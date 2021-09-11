@@ -6,9 +6,10 @@
 - 🔭 I’m currently pursuing my Bachelor of Technology in Computer Science and Engineering(B.Tech. CSE).
 - 🌱 I’m currently learning Django, Deep Learning.
 - 👯 I’m looking to collaborate on Open-source Projects.
+- ✍ I now work for ZHIQUTU INC.
 - 💬 Ask me about Web, App, ML.
 ---
-⭐️ From [JossSong](https://www.zhiqutu.cn)
+⭐️ From email [JossSong](http://www.zhiqutu.cn)
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>Languages and Tools</h2>
 <br />
