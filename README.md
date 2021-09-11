@@ -2,11 +2,11 @@
 <h1 align="center">Hi there <img src="https://github.com/sudnyeshtalekar/sudnyeshtalekar/blob/master/Assets/Hi.gif" width="40px">, I'm Joss Song</h1>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>About me &nbsp;&nbsp; <span align=""> <img src="https://komarev.com/ghpvc/?username=sudnyeshtalekar" alt="sudnyeshtalekar" /> </span></h2>
-- ❤  I come from China.
-- 🔭 I’m currently pursuing my Bachelor of Technology in Computer Science and Engineering(B.Tech. CSE).
-- 🌱 I’m currently learning Django, Deep Learning.
-- 👯 I’m looking to collaborate on Open-source Projects.
-- ✍ I now work for ZHIQUTU INC.
+- ❤  I'm come from China.
+- 🔭 I'm currently pursuing my Bachelor of Technology in Computer Science and Engineering(B.Tech. CSE).
+- 🌱 I'm currently learning Django, Deep Learning.
+- 👯 I'm looking to collaborate on Open-source Projects.
+- ✍ I'm now work for ZHIQUTU INC.
 - 💬 Ask me about Web, App, ML.
 ---
 ⭐️ From email [JossSong](http://www.zhiqutu.cn)
