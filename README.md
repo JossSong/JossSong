@@ -5,7 +5,7 @@
 - ❤  I'm come from China.
 - 🔭 I'm currently pursuing my Bachelor of Technology in Computer Science and Engineering(B.Tech. CSE).
 - 🌱 I'm currently learning Cloud computing, Devops.
-- - ✍ I'm now work for ZHIQUTU INC.
+- ✍ I'm now work for ZHIQUTU INC.
 - 👯 I'm looking to collaborate on Open-source Projects.
 - 💬 Ask me about Web, App, ML.
 ---
