@@ -37,14 +37,11 @@
   <img align="left" alt="Sudnyesh's Twitter" width="22px" src="https://files.catbox.moe/58huqj.svg" />
 </a>
 <a href="https://linkedin.com/in/">
-  <img align="left" alt="Sudnyesh's Linkdein" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+  <img align="left" alt="Sudnyesh's Linkdein" width="22px" src="https://files.catbox.moe/al40oz.svg" />
 </a>
 <a href="https://github.com/JossSong">
-  <img align="left" alt="Sudnyesh's Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />
+  <img align="left" alt="Sudnyesh's Github" width="22px" src="https://files.catbox.moe/29p6zd.svg" />
 </a>
 <a href="https://www.instagram.com/">
-  <img align="left" alt="Sudnyesh's Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />
-</a>
-<a href="http://sudnyesht.ml">
-  <img align="left"  width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.2.0/icons/write-dot-as.svg" />
+  <img align="left" alt="Sudnyesh's Instagram" width="22px" src="https://files.catbox.moe/cmbkkj.svg" />
 </a>
