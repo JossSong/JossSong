@@ -42,6 +42,3 @@
 <a href="https://github.com/JossSong">
   <img align="left" alt="Sudnyesh's Github" width="22px" src="https://files.catbox.moe/29p6zd.svg" />
 </a>
-<a href="https://www.instagram.com/">
-  <img align="left" alt="Sudnyesh's Instagram" width="22px" src="https://files.catbox.moe/cmbkkj.svg" />
-</a>
