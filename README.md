@@ -17,26 +17,27 @@
 
 <br />
 
-<h2>Languages and Tools</h2>
+<h2>Good language and Tools</h2>
 
 <br />
+
 <p align="center">
  <img src="https://img.shields.io/badge/HTML-5-green" alt="html" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/CSS-3-yellowgreen" alt="CSS3" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/JavaScript-Stable-orange" alt="javascript" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/PHP-8-yellowgreen" alt="php" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/PHP-8-yellowgreen" alt="php" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-Stable-important" alt="Golang" style="vertical-align:top; margin:4px">
  <img src="https://img.shields.io/badge/Java-11-success" alt="Java" style="vertical-align:top; margin:4px">
+ <img src="https://img.shields.io/badge/Rust- -red" alt="Rust" style="vertical-align:top; margin:4px">
  <br />
  <img src="https://img.shields.io/badge/MySql-8-important" alt="sql" style="vertical-align:top; margin:4px">
  <img src="https://img.shields.io/badge/postgresql-11-red" alt="postgresql" style="vertical-align:top; margin:4px">
  <img src="https://img.shields.io/badge/Matlab-blue" alt="matlab" style="vertical-align:top; margin:4px">
- <img src="https://img.shields.io/badge/Rust- -red" alt="postgresql" style="vertical-align:top; margin:4px">
-
-
+ 
 </p>
+
 <br />
 
 <p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=JossSong&show_icons=true&theme=dark" alt="sudnyeshtalekar" /> 
@@ -53,3 +54,4 @@
 <a href="https://github.com/JossSong">
   <img align="left" alt="Sudnyesh's Github" width="22px" src="https://files.catbox.moe/29p6zd.svg" />
 </a>
+<hr>
