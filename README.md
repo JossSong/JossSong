@@ -28,13 +28,15 @@
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/PHP-8-yellowgreen" alt="php" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/Golang-Stable-important" alt="Golang" style="vertical-align:top; margin:4px">
- <img src="https://img.shields.io/badge/Java-11-success" alt="Java" style="vertical-align:top; margin:4px">
- <img src="https://img.shields.io/badge/Rust- -red" alt="Rust" style="vertical-align:top; margin:4px">
+ <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/Java-11-success" alt="Java" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
  <br />
- <img src="https://img.shields.io/badge/MySql-8-important" alt="sql" style="vertical-align:top; margin:4px">
- <img src="https://img.shields.io/badge/postgresql-11-red" alt="postgresql" style="vertical-align:top; margin:4px">
- <img src="https://img.shields.io/badge/Matlab-blue" alt="matlab" style="vertical-align:top; margin:4px">
+ <img src="https://img.shields.io/badge/MySql-8-important" alt="sql" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/postgresql-11-red" alt="postgresql" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/Matlab-blue" alt="matlab" style="vertical-align:top; margin:6px">
+  <img src="https://img.shields.io/badge/nginx-red" alt="nginx" style="vertical-align:top; margin:6px">
+  <img src="https://img.shields.io/badge/apache-green" alt="apache" style="vertical-align:top; margin:6px">
  
 </p>
 
