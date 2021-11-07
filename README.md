@@ -29,8 +29,12 @@
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-Stable-important" alt="Golang" style="vertical-align:top; margin:4px">
  <img src="https://img.shields.io/badge/Java-11-success" alt="Java" style="vertical-align:top; margin:4px">
+ <br />
  <img src="https://img.shields.io/badge/MySql-8-important" alt="sql" style="vertical-align:top; margin:4px">
  <img src="https://img.shields.io/badge/postgresql-11-red" alt="postgresql" style="vertical-align:top; margin:4px">
+ <img src="https://img.shields.io/badge/Matlab-blue" alt="matlab" style="vertical-align:top; margin:4px">
+ <img src="https://img.shields.io/badge/Rust- -red" alt="postgresql" style="vertical-align:top; margin:4px">
+
 
 </p>
 <br />
