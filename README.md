@@ -13,7 +13,7 @@
 - 💬 Ask me about Web, App, ML.
 ---
 
-⭐️ Send E-mail  <a href="https://www.google.com/gmail" target="_blank">Joss@88.com</a>
+⭐️ Send E-mail  <a href="mailto:Joss@88.com" target="_blank">Joss@88.com</a>
 
 <br />
 
