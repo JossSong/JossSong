@@ -55,10 +55,5 @@
 <a href="https://twitter.com/">
   <img align="left" alt="Sudnyesh's Twitter" width="22px" src="https://files.catbox.moe/op65q4.png" />
 </a>
-<a href="https://linkedin.com/in/">
-  <img align="left" alt="Sudnyesh's Linkdein" width="22px" src="" />
-</a>
-<a href="https://github.com/JossSong">
-  <img align="left" alt="Sudnyesh's Github" width="22px" src="" />
-</a>
+
 <hr>
