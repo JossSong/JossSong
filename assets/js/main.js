@@ -70,3 +70,12 @@ $('.btn-mobile-menu__icon').click(function () {
 	}
 	$('.btn-mobile-menu__icon').toggleClass('social iconfont icon-list social iconfont icon-angleup animated fadeIn');
 });
+
+
+hotkeys('x+enter,g+enter,s+enter', function(event,handler) {
+  switch(handler.key){
+    case "x+enter":window.location.replace("https://josssong.cn4.quickconnect.cn");break;
+    case "g+enter":window.location.replace("https://work.zhiqutu.com");break;
+    case "s+enter":window.location.replace("https://home.joss.vip");break;	  
+  }
+});
