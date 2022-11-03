@@ -5932,7 +5932,6 @@ hr {
 .panel-inverted {
 	font-weight:100;
 	text-align:center;
-	text-shadow:0 1px 1px rgba(0,0,0,0.4);
 }
 .panel-inverted a {
 	color:#fff;
@@ -6026,9 +6025,9 @@ nav {
 .navigation__item a {
 	display:block;
 	position:relative;
-	border-color:#fff;
-	color:#fff;
-	opacity:0.8;
+	border-color:#ccc;
+	color:#ccc;
+	opacity:0.9;
 }
 .navigation__item a:hover {
 	color:#fff;
