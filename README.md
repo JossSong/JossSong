@@ -52,7 +52,7 @@
 
 <h2> My media </h2>
 
-<a href="https://twitter.com/">
+<a href="https://twitter.com/JossSongs">
   <img align="left" alt="Sudnyesh's Twitter" width="22px" src="https://files.catbox.moe/op65q4.png" />
 </a>
 
