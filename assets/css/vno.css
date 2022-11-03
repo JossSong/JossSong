@@ -6029,11 +6029,7 @@ nav {
 	color:#ccc;
 	opacity:0.9;
 }
-.navigation__item a:hover {
-	color:#fff;
-	border-color:#fff;
-	opacity:1;
-}
+
 .navigation--social a {
 	border:0;
 	padding:6px 8px 6px 9px;
