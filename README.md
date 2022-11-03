@@ -12,15 +12,10 @@
 - 👯 I'm looking to collaborate on Open-source Projects.
 - 💬 Ask me about Web, App, ML.
 ---
-
 ⭐️ Send E-mail  <a href="mailto:Joss@88.com" target="_blank">Joss@88.com</a>
-
 <br />
-
 <h2>Good language and Tools</h2>
-
 <br />
-
 <p align="center">
  <img src="https://img.shields.io/badge/HTML-5-green" alt="html" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/CSS-3-yellowgreen" alt="CSS3" style="vertical-align:top; margin:6px">
@@ -48,7 +43,6 @@
 </p>
 
 <br />
-
 
 <h2> My media </h2>
 
