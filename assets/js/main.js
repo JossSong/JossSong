@@ -72,10 +72,9 @@ $('.btn-mobile-menu__icon').click(function () {
 });
 
 
-hotkeys('x+enter,g+enter,s+enter', function(event,handler) {
+hotkeys('p+enter,c+enter', function(event,handler) {
   switch(handler.key){
-    case "x+enter":window.location.replace("https://josssong.cn4.quickconnect.cn");break;
-    case "g+enter":window.location.replace("https://work.zhiqutu.com");break;
-    case "s+enter":window.location.replace("https://home.joss.vip");break;	  
+    case "p+enter":window.location.replace("https://josssong.cn4.quickconnect.cn");break;
+    case "c+enter":window.location.replace("https://work.zhiqutu.com");break;
   }
 });
