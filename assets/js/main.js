@@ -71,10 +71,10 @@ $('.btn-mobile-menu__icon').click(function () {
 	$('.btn-mobile-menu__icon').toggleClass('social iconfont icon-list social iconfont icon-angleup animated fadeIn');
 });
 
-
-hotkeys('p+enter,c+enter', function(event,handler) {
+hotkeys('p+enter,c+enter,f+enter', function(event,handler) {
   switch(handler.key){
     case "p+enter":window.location.replace("https://josssong.cn4.quickconnect.cn");break;
-    case "c+enter":window.location.replace("https://work.zhiqutu.com");break;
+    case "c+enter":window.location.replace("https://work.zhiqutu.com");break; 
+    case "f+enter":window.location.replace("https://account.qnap.com.cn/signin");break;	  
   }
 });
