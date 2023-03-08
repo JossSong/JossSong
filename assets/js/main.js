@@ -73,7 +73,7 @@ $('.btn-mobile-menu__icon').click(function () {
 
 hotkeys('f+enter,c+enter', function(event,handler) {
   switch(handler.key){
-    case "f+enter":window.location.replace("http://192.168.1.100");break;
+    case "f+enter":window.location.replace("http://192.168.1.100:30000");break;
     case "c+enter":window.location.replace("https://work.zhiqutu.com");break; 
   }
 });
