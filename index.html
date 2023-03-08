@@ -22,6 +22,21 @@
                   }
 		}
 	</style>
+	
+	    <style>
+      #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+      }
+    </style>
 </head>
 
 <body>
@@ -93,41 +108,45 @@
             </div>
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
-	    <!-- 在HTML中添加一个div元素 -->
-<div id="myDiv" style="display:none; width:800px; height:800px; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
-  <h1>这是一个div弹窗</h1>
-  <p>点击任意位置关闭</p>
-</div>
 
+	    
+	    
+	    
+	    
+	    
+	    <div id="popup"></div>
+    <script>
+      var timeoutId;
+
+      document.addEventListener('keydown', function(event) {
+        if (event.code === 'Space' && event.repeat) {
+          event.preventDefault();
+          var popup = document.getElementById('popup');
+          // 从指定 URL 加载 DIV 内容
+          popup.innerHTML = '<object type="text/html" data="http://192.168.1.100:30000"></object>';
+          popup.style.display = 'block';
+          timeoutId = setTimeout(function() {
+            popup.style.display = 'none';
+          }, 10000);
+        }
+      });
+
+      document.addEventListener('click', function() {
+        clearTimeout(timeoutId);
+      });
+      document.addEventListener('mousemove', function() {
+        clearTimeout(timeoutId);
+      });
+      document.addEventListener('keydown', function() {
+        clearTimeout(timeoutId);
+      });
+    </script>
+	   
+	    
+	    
     </header>
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
-<script>	
-	
-	// 获取div元素
-var myDiv = document.getElementById('myDiv');
-
-// 监听空格键双击事件
-var lastKeypressTime = 0; // 记录最后一次按键时间
-document.addEventListener('keydown', function(event) {
-  var now = new Date().getTime(); // 获取当前时间
-  if (event.code === 'Space' && now - lastKeypressTime < 500) {
-    event.preventDefault(); // 防止默认行为
-    myDiv.style.display = 'block'; // 显示div元素
-    // 10秒后自动隐藏div元素
-    setTimeout(function() {
-      myDiv.style.display = 'none';
-    }, 10000);
-  }
-  lastKeypressTime = now; // 更新最后一次按键时间
-});
-
-// 点击div元素任意位置关闭
-myDiv.addEventListener('click', function() {
-  myDiv.style.display = 'none';
-});
-
-</script>
 </body>
 </html>
