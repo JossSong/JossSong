@@ -97,5 +97,15 @@
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
+<script>
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Space' && event.repeat) {
+    // 如果是双击空格键，执行下面的代码
+    event.preventDefault(); // 防止默认行为（在文本框中输入空格）
+    // 弹出一个窗口
+    window.open('http://192.168.1.100:30000', 'popup', 'width=400,height=300');
+  }
+});	
+</script>
 </body>
 </html>
