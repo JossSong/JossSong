@@ -27,8 +27,8 @@
       #popup {
         display: none;
         position: fixed;
-        top: 50%;
-        left: 50%;
+        top: 80%;
+        left: 80%;
         transform: translate(-50%, -50%);
         background-color: #fff;
         padding: 20px;
@@ -108,11 +108,6 @@
             </div>
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
-
-	    
-	    
-	    
-	    
 	    
 	    <div id="popup"></div>
     <script>
@@ -123,7 +118,7 @@
           event.preventDefault();
           var popup = document.getElementById('popup');
           // 从指定 URL 加载 DIV 内容
-          popup.innerHTML = '<object type="text/html" data="http://192.168.1.100:30000"></object>';
+          popup.innerHTML = '<object type="text/html" data="https://baidu.com"></object>';
           popup.style.display = 'block';
           timeoutId = setTimeout(function() {
             popup.style.display = 'none';
