@@ -93,6 +93,12 @@
             </div>
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
+	    <!-- 在HTML中添加一个div元素 -->
+<div id="myDiv" style="display:none; width:400px; height:300px; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+  <h1>这是一个div弹窗</h1>
+  <p>点击任意位置关闭</p>
+</div>
+
     </header>
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
@@ -105,7 +111,34 @@ document.addEventListener('keydown', function(event) {
     // 弹出一个窗口
     window.open('http://192.168.1.100:30000', 'popup', '_self', 'width=800,height=800');
   }
-});	
+});
+	
+	
+	
+	
+	// 获取div元素
+var myDiv = document.getElementById('myDiv');
+
+// 监听空格键双击事件
+var lastKeypressTime = 0; // 记录最后一次按键时间
+document.addEventListener('keydown', function(event) {
+  var now = new Date().getTime(); // 获取当前时间
+  if (event.code === 'Space' && now - lastKeypressTime < 500) {
+    event.preventDefault(); // 防止默认行为
+    myDiv.style.display = 'block'; // 显示div元素
+    // 10秒后自动隐藏div元素
+    setTimeout(function() {
+      myDiv.style.display = 'none';
+    }, 10000);
+  }
+  lastKeypressTime = now; // 更新最后一次按键时间
+});
+
+// 点击div元素任意位置关闭
+myDiv.addEventListener('click', function() {
+  myDiv.style.display = 'none';
+});
+
 </script>
 </body>
 </html>
