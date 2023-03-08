@@ -94,7 +94,7 @@
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
 	    <!-- 在HTML中添加一个div元素 -->
-<div id="myDiv" style="display:none; width:400px; height:300px; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+<div id="myDiv" style="display:none; width:800px; height:800px; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
   <h1>这是一个div弹窗</h1>
   <p>点击任意位置关闭</p>
 </div>
@@ -103,18 +103,7 @@
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
-<script>
-document.addEventListener('keydown', function(event) {
-  if (event.code === 'Space' && event.repeat) {
-    // 如果是双击空格键，执行下面的代码
-    event.preventDefault(); // 防止默认行为（在文本框中输入空格）
-    // 弹出一个窗口
-    window.open('http://192.168.1.100:30000', 'popup', '_self', 'width=800,height=800');
-  }
-});
-	
-	
-	
+<script>	
 	
 	// 获取div元素
 var myDiv = document.getElementById('myDiv');
