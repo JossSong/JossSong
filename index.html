@@ -22,21 +22,7 @@
                   }
 		}
 	</style>
-	
-	    <style>
-      #popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        padding: 20px;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 9999;
-      }
-    </style>
+
 </head>
 
 <body>
@@ -109,7 +95,7 @@
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
 	    
-<div id="myDiv" style="display:none; width:80%; height:80%; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-90%, -90%); z-index: 99999;">
+<div id="myDiv" style="display:none; width:80%; height:80%; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 99999;">
 <iframe src="https://rsshub.joss.vip" width="100%" height="100%" frameborder="0">
 您的浏览器不支持iframe，请升级
 </iframe>	
@@ -124,7 +110,7 @@ var myDiv = document.getElementById('myDiv');
 var lastKeypressTime = 0; // 记录最后一次按键时间
 document.addEventListener('keydown', function(event) {
   var now = new Date().getTime(); // 获取当前时间
-  if (event.code === 'Space' && now - lastKeypressTime < 500) {
+  if (event.code === 'Space' && now - lastKeypressTime < 100) {
     event.preventDefault(); // 防止默认行为
     myDiv.style.display = 'block'; // 显示div元素
     // 10秒后自动隐藏div元素
