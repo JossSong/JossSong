@@ -63,7 +63,7 @@
                                         <a href="https://blog.joss.vip" class="blog-button">Blog</a>
                                     </li>
                                     <li class="navigation__item">
-                                        <a href="https://blog.joss.vip/chat" class="blog-button">Chat</a>
+                                        <a href="https://blog.joss.vip/chat" class="blog-button">Store</a>
                                     </li>
                                     <li class="navigation__item">
                                         <a href="https://blog.joss.vip/about" class="blog-button">About</a>
@@ -105,40 +105,7 @@
                 </div>
             </div>
             <div class="panel-cover--overlay cover-slate"></div>
-        </div>
-	    
-<div id="myDiv" style="display:none; width:80%; height:80%; background-color:#eee; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 99999;">
-<iframe src="https://itab.lnk" width="100%" height="100%" frameborder="0">
-您的浏览器不支持iframe，请升级
-</iframe>	
-</div>
-	    
-    <script>
-   // 获取div元素
-var myDiv = document.getElementById('myDiv');
-
-// 监听空格键双击事件
-var lastKeypressTime = 0; // 记录最后一次按键时间
-document.addEventListener('keydown', function(event) {
-  var now = new Date().getTime(); // 获取当前时间
-  if (event.code === 'Space' && now - lastKeypressTime < 100) {
-    event.preventDefault(); // 防止默认行为
-    myDiv.style.display = 'block'; // 显示div元素
-    // 10秒后自动隐藏div元素
-    setTimeout(function() {
-      myDiv.style.display = 'none';
-    }, 10000);
-  }
-  lastKeypressTime = now; // 更新最后一次按键时间
-});
-
-// 点击div元素任意位置关闭
-myDiv.addEventListener('click', function() {
-  myDiv.style.display = 'none';
-});
-
-    </script>
-	    
+        </div>	    
  </header>
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
