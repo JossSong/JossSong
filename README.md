@@ -21,7 +21,6 @@
  <img src="https://img.shields.io/badge/CSS-3-yellowgreen" alt="CSS3" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/JavaScript-Stable-orange" alt="javascript" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/PHP-8-yellowgreen" alt="php" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
@@ -31,7 +30,6 @@
  <img src="https://img.shields.io/badge/postgresql-11-red" alt="postgresql" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/nginx-red" alt="nginx" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Redis-yellowgreen" alt="redis" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/apache-green" alt="apache" style="vertical-align:top; margin:6px">
  <br />
  <img src="https://img.shields.io/badge/docker-21-blue" alt="apache" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Kubernetes-1.25-green" alt="apache" style="vertical-align:top; margin:6px">
