@@ -115,7 +115,7 @@ document.addEventListener('keydown', function(event) {
   const currentTime = new Date().getTime();
   if (event.code === 'Space') {
     if (currentTime - lastKeyPressTime <= doubleClickDuration) { // 判断是否为双击事件
-      window.open('https://github.com/login?client_id=930860aee1b7c1ce56ee&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D930860aee1b7c1ce56ee%26scope%3Duser', '_self'); // 打开 itab
+      window.open('https://go.itab.link', '_self'); // 打开 itab
     }
     lastKeyPressTime = currentTime;
   }
