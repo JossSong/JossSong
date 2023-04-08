@@ -115,13 +115,13 @@ document.addEventListener('keydown', function(event) {
   const currentTime = new Date().getTime();
   if (event.code === 'Space') {
     if (currentTime - lastKeyPressTime <= doubleClickDuration) { // 判断是否为双击事件
-      window.open('https://start.me', '_self'); // 打开 https://start.me 网页
+      window.open('https://start.me/users/sign_in', '_self'); // 打开 https://start.me 网页
     }
     lastKeyPressTime = currentTime;
   }
 });
 </script>
-<script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+<!-- <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script> -->
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
