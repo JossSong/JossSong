@@ -108,14 +108,20 @@
         </div>	    
  </header>
 <script>
+var lastKeypressTime = 0;
+
 document.addEventListener("keydown", function(event) {
   if (event.keyCode == 32 && event.keyCode != 8) { // 按下空格键
-    var keyPressed = prompt("请输入一个字母键（h 或 n）："); // 弹出对话框输入字母键
-    if (keyPressed == "h") {
-      window.location.href = "http://192.168.1.100:30000";
-    } else if (keyPressed == "n") {
-      window.location.href = "https://work.zhiqutu.com";
+    var currentTime = new Date().getTime();
+    if (currentTime - lastKeypressTime < 300) { // 判断是否为双击事件
+      var keyPressed = prompt("请输入密码 ："); // 弹出对话框输入字母键
+      if (keyPressed == "h") {
+        window.location.href = "http://192.168.1.100:30000";
+      } else if (keyPressed == "n") {
+        window.location.href = "https://work.zhiqutu.com";
+      }
     }
+    lastKeypressTime = currentTime;
   }
 });
 </script>
