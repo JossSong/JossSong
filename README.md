@@ -6,7 +6,7 @@
 <h2>About me &nbsp;&nbsp; <span align=""> <img src="https://komarev.com/ghpvc/?username=sudnyeshtalekar" alt="sudnyeshtalekar" /> </span></h2>
 
 - ❤  I'm come from China.
-- 🔭 I'm currently pursuing my Bachelor of Technology in Computer Science and Engineering(B.Tech. CSE).
+- 🔭 I am currently studying engineering management at Tianjin University(B.Tech. MEM).
 - 🌱 I'm currently learning Cloud computing, Devops.
 - ✍ I'm now work for ZHIQUTU INC.
 - 👯 I'm looking to collaborate on Open-source Projects.
