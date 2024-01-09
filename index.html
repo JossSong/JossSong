@@ -1,17 +1,59 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Joss Song</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joss Song</title>
-    <meta name="keywords" content="Joss's Home">
+    <meta name="keywords" content="Joss 宋京京">
     <meta name="description" content="Be all you can be!">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="/assets/css/vno.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/iconfont.css">
-    <link rel="icon" href="favicon.ico">
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script>
+        var lastKeypressTime = 0;
+        document.addEventListener("keydown", function(event) {
+          if (event.keyCode == 32 && event.keyCode != 8) { // 按下空格键
+            var currentTime = new Date().getTime();
+            if (currentTime - lastKeypressTime < 300) { // 判断是否为双击事件
+              var keyPressed = prompt("请输入密码 ："); // 弹出对话框输入字母键
+              if (keyPressed == "h") {
+                window.location.href = "http://192.168.2.100:30000";
+              } else if (keyPressed == "n") {
+                window.location.href = "https://work.zhiqutu.com";
+              }
+            }
+            lastKeypressTime = currentTime;
+          }
+        });
+        </script>
 
-    	<style>
+    <script>
+        function showContent() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var langCode = userLang.substr(0, 2).toLowerCase();
+
+            switch (langCode) {
+                case "en":
+                    document.getElementById("en-content").style.display = "block";
+                    break;
+                case "zh":
+                    document.getElementById("zh-content").style.display = "block";
+                    break;
+                default:
+                    document.getElementById("default-content").style.display = "block";
+                    break;
+            }
+        }
+    </script>
+    <style>
+        .content {
+            display: none;
+        }
+    </style>
+    <style>
 		body {
 			background: white;
 			color: black;
@@ -23,104 +65,97 @@
                   }
 		}
 		.info-back {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
 
-.info-back img {
-  width: 100%;
-  height: auto;
-}
+        .info-back img {
+             width: 100%;
+             height: auto;
+        }
 	</style>
-
 </head>
+<body onload="showContent()">
+    <div id="en-content" class="content">
 
-<body>
-    <span class="mobile btn-mobile-menu">
-        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-    </span>
-    <header id="panel" class="panel-cover">
-        <div class="panel-main">
-            <div class="panel-main__inner panel-inverted">
-                <div class="panel-main__content">
-                    <div class="ih-item circle effect right_to_left">            
-                        <div class="blog-button">
-                            <div class="info iUp">
-                                <div class="info-back">
-                                    <img src="https://creatorspace.imgix.net/users/clh1rib9800b3sg01kzarfol0/Q1xgErPAqmRydP98-_cgi-bin_mmwebwx-bin_webwxgetmsgimg__%2526MsgID%253D2102299972515254704%2526skey%253D%2540crypt_e7714950_18ee50890ff7764c85778193a2d6d8fe%2526mmweb_appid%253Dwx_webfilehelper.jpeg?w=300&h=300"  />
+        <h1>Welcome to My Website (English Version)</h1>
+        <p>This is the content for English language.</p>
+
+    </div>
+    <div id="zh-content" class="content">
+        <span class="mobile btn-mobile-menu">
+            <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
+            <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
+        </span>
+        <header id="panel" class="panel-cover">
+            <div class="panel-main">
+                <div class="panel-main__inner panel-inverted">
+                    <div class="panel-main__content">
+                        <div class="ih-item circle effect right_to_left">            
+                            <div class="blog-button">
+                                <div class="info iUp">
+                                    <div class="info-back">
+                                        <img src="https://creatorspace.imgix.net/users/clh1rib9800b3sg01kzarfol0/Q1xgErPAqmRydP98-_cgi-bin_mmwebwx-bin_webwxgetmsgimg__%2526MsgID%253D2102299972515254704%2526skey%253D%2540crypt_e7714950_18ee50890ff7764c85778193a2d6d8fe%2526mmweb_appid%253Dwx_webfilehelper.jpeg?w=300&h=300"  />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-		<h2 class="panel-cover__title panel-title iUp">
-                   Joss Song                    
-		</h2>
-                    <h3 class="panel-cover__title panel-title iUp">
-                    万物致简 | 道法自然
-                    </h3>
-                    <p class="panel-cover__subtitle panel-subtitle iUp">#创业者 #投资人 #产品经理 #程序员 #设计师 #媒体人</p>
-                    <hr class="panel-cover__divider iUp" />
-                    <p id="description" class="panel-cover__description iUp">道生一，一生二，二生三，三生万物。
-                        <br/>
-                        <strong>-「中牟道中」</strong>
-                    </p>
-                    <div class="navigation-wrapper iUp">
-                        <div>
-                            <nav class="cover-navigation cover-navigation--primary">
-                                <ul class="navigation">
-                                    <li class="navigation__item">
-                                        <a href="https://josssong.notion.site/" target="_blank" class="blog-button">Notion</a>
-                                    </li>
-				<li class="navigation__item">
-                                        <a href="https://www.figma.com/@josssong" target="_blank"  title="Figma" target="_blank" class="blog-button">Figma</a>
-                                    </li>
-					 <li class="navigation__item">
-                                        <a href="https://github.com/josssong" target="_blank"  class="blog-button">Github</a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="https://youtube.com/josssong" target="_blank"  class="blog-button">Youtube</a>
-                                    </li>
-				<li class="navigation__item">
-                                        <a href="https://bilibili.com/josssong" target="_blank"  class="blog-button">Bilibili</a>
-                                    </li>
-				 <li class="navigation__item">
-                                        <a href="https://weibo.com/josssong" target="_blank"  class="blog-button">Weibo</a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="https://twitter.com/josssongs" target="_blank"  class="blog-button">Twitter</a>
-                                    </li>
-                                </ul>
-                            </nav>
+            <h2 class="panel-cover__title panel-title iUp">
+                       Joss Song                    
+            </h2>
+                        <h3 class="panel-cover__title panel-title iUp">
+                        万物致简 | 道法自然
+                        </h3>
+                        <p class="panel-cover__subtitle panel-subtitle iUp">#创业者 #投资人 #产品经理 #程序员 #设计师 #媒体人</p>
+                        <hr class="panel-cover__divider iUp" />
+                        <p id="description" class="panel-cover__description iUp">道生一，一生二，二生三，三生万物。
+                            <br/>
+                            <strong>-「中牟道中」</strong>
+                        </p>
+                        <div class="navigation-wrapper iUp">
+                            <div>
+                                <nav class="cover-navigation cover-navigation--primary">
+                                    <ul class="navigation">
+                                        <li class="navigation__item">
+                                            <a href="https://josssong.notion.site/" target="_blank" class="blog-button">Notion</a>
+                                        </li>
+                    <li class="navigation__item">
+                                            <a href="https://www.figma.com/@josssong" target="_blank"  title="Figma" target="_blank" class="blog-button">Figma</a>
+                                        </li>
+                         <li class="navigation__item">
+                                            <a href="https://github.com/josssong" target="_blank"  class="blog-button">Github</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="https://youtube.com/josssong" target="_blank"  class="blog-button">Youtube</a>
+                                        </li>
+                    <li class="navigation__item">
+                                            <a href="https://bilibili.com/josssong" target="_blank"  class="blog-button">Bilibili</a>
+                                        </li>
+                     <li class="navigation__item">
+                                            <a href="https://weibo.com/josssong" target="_blank"  class="blog-button">Weibo</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="https://twitter.com/josssongs" target="_blank"  class="blog-button">Twitter</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                    
                         </div>
-			    
                     </div>
                 </div>
-            </div>
-            <div class="panel-cover--overlay cover-slate"></div>
-        </div>	    
- </header>
-<script>
-var lastKeypressTime = 0;
+                <div class="panel-cover--overlay cover-slate"></div>
+            </div>	    
+     </header>
 
-document.addEventListener("keydown", function(event) {
-  if (event.keyCode == 32 && event.keyCode != 8) { // 按下空格键
-    var currentTime = new Date().getTime();
-    if (currentTime - lastKeypressTime < 300) { // 判断是否为双击事件
-      var keyPressed = prompt("请输入密码 ："); // 弹出对话框输入字母键
-      if (keyPressed == "h") {
-        window.location.href = "http://192.168.2.100:30000";
-      } else if (keyPressed == "n") {
-        window.location.href = "https://work.zhiqutu.com";
-      }
-    }
-    lastKeypressTime = currentTime;
-  }
-});
-</script>
-<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/js/main.js"></script>
+    </div>
+    <div id="default-content" class="content">
+
+        <h1>Welcome to My Website</h1>
+        <p>This is the default content.</p>
+
+    </div>
 </body>
 </html>
