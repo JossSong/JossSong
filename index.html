@@ -10,27 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/vno.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/iconfont.css">
     <link rel="icon" href="favicon.ico">
-    <script>
-        var userLang = navigator.language || navigator.userLanguage;
-        var langCode = userLang.substr(0, 2).toLowerCase();
-        var redirectUrl = "";
 
-        switch (langCode) {
-            case "en":
-                redirectUrl = "index_en.html";
-                break;
-            case "zh":
-                redirectUrl = "index.html";
-                break;
-            default:
-                redirectUrl = "index.html"; // 默认跳转到中文页面
-                break;
-        }
-
-        if (redirectUrl !== "" && window.location.pathname !== redirectUrl) {
-            window.location.href = redirectUrl;
-        }
-    </script>
     	<style>
 		body {
 			background: white;
