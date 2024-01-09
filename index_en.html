@@ -10,20 +10,13 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/vno.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/iconfont.css">
     <link rel="icon" href="favicon.ico">
-	<script>
+<script>
   var userLang = navigator.language || navigator.userLanguage;
-  var redirectUrl;
   
   if (userLang.startsWith("en")) {
-    redirectUrl = "index_en.html";
+    window.location.href = "index_en.html"; // 英语页面
   } else {
-    redirectUrl = "index.html";
-  }
-  
-  // 检查当前页面是否已经是目标语言页面
-  if (window.location.href.indexOf(redirectUrl) === -1) {
-    // 重定向到相应的语言版本网页
-    window.location.href = redirectUrl;
+    window.location.href = "index.html"; // 中文页面（默认）
   }
 </script>
 
