@@ -15,13 +15,16 @@
   var redirectUrl;
   
   if (userLang.startsWith("en")) {
-    redirectUrl = "./index_en.html";
+    redirectUrl = "index_en.html";
   } else {
-    redirectUrl = "./index.html";
+    redirectUrl = "index.html";
   }
   
-  // 重定向到相应的语言版本网页
-  window.location.href = redirectUrl;
+  // 检查当前页面是否已经是目标语言页面
+  if (window.location.href.indexOf(redirectUrl) === -1) {
+    // 重定向到相应的语言版本网页
+    window.location.href = redirectUrl;
+  }
 </script>
     	<style>
 		body {
