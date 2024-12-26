@@ -8,7 +8,7 @@
 - ❤  I'm come from China.
 - 🔭 I am currently studying engineering management at Tianjin University(B.Tech. MEM).
 - 🌱 I'm currently learning Cloud computing, Devops.
-- ✍ I'm now work for ZHIQUTU INC.
+- ✍ I'm now work for TNTN INC.
 - 👯 I'm looking to collaborate on Open-source Projects.
 - 💬 Ask me about Web, App, ML.
 ---
