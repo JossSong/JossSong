@@ -1,4 +1,3 @@
-<img width="1480" height="1040" alt="image" src="https://github.com/user-attachments/assets/dacd005f-a91d-46ab-ad51-eb25d75343b5" />
 <h1 align="center">Hi there <img src="https://github.com/sudnyeshtalekar/sudnyeshtalekar/blob/master/Assets/Hi.gif" width="40px">, I'm Joss Song</h1>
 
 <img align='right' src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="230">
@@ -19,7 +18,7 @@
 <p align="center">
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/flutter-4.1" alt="flutter" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/flutter-4.3.1" alt="flutter" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
  <br />
