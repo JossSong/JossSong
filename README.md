@@ -18,11 +18,11 @@
 <p align="center">
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/flutter-4.3.1" alt="flutter" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/flutter-4.3-red" alt="flutter" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
  <br />
-  <img src="https://img.shields.io/badge/linux" alt="linux" style="vertical-align:top; margin:6px">
+  <img src="https://img.shields.io/badge/linux-ubuntu-red" alt="linux" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/docker-21-blue" alt="docker" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Kubernetes-1.25-green" alt="kubernetes" style="vertical-align:top; margin:6px">
 </p>
