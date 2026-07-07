@@ -17,16 +17,15 @@
 <h2>Good language and Tools</h2>
 <br />
 <p align="center">
-
- <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
-   <br />
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Flutter</title><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+ <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/flutter-4.1" alt="flutter" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
  <br />
- <img src="https://img.shields.io/badge/docker-21-blue" alt="apache" style="vertical-align:top; margin:6px">
- <img src="https://img.shields.io/badge/Kubernetes-1.25-green" alt="apache" style="vertical-align:top; margin:6px">
+  <img src="https://img.shields.io/badge/linux" alt="linux" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/docker-21-blue" alt="docker" style="vertical-align:top; margin:6px">
+ <img src="https://img.shields.io/badge/Kubernetes-1.25-green" alt="kubernetes" style="vertical-align:top; margin:6px">
 </p>
 <br />
 <h2> My media </h2>
