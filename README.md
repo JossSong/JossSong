@@ -21,7 +21,7 @@
  <img src="https://img.shields.io/badge/node-21-lightgrey" alt="node" style="vertical-align:top; margin:6px">
    <br />
  <img src="https://img.shields.io/badge/Python-3.9-red" alt="python" style="vertical-align:top; margin:6px">
-  <img height="32" width="32" src="https://unpkg.com/simple-icons@v16/icons/#02569B.svg" />
+  <img height="32" width="32" src="https://unpkg.com/simple-icons@v16/icons/flutter.svg" />
 
  <img src="https://img.shields.io/badge/Golang-1.17-important" alt="Golang" style="vertical-align:top; margin:6px">
  <img src="https://img.shields.io/badge/Rust-1.5-red" alt="Rust" style="vertical-align:top; margin:6px">
