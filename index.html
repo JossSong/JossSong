@@ -1,217 +1,824 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN" data-theme="night">
 <head>
-    <meta charset="UTF-8">
-    <title>Joss Song</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Joss 宋京">
-    <meta name="description" content="Be all you can be!">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/assets/css/vno.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/iconfont.css">
-    <script>
-        var lastKeypressTime = 0;
-        document.addEventListener("keydown", function(event) {
-          if (event.keyCode == 32 && event.keyCode != 8) { // 按下空格键
-            var currentTime = new Date().getTime();
-            if (currentTime - lastKeypressTime < 300) { // 判断是否为双击事件
-              var keyPressed = prompt("请输入密码 ："); // 弹出对话框输入字母键
-              if (keyPressed == "h") {
-                window.location.href = "http://192.168.31.100";
-              } else if (keyPressed == "n") {
-                window.location.href = "https://harecms.com";
-              }
-            }
-            lastKeypressTime = currentTime;
-          }
-        });
-        </script>
-
-    <script>
-        function showContent() {
-            var userLang = navigator.language || navigator.userLanguage;
-            var langCode = userLang.substr(0, 2).toLowerCase();
-
-            switch (langCode) {
-                case "en":
-                    document.getElementById("en-content").style.display = "block";
-                    break;
-                case "zh":
-                    document.getElementById("zh-content").style.display = "block";
-                    break;
-                default:
-                    document.getElementById("default-content").style.display = "block";
-                    break;
-            }
-        }
-    </script>
-    <style>
-        .content {
-            display: none;
-        }
-    </style>
-    <style>
-		body {
-			background: white;
-			color: black;
-		}
-    		    @media (prefers-color-scheme: dark) {
-       	      body {
-    	      		background: black;
-    	        	color: white;
-                  }
-		}
-		.info-back {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .info-back img {
-             width: 100%;
-             height: auto;
-        }
-	</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>宋京 SONG JING · 仰望星辰 脚踏实地</title>
+<meta name="description" content="宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶，广交好友。" />
+<meta name="theme-color" content="#05081a" />
+<link rel="icon" href="favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script>
+/* Resolve theme before first paint: 'auto' (follow system) is the default */
+(function () {
+  try {
+    var mode = localStorage.getItem('joss-theme');
+    if (mode !== 'day' && mode !== 'night') mode = 'auto';
+    var sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'night';
+    document.documentElement.dataset.theme = mode === 'auto' ? sys : mode;
+    document.documentElement.dataset.mode = mode;
+  } catch (e) {}
+})();
+</script>
 </head>
-<body onload="showContent()">
-    <div id="en-content" class="content">
-            <!--english start-->
-        <span class="mobile btn-mobile-menu">
-            <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-            <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-        </span>
-        <header id="panel" class="panel-cover">
-            <div class="panel-main">
-                <div class="panel-main__inner panel-inverted">
-                    <div class="panel-main__content">
-                        <div class="ih-item circle effect right_to_left">            
-                            <div class="blog-button">
-                                <div class="info iUp">
-                                    <div class="info-back">
-                                        <img src="favicon.ico" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            <h2 class="panel-cover__title panel-title iUp">
-                       Joss Song                    
-            </h2>
-                        <h3 class="panel-cover__title panel-title iUp">
-                            Everything is simple and natural.
-                        </h3>
-                        <p class="panel-cover__subtitle panel-subtitle iUp">#Entrepreneur # Investor Knows Some Technology, Occasionally Writes, Likes Tea or Coffee</p>
-                        <hr class="panel-cover__divider iUp" />
-                        <p id="" class="panel-cover__description iUp">Tao gives birth to one, one gives birth to two, two gives birth to three, and three gives birth to all things.
-                            <br/>
-                            <strong>-「Zhongmou Daozhong」</strong>
-                        </p>
-                        <div class="navigation-wrapper iUp">
-                            <div>
-                                <nav class="cover-navigation cover-navigation--primary">
-                                    <ul class="navigation">
-                                        <li class="navigation__item">
-                                            <a href="https://josssong.notion.site/486fdb3f5e2783789b478134851aec8d?v=e8efdb3f5e27831396750800084975be&pvs=73" target="_blank" class="blog-button">Notion</a>
-                                        </li>
-                    <li class="navigation__item">
-                                            <a href="https://www.figma.com/@josssong" target="_blank"  title="Figma" target="_blank" class="blog-button">Figma</a>
-                                        </li>
-                         <li class="navigation__item">
-                                            <a href="https://github.com/josssong" target="_blank"  class="blog-button">Github</a>
-                                        </li>
-                                        <li class="navigation__item">
-                                            <a href="https://youtube.com/josssong" target="_blank"  class="blog-button">Youtube</a>
-                                        </li>
-                                        <li class="navigation__item">
-                                            <a href="https://twitter.com/josssongs" target="_blank"  class="blog-button">X</a>
-                                        </li>
-					<li class="navigation__item">
-                                            <a href="mailto:Joss@88.com" target="_blank"  class="blog-button">Email</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                    
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-cover--overlay cover-slate"></div>
-            </div>	    
-     </header>
-         <!--english end-->
+<body>
 
+<!-- ============ HERO SCENE ============ -->
+<main id="home" class="home scene-root" aria-label="动画主场景：星辰大海与地球生态">
+
+  <!-- Mouse parallax root -->
+  <div class="parallax" id="parallax">
+
+    <!-- Sky -->
+    <div class="layer sky">
+      <div class="nebula nebula--a"></div>
+      <div class="nebula nebula--b"></div>
+      <div class="nebula nebula--c"></div>
+
+      <!-- Stars (generated by JS, night only) -->
+      <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+      <!-- Shooting stars (night only) -->
+      <div class="shooters" aria-hidden="true">
+        <span class="shooter s1"></span>
+        <span class="shooter s2"></span>
+        <span class="shooter s3"></span>
+      </div>
+
+      <!-- Moon (night only) -->
+      <svg class="moon" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <radialGradient id="moonGrad" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#fff8e7"/>
+            <stop offset="55%" stop-color="#f4e7c4"/>
+            <stop offset="100%" stop-color="#b9a988"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="44" fill="url(#moonGrad)"/>
+        <circle cx="38" cy="40" r="4" fill="#9c8c6c" opacity=".45"/>
+        <circle cx="60" cy="58" r="6" fill="#9c8c6c" opacity=".4"/>
+        <circle cx="50" cy="30" r="2.5" fill="#9c8c6c" opacity=".5"/>
+        <circle cx="30" cy="62" r="3" fill="#9c8c6c" opacity=".45"/>
+      </svg>
+
+      <!-- Sun (day only) -->
+      <div class="sun" aria-hidden="true">
+        <div class="sun__core"></div>
+        <div class="sun__rays"></div>
+      </div>
+
+      <!-- Clouds (day only) -->
+      <div class="clouds" aria-hidden="true">
+        <svg class="cloud cloud--1" viewBox="0 0 200 70">
+          <ellipse cx="60" cy="45" rx="46" ry="20" fill="#fff"/>
+          <ellipse cx="105" cy="34" rx="38" ry="22" fill="#fff"/>
+          <ellipse cx="145" cy="46" rx="34" ry="17" fill="#fff"/>
+          <ellipse cx="95" cy="50" rx="60" ry="14" fill="#fff"/>
+        </svg>
+        <svg class="cloud cloud--2" viewBox="0 0 200 70">
+          <ellipse cx="60" cy="45" rx="46" ry="20" fill="#fff"/>
+          <ellipse cx="105" cy="34" rx="38" ry="22" fill="#fff"/>
+          <ellipse cx="145" cy="46" rx="34" ry="17" fill="#fff"/>
+          <ellipse cx="95" cy="50" rx="60" ry="14" fill="#fff"/>
+        </svg>
+        <svg class="cloud cloud--3" viewBox="0 0 200 70">
+          <ellipse cx="60" cy="45" rx="46" ry="20" fill="#fff"/>
+          <ellipse cx="105" cy="34" rx="38" ry="22" fill="#fff"/>
+          <ellipse cx="145" cy="46" rx="34" ry="17" fill="#fff"/>
+          <ellipse cx="95" cy="50" rx="60" ry="14" fill="#fff"/>
+        </svg>
+      </div>
+
+      <!-- Distant planet (night only) -->
+      <div class="planet planet--ring" aria-hidden="true"></div>
     </div>
 
-    <div id="zh-content" class="content">
-            <!--中文 开始-->
-        <span class="mobile btn-mobile-menu">
-            <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-            <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-        </span>
-        <header id="panel" class="panel-cover">
-            <div class="panel-main">
-                <div class="panel-main__inner panel-inverted">
-                    <div class="panel-main__content">
-                        <div class="ih-item circle effect right_to_left">            
-                            <div class="blog-button">
-                                <div class="info iUp">
-                                    <div class="info-back">
-                                        <img src="favicon.ico" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            <h2 class="panel-cover__title panel-title iUp">
-                       宋京            
-            </h2>
-                        <h3 class="panel-cover__title panel-title iUp">
-                        万物致简 | 道法自然
-                        </h3>
-                        <p class="panel-cover__subtitle panel-subtitle iUp">#创业者 #投资人 懂点技术 偶尔写作 喜欢喝茶or咖啡</p>
-                        <hr class="panel-cover__divider iUp" />
-                        <p id="" class="panel-cover__description iUp">道生一，一生二，二生三，三生万物。
-                            <br/>
-                            <strong>-「中牟道中」</strong>
-                        </p>
-                        <div class="navigation-wrapper iUp">
-                            <div>
-                                <nav class="cover-navigation cover-navigation--primary">
-                                    <ul class="navigation">
-                         <li class="navigation__item">
-                                            <a href="https://gitee.com/josssong" target="_blank"  class="blog-button">码云</a>
-                                        </li>
-                    <li class="navigation__item">
-                                            <a href="https://bilibili.com/josssong" target="_blank"  class="blog-button">B站</a>
-                                        </li>
-                     <li class="navigation__item">
-                                            <a href="https://weibo.com/josssong" target="_blank"  class="blog-button">微博</a>
-                                        </li>
-                                        <li class="navigation__item">
-                                            <a href="mailto:Joss@88.com" target="_blank"  class="blog-button">邮箱</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                    
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-cover--overlay cover-slate"></div>
-            </div>	    
-        </header>
-            <!--中文 结束-->
+    <!-- Mid layer: birds -->
+    <div class="layer mid" aria-hidden="true">
+      <svg class="birds" viewBox="0 0 1600 600" preserveAspectRatio="none">
+        <g class="bird b1"><g class="bird-flap"><path d="M0,0 q10,-10 20,0 q10,-10 20,0"/></g></g>
+        <g class="bird b2"><g class="bird-flap delay-2"><path d="M0,0 q8,-8 16,0 q8,-8 16,0"/></g></g>
+        <g class="bird b3"><g class="bird-flap delay-3"><path d="M0,0 q12,-12 24,0 q12,-12 24,0"/></g></g>
+        <g class="bird b4"><g class="bird-flap delay-4"><path d="M0,0 q7,-7 14,0 q7,-7 14,0"/></g></g>
+        <g class="bird b5"><g class="bird-flap delay-5"><path d="M0,0 q10,-10 20,0 q10,-10 20,0"/></g></g>
+        <g class="bird b6"><g class="bird-flap delay-6"><path d="M0,0 q9,-9 18,0 q9,-9 18,0"/></g></g>
+        <g class="bird b7"><g class="bird-flap delay-7"><path d="M0,0 q11,-11 22,0 q11,-11 22,0"/></g></g>
+      </svg>
     </div>
 
-    <div id="default-content" class="content">
-        <!--默认-->
-        <h1>Welcome to My Website</h1>
-        <p>This is the default content.Change it to English</p>
-        <!--默认-->
+    <!-- Planet (Earth) -->
+    <div class="layer earth-layer" aria-hidden="true">
+      <svg class="earth" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax meet">
+        <defs>
+          <radialGradient id="earthCore" cx="50%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#4a8156"/>
+            <stop offset="55%" stop-color="#2c5340"/>
+            <stop offset="100%" stop-color="#0f2a23"/>
+          </radialGradient>
+          <radialGradient id="earthHalo" cx="50%" cy="50%" r="55%">
+            <stop offset="55%" stop-color="rgba(110,168,200,0)"/>
+            <stop offset="82%" stop-color="rgba(110,168,200,.22)"/>
+            <stop offset="100%" stop-color="rgba(110,168,200,0)"/>
+          </radialGradient>
+          <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7ab35a"/>
+            <stop offset="100%" stop-color="#2c5236"/>
+          </linearGradient>
+          <clipPath id="surfaceClip">
+            <ellipse cx="800" cy="900" rx="720" ry="340"/>
+          </clipPath>
+        </defs>
+
+        <!-- Halo -->
+        <ellipse cx="800" cy="900" rx="720" ry="340" fill="url(#earthHalo)"/>
+
+        <!-- Core sphere -->
+        <ellipse cx="800" cy="900" rx="720" ry="340" fill="url(#earthCore)"/>
+
+        <!-- Surface textures (clipped to sphere) -->
+        <g clip-path="url(#surfaceClip)">
+
+          <!-- Wavy grass band along top arc -->
+          <path d="M80,900
+                   a720,340 0 0 1 1440,0
+                   L1520,760
+                   q-120,90 -260,100 q-140,10 -260,30 q-120,-20 -260,-30 q-140,-10 -260,-100 z"
+                fill="url(#soilGrad)"/>
+
+          <!-- Secondary grass tone -->
+          <path d="M120,900
+                   a680,300 0 0 1 1360,0
+                   L1480,770
+                   q-110,80 -240,90 q-130,10 -240,28 q-110,-18 -240,-28 q-130,-10 -240,-90 z"
+                fill="#5a9a4a" opacity=".55"/>
+
+          <!-- Grass blades -->
+          <g class="grass" stroke="#bce59a" stroke-width="3" stroke-linecap="round" fill="none">
+            <path d="M260,760 q-3,-22 6,-34"/>
+            <path d="M310,744 q3,-18 12,-28"/>
+            <path d="M360,730 q-2,-22 8,-34"/>
+            <path d="M420,716 q4,-18 14,-28"/>
+            <path d="M470,708 q-3,-20 9,-30"/>
+            <path d="M530,702 q3,-16 12,-24"/>
+            <path d="M590,698 q-3,-20 10,-30"/>
+            <path d="M650,696 q2,-16 12,-24"/>
+            <path d="M720,694 q-2,-18 10,-28"/>
+            <path d="M780,694 q3,-16 12,-24"/>
+            <path d="M840,694 q-2,-16 10,-26"/>
+            <path d="M900,696 q3,-18 12,-26"/>
+            <path d="M960,700 q-3,-18 10,-28"/>
+            <path d="M1020,706 q3,-18 12,-26"/>
+            <path d="M1080,714 q-3,-18 10,-28"/>
+            <path d="M1140,722 q3,-18 12,-28"/>
+            <path d="M1200,732 q-3,-20 10,-30"/>
+            <path d="M1260,744 q3,-20 12,-30"/>
+            <path d="M1320,756 q-3,-22 10,-32"/>
+          </g>
+
+          <!-- Pond -->
+          <ellipse cx="700" cy="780" rx="68" ry="18" fill="#6fa7c8" opacity=".9"/>
+          <ellipse cx="700" cy="780" rx="68" ry="18" fill="none" stroke="#bfe1f0" stroke-width="2" opacity=".75"/>
+          <ellipse cx="688" cy="774" rx="20" ry="5" fill="#bfe1f0" opacity=".5"/>
+
+          <!-- Trees -->
+          <g class="trees">
+            <g transform="translate(420,660)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="34" ry="8" fill="#a8e3a0" opacity=".7"/><rect x="-5" y="-22" width="10" height="26" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.4"/><circle cx="0" cy="-30" r="28" fill="#9be886" stroke="#1a3a1f" stroke-width="2.4"/><circle cx="-15" cy="-22" r="22" fill="#b8f29c" stroke="#1a3a1f" stroke-width="2"/><circle cx="14" cy="-26" r="22" fill="#7fd86a" stroke="#1a3a1f" stroke-width="2"/></g></g>
+            <g transform="translate(520,690)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="28" ry="6" fill="#a8e3a0" opacity=".7"/><rect x="-4" y="-18" width="8" height="20" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.2"/><circle cx="0" cy="-26" r="22" fill="#9be886" stroke="#1a3a1f" stroke-width="2"/><circle cx="-12" cy="-16" r="16" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
+            <g transform="translate(1060,660)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="34" ry="8" fill="#a8e3a0" opacity=".7"/><rect x="-5" y="-22" width="10" height="26" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.4"/><circle cx="0" cy="-30" r="28" fill="#9be886" stroke="#1a3a1f" stroke-width="2.4"/><circle cx="-15" cy="-22" r="22" fill="#b8f29c" stroke="#1a3a1f" stroke-width="2"/><circle cx="14" cy="-26" r="22" fill="#7fd86a" stroke="#1a3a1f" stroke-width="2"/></g></g>
+            <g transform="translate(1150,684)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="28" ry="6" fill="#a8e3a0" opacity=".7"/><rect x="-4" y="-18" width="8" height="20" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.2"/><circle cx="0" cy="-26" r="22" fill="#9be886" stroke="#1a3a1f" stroke-width="2"/><circle cx="-10" cy="-18" r="16" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
+            <g transform="translate(1220,718)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="22" ry="5" fill="#a8e3a0" opacity=".6"/><rect x="-3.5" y="-14" width="7" height="16" fill="#6a3a1a"/><circle cx="0" cy="-19" r="16" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
+            <g transform="translate(310,720)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="24" ry="6" fill="#a8e3a0" opacity=".65"/><rect x="-3" y="-12" width="6" height="14" fill="#6a3a1a"/><circle cx="0" cy="-18" r="16" fill="#9be886" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
+            <g transform="translate(1320,748)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="22" ry="5" fill="#a8e3a0" opacity=".6"/><rect x="-3" y="-12" width="6" height="14" fill="#6a3a1a"/><circle cx="0" cy="-16" r="14" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/></g></g>
+          </g>
+
+          <!-- Bushes -->
+          <g class="bushes">
+            <ellipse cx="350" cy="690" rx="20" ry="10" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/>
+            <ellipse cx="360" cy="684" rx="14" ry="8" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.2"/>
+            <ellipse cx="1180" cy="706" rx="20" ry="10" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/>
+            <ellipse cx="1192" cy="700" rx="14" ry="8" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.2"/>
+            <ellipse cx="600" cy="680" rx="14" ry="7" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.2"/>
+            <ellipse cx="990" cy="684" rx="16" ry="8" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.2"/>
+          </g>
+
+          <!-- Character platform -->
+          <g class="mound">
+            <ellipse cx="800" cy="600" rx="150" ry="26" fill="#86d68f" opacity=".75"/>
+            <ellipse cx="800" cy="593" rx="128" ry="18" fill="#b8f29c" opacity=".6"/>
+          </g>
+
+          <!-- Flowers -->
+          <g class="flowers">
+            <g class="flower f1" transform="translate(330,706)"><g class="flower-inner"><circle r="9" fill="#ffd166" stroke="#a86010" stroke-width="1.6"/><g stroke="#ffd166" stroke-width="4.5" stroke-linecap="round"><line x1="0" y1="-15" x2="0" y2="15"/><line x1="-15" y1="0" x2="15" y2="0"/><line x1="-11" y1="-11" x2="11" y2="11"/><line x1="-11" y1="11" x2="11" y2="-11"/></g><circle r="3.6" fill="#7a3a08"/></g></g>
+            <g class="flower f2" transform="translate(560,712)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
+            <g class="flower f3" transform="translate(630,704)"><g class="flower-inner"><circle r="8" fill="#c4a8ff" stroke="#5a3aa8" stroke-width="1.4"/><g stroke="#c4a8ff" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#2a1a68"/></g></g>
+            <g class="flower f4" transform="translate(950,712)"><g class="flower-inner"><circle r="8" fill="#ffd166" stroke="#a86010" stroke-width="1.4"/><g stroke="#ffd166" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#7a3a08"/></g></g>
+            <g class="flower f5" transform="translate(1020,708)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
+            <g class="flower f1" transform="translate(1100,720)"><g class="flower-inner"><circle r="8" fill="#ffd166" stroke="#a86010" stroke-width="1.4"/><g stroke="#ffd166" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#7a3a08"/></g></g>
+            <g class="flower f3" transform="translate(260,758)"><g class="flower-inner"><circle r="7" fill="#c4a8ff" stroke="#5a3aa8" stroke-width="1.2"/><g stroke="#c4a8ff" stroke-width="3.2" stroke-linecap="round"><line x1="0" y1="-12" x2="0" y2="12"/><line x1="-12" y1="0" x2="12" y2="0"/><line x1="-8" y1="-8" x2="8" y2="8"/><line x1="-8" y1="8" x2="8" y2="-8"/></g><circle r="2.8" fill="#2a1a68"/></g></g>
+            <g class="flower f2" transform="translate(1340,720)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
+          </g>
+
+          <!-- Surface highlight -->
+          <ellipse cx="800" cy="580" rx="520" ry="40" fill="rgba(255,255,255,.07)"/>
+
+          <!-- Lower shading -->
+          <g opacity=".35">
+            <ellipse cx="640" cy="1020" rx="220" ry="70" fill="#000"/>
+            <ellipse cx="1020" cy="1050" rx="260" ry="80" fill="#000"/>
+            <ellipse cx="800" cy="1140" rx="320" ry="100" fill="#000"/>
+          </g>
+        </g>
+      </svg>
+
+      <!-- Villa (left of character) -->
+      <svg class="villa" viewBox="0 0 300 240" aria-hidden="true">
+        <defs>
+          <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f7edd9"/>
+            <stop offset="100%" stop-color="#cbb693"/>
+          </linearGradient>
+          <linearGradient id="roofGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#a34a30"/>
+            <stop offset="100%" stop-color="#6e2f1c"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="150" cy="224" rx="130" ry="8" fill="#000" opacity=".3"/>
+
+        <!-- main 2-story body -->
+        <rect x="40" y="86" width="150" height="128" fill="url(#wallGrad)" stroke="#7b6147" stroke-width="2"/>
+        <!-- roof -->
+        <polygon points="28,88 115,34 202,88" fill="url(#roofGrad)" stroke="#4a2618" stroke-width="2"/>
+        <!-- dormer -->
+        <rect x="92" y="42" width="44" height="34" fill="#efdcb8" stroke="#7b6147" stroke-width="1.6"/>
+        <polygon points="88,44 114,28 140,44" fill="url(#roofGrad)" stroke="#4a2618" stroke-width="1.6"/>
+        <rect class="win" x="102" y="50" width="24" height="20" fill="#ffd58a"/>
+        <!-- chimney -->
+        <rect x="168" y="44" width="14" height="34" fill="#8a4a36"/>
+        <g class="smoke">
+          <circle cx="175" cy="36" r="7" fill="#e8e2da" opacity=".6"/>
+          <circle cx="180" cy="22" r="9" fill="#e8e2da" opacity=".5"/>
+          <circle cx="185" cy="6" r="11" fill="#e8e2da" opacity=".3"/>
+        </g>
+
+        <!-- 2nd floor windows + balcony -->
+        <rect class="win" x="56" y="104" width="26" height="26" fill="#ffd58a"/>
+        <rect class="win" x="98" y="104" width="26" height="26" fill="#ffd58a"/>
+        <!-- balcony on right of 2nd floor -->
+        <rect x="140" y="132" width="44" height="4" fill="#8a6a48"/>
+        <g stroke="#8a6a48" stroke-width="2.4" stroke-linecap="round">
+          <line x1="144" y1="132" x2="144" y2="112"/>
+          <line x1="152" y1="132" x2="152" y2="112"/>
+          <line x1="160" y1="132" x2="160" y2="112"/>
+          <line x1="168" y1="132" x2="168" y2="112"/>
+          <line x1="176" y1="132" x2="176" y2="112"/>
+          <line x1="142" y1="112" x2="180" y2="112"/>
+        </g>
+        <rect class="win" x="146" y="118" width="0" height="0"/>
+        <!-- balcony door -->
+        <rect x="148" y="116" width="20" height="18" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.4"/>
+
+        <!-- 1st floor -->
+        <rect class="win" x="56" y="156" width="26" height="26" fill="#ffd58a"/>
+        <rect x="100" y="150" width="26" height="34" fill="#5a3920" rx="2"/>
+        <circle cx="120" cy="168" r="1.8" fill="#ffd58a"/>
+
+        <!-- garage wing -->
+        <rect x="190" y="122" width="86" height="92" fill="#e7d5b4" stroke="#7b6147" stroke-width="2"/>
+        <rect x="182" y="114" width="102" height="10" rx="3" fill="url(#roofGrad)" stroke="#4a2618" stroke-width="1.6"/>
+        <!-- garage door with slats -->
+        <rect x="204" y="140" width="58" height="66" fill="#d9c9a8" stroke="#7b6147" stroke-width="1.6"/>
+        <g stroke="#a89468" stroke-width="2">
+          <line x1="206" y1="154" x2="260" y2="154"/>
+          <line x1="206" y1="170" x2="260" y2="170"/>
+          <line x1="206" y1="186" x2="260" y2="186"/>
+        </g>
+        <circle cx="233" cy="148" r="2.4" fill="#8a6a48"/>
+
+        <!-- path to door -->
+        <polygon points="100,184 126,184 140,224 86,224" fill="#d9c9a8" opacity=".8"/>
+
+        <!-- window frames -->
+        <g stroke="#7b6147" stroke-width="1.4">
+          <line x1="69" y1="104" x2="69" y2="130"/>
+          <line x1="56" y1="117" x2="82" y2="117"/>
+          <line x1="111" y1="104" x2="111" y2="130"/>
+          <line x1="98" y1="117" x2="124" y2="117"/>
+          <line x1="69" y1="156" x2="69" y2="182"/>
+          <line x1="56" y1="169" x2="82" y2="169"/>
+        </g>
+
+        <!-- string lights along roof edge (night sparkle) -->
+        <g class="string-lights">
+          <path d="M40,84 q75,-56 150,0" fill="none" stroke="#5a4a3a" stroke-width="1.2"/>
+          <circle class="light" cx="60" cy="72" r="2.6" fill="#ffd58a"/>
+          <circle class="light" cx="80" cy="60" r="2.6" fill="#ff9a9a"/>
+          <circle class="light" cx="115" cy="48" r="2.6" fill="#a8e8ff"/>
+          <circle class="light" cx="150" cy="60" r="2.6" fill="#ffd58a"/>
+          <circle class="light" cx="170" cy="72" r="2.6" fill="#c4a8ff"/>
+        </g>
+      </svg>
+
+      <!-- RV (right of character) -->
+      <svg class="rv" viewBox="0 0 280 150" aria-hidden="true">
+        <ellipse cx="140" cy="138" rx="120" ry="5" fill="#000" opacity=".3"/>
+        <!-- exhaust puffs -->
+        <g class="exhaust">
+          <circle cx="18" cy="118" r="4" fill="#cfd4d8" opacity="0"/>
+          <circle cx="12" cy="112" r="5" fill="#cfd4d8" opacity="0"/>
+          <circle cx="6" cy="106" r="6" fill="#cfd4d8" opacity="0"/>
+        </g>
+        <rect x="20" y="44" width="240" height="80" rx="10" fill="#f6f4ee" stroke="#7d7a72" stroke-width="2"/>
+        <rect x="20" y="80" width="240" height="10" fill="#d97757"/>
+        <path d="M20,44 q0,-22 32,-22 h44 q22,0 22,22 v44 h-98z" fill="#e9e7e0" stroke="#7d7a72" stroke-width="2"/>
+        <path d="M40,34 q0,-16 16,-16 h30 q16,0 16,16 v18 h-62z" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.5"/>
+        <rect x="124" y="56" width="24" height="18" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.2"/>
+        <rect x="156" y="56" width="24" height="18" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.2"/>
+        <rect x="188" y="56" width="24" height="18" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.2"/>
+        <rect x="220" y="56" width="24" height="18" fill="#a8d8e8" stroke="#5a6e7a" stroke-width="1.2"/>
+        <rect x="114" y="92" width="14" height="28" fill="#d4cfc4" stroke="#7d7a72" stroke-width="1.2"/>
+        <circle cx="26" cy="108" r="4" fill="#ffd58a"/>
+        <circle cx="246" cy="58" r="4" fill="#ff7a7a"/>
+        <!-- awning -->
+        <path d="M126,50 h120 l8,-8 h-128z" fill="#e07a5f" opacity=".9"/>
+        <g class="wheel">
+          <circle cx="60" cy="128" r="12" fill="#2a2a2a"/>
+          <circle cx="60" cy="128" r="5" fill="#888"/>
+        </g>
+        <g class="wheel">
+          <circle cx="210" cy="128" r="12" fill="#2a2a2a"/>
+          <circle cx="210" cy="128" r="5" fill="#888"/>
+        </g>
+        <circle cx="180" cy="118" r="2.6" fill="#ffd58a" class="awnlight"/>
+        <circle cx="196" cy="118" r="2.6" fill="#ffd58a" class="awnlight" style="animation-delay:.6s"/>
+        <circle cx="212" cy="118" r="2.6" fill="#ffd58a" class="awnlight" style="animation-delay:1.2s"/>
+      </svg>
     </div>
-<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/js/main.js"></script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2458899947487939"
-     crossorigin="anonymous"></script>
+
+    <!-- Character layer (interactive: programmer at desk) -->
+    <div class="layer character-layer">
+      <button id="character" class="character" type="button" aria-haspopup="dialog" aria-controls="intro" aria-label="打开宋京的个人介绍" data-i18n-aria="hero.characterAria">
+        <svg viewBox="0 0 300 250" aria-hidden="true">
+          <!-- ground shadow -->
+          <ellipse cx="150" cy="238" rx="95" ry="8" fill="#000" opacity=".3"/>
+
+          <!-- screen glow behind laptop -->
+          <ellipse class="screen-glow" cx="150" cy="110" rx="70" ry="40" fill="#8fd0ff" opacity=".25"/>
+
+          <!-- stool + legs (behind desk) -->
+          <rect x="126" y="196" width="8" height="34" fill="#6a4a2a"/>
+          <rect x="166" y="196" width="8" height="34" fill="#6a4a2a"/>
+          <g class="legs">
+            <rect x="124" y="176" width="15" height="42" rx="6" fill="#2a3550"/>
+            <rect x="161" y="176" width="15" height="42" rx="6" fill="#2a3550"/>
+          </g>
+
+          <!-- torso / navy blazer + open-collar light-blue shirt (no tie) -->
+          <g class="body">
+            <path d="M106,118 q0,-34 44,-36 q44,2 44,36 v66 q0,14 -14,16 h-60 q-14,-2 -14,-16 z"
+                  fill="#2e3a54" stroke="#1c2436" stroke-width="2"/>
+            <!-- light blue shirt V (open collar, no tie) -->
+            <path d="M138,93 l12,-6 12,6 v34 l-12,6 -12,-6 z" fill="#c5d8eb"/>
+            <!-- collar tips peeking at the V neck -->
+            <path d="M146,90 l4,-3 4,3 -4,7 z" fill="#b8cee0" stroke="#1c2436" stroke-width="0.8"/>
+            <!-- lapel fold lines -->
+            <path d="M138,93 l-5,4 5,28 5,-10" fill="none" stroke="#1c2436" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M162,93 l5,4 -5,28 -5,-10" fill="none" stroke="#1c2436" stroke-width="1.4" stroke-linejoin="round"/>
+          </g>
+
+          <!-- arms: suit sleeves reach forward to keyboard -->
+          <g class="arm arm--l">
+            <path d="M110,126 q-26,26 -18,58" fill="none" stroke="#2e3a54" stroke-width="16" stroke-linecap="round"/>
+            <circle cx="92" cy="178" r="8" fill="#c5d8eb" stroke="#b8cee0" stroke-width="1"/>
+            <circle class="hand hand--l" cx="92" cy="184" r="9" fill="#edc19a" stroke="#a8845a" stroke-width="1.4"/>
+          </g>
+          <g class="arm arm--r">
+            <path d="M190,126 q26,26 18,58" fill="none" stroke="#2e3a54" stroke-width="16" stroke-linecap="round"/>
+            <circle cx="208" cy="178" r="8" fill="#c5d8eb" stroke="#b8cee0" stroke-width="1"/>
+            <circle class="hand hand--r" cx="208" cy="184" r="9" fill="#edc19a" stroke="#a8845a" stroke-width="1.4"/>
+          </g>
+
+          <!-- head: soft oval face, short neat hair, modern half-rim glasses, warm smile -->
+          <g class="head">
+            <!-- ears -->
+            <ellipse cx="123" cy="68" rx="4" ry="6.5" fill="#e8c4a4" stroke="#b89274" stroke-width="1.2"/>
+            <ellipse cx="177" cy="68" rx="4" ry="6.5" fill="#e8c4a4" stroke="#b89274" stroke-width="1.2"/>
+            <!-- face: warm oval, no hard jawline -->
+            <ellipse cx="150" cy="66" rx="27" ry="30" fill="#edc19a" stroke="#b89274" stroke-width="1.6"/>
+            <!-- eyebrows: straight and level, composed/serious -->
+            <path d="M130,55.5 q8,-1 17,-0.5" stroke="#2a2d35" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+            <path d="M153,55 q9,-0.5 17,0.5" stroke="#2a2d35" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+            <!-- short neat hair with subtle lift on top -->
+            <path d="M124,60 q0,-26 14,-29 q6,-2 12,-2 q6,0 12,2 q14,3 14,29
+                     q-2,-9 -6,-12 q-2,3 -7,3 q-3,-1 -13,-1 q-10,0 -13,1 q-5,0 -7,-3 q-4,3 -6,12 z"
+                  fill="#1a1d24"/>
+            <!-- hair texture strands on top -->
+            <path d="M141,32 q3,2 6,0 M150,29 q3,2 6,0 M159,32 q3,2 6,0"
+                  stroke="#0a0c12" stroke-width="0.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+            <!-- eyes: steady, slightly narrowed (composed gaze at screen) -->
+            <circle cx="139" cy="68" r="2.2" fill="#1a1f33"/>
+            <circle cx="161" cy="68" r="2.2" fill="#1a1f33"/>
+            <path d="M135,65.5 q4,-1.5 8,0 M157,65.5 q4,-1.5 8,0"
+                  stroke="#2a2d35" stroke-width="1" fill="none" opacity=".65" stroke-linecap="round"/>
+            <!-- glasses: thin metal rectangular half-rim -->
+            <g>
+              <rect x="130" y="61" width="18" height="11" rx="2" fill="rgba(0,0,0,0.05)" stroke="#9a9aa2" stroke-width="1.2"/>
+              <rect x="152" y="61" width="18" height="11" rx="2" fill="rgba(0,0,0,0.05)" stroke="#9a9aa2" stroke-width="1.2"/>
+              <line x1="148" y1="64" x2="152" y2="64" stroke="#9a9aa2" stroke-width="1.2"/>
+            </g>
+            <!-- dignified closed-lip smile: calm, faint -->
+            <path d="M142,85 q8,2.4 16,0" stroke="#8a4a2c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- subtle smile lines (nasolabial hints) -->
+            <path d="M139,81 q-1.5,3 -1,5 M161,81 q1.5,3 1,5"
+                  stroke="#c99a6e" stroke-width="0.9" fill="none" opacity=".55" stroke-linecap="round"/>
+          </g>
+
+          <!-- desk -->
+          <rect x="56" y="196" width="188" height="12" rx="4" fill="#9a6a3a" stroke="#5a3a1a" stroke-width="1.8"/>
+          <rect x="66" y="208" width="10" height="30" fill="#7a4e26"/>
+          <rect x="224" y="208" width="10" height="30" fill="#7a4e26"/>
+
+          <!-- laptop (lid facing viewer) -->
+          <g class="laptop">
+            <rect x="112" y="126" width="76" height="72" rx="4" fill="#39415c" stroke="#232a40" stroke-width="2"/>
+            <rect x="118" y="132" width="64" height="60" rx="2" fill="#2c3350"/>
+            <circle class="laptop-logo" cx="150" cy="162" r="7" fill="#8fd0ff"/>
+            <!-- hinge light leak -->
+            <rect x="118" y="188" width="64" height="4" fill="#8fd0ff" opacity=".5" class="laptop-leak"/>
+            <!-- laptop base -->
+            <path d="M104,198 h92 l-6,-4 h-80z" fill="#4a5470" stroke="#232a40" stroke-width="1.4"/>
+          </g>
+
+          <!-- tea cup (right of laptop) -->
+          <g class="tea">
+            <path d="M224,196 h26 v-12 q0,-6 -13,-6 q-13,0 -13,6z" fill="#f4ede0" stroke="#a89468" stroke-width="1.4"/>
+            <path d="M250,186 q8,2 0,8" fill="none" stroke="#a89468" stroke-width="1.6"/>
+            <ellipse cx="237" cy="181" rx="10" ry="2.4" fill="#8a5a2a"/>
+            <g class="steam">
+              <path d="M233,172 q-3,-5 0,-9 q3,-4 0,-8" fill="none" stroke="#dfe8f0" stroke-width="2" stroke-linecap="round"/>
+              <path d="M241,172 q-3,-5 0,-9 q3,-4 0,-8" fill="none" stroke="#dfe8f0" stroke-width="2" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- floating code symbols above laptop -->
+          <g class="codes" fill="#8fd0ff" font-family="ui-monospace, monospace" font-weight="700">
+            <text class="code c1" x="96" y="104" font-size="13">&lt;/&gt;</text>
+            <text class="code c2" x="196" y="92" font-size="11">{ }</text>
+            <text class="code c3" x="216" y="120" font-size="10">;</text>
+          </g>
+        </svg>
+
+        <!-- Click halo -->
+        <span class="halo" aria-hidden="true"></span>
+      </button>
+
+      <!-- Hint label -->
+      <div class="hint" aria-hidden="true">
+        <span class="hint__dot"></span>
+        <span class="hint__txt" data-i18n="hero.hint">点我 · about</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Top corner brand mark -->
+  <header class="brand">
+    <span class="brand__mark">宋京</span>
+    <span class="brand__sub" data-i18n="hero.brandSub">Joss.Song</span>
+  </header>
+
+  <!-- Bottom signature -->
+  <footer class="signature">
+    <span data-i18n="hero.signature">仰望星辰 · 脚踏实地</span>
+  </footer>
+
+</main>
+
+<!-- Day/Night/Auto theme toggle (fixed, above intro overlay) -->
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="切换日间 / 夜间模式" title="切换日间 / 夜间模式">
+  <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M20.6 14.6A8.6 8.6 0 0 1 9.4 3.4 8.6 8.6 0 1 0 20.6 14.6z"/>
+  </svg>
+  <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <circle cx="12" cy="12" r="4.4" fill="currentColor"/>
+    <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <line x1="12" y1="2" x2="12" y2="4.4"/><line x1="12" y1="19.6" x2="12" y2="22"/>
+      <line x1="2" y1="12" x2="4.4" y2="12"/><line x1="19.6" y1="12" x2="22" y2="12"/>
+      <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
+      <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
+    </g>
+  </svg>
+  <svg class="icon icon--auto" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M12 3.4a8.6 8.6 0 0 1 0 17.2z" fill="currentColor"/>
+  </svg>
+</button>
+
+<!-- Language toggle (fixed, above intro overlay) -->
+<button id="langToggle" class="lang-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
+
+<!-- Back-to-top (About page, appears after scrolling down) -->
+<button id="introTop" class="intro-top" type="button" aria-label="回到顶部" title="回到顶部" data-i18n-aria="intro.topAria">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path d="M12 19V5M5.5 11.5L12 5l6.5 6.5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- ============ INTRO (Personal Page) ============ -->
+<section id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle" aria-hidden="true">
+  <div class="intro__bg" aria-hidden="true">
+    <div class="intro__stars"></div>
+  </div>
+
+  <button class="intro__back" type="button" aria-label="返回首页" data-i18n-aria="intro.backAria">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-i18n="intro.back">返回首页</span>
+  </button>
+
+  <div class="intro__inner">
+
+    <!-- ===== Profile card ===== -->
+    <div class="intro__card reveal">
+      <div class="intro__avatar" aria-hidden="true">
+        <img src="assets/images/joss-avatar.png" alt="宋京头像" />
+      </div>
+
+      <p class="intro__hi" data-i18n="intro.hi">通识集团 · 宋京工作室 · 简道奠基人</p>
+      <h1 id="introTitle" class="intro__name"><span data-i18n="intro.nameZh">宋京</span> <span data-i18n="intro.nameEn">SONG&nbsp;JING</span></h1>
+
+      <ul class="intro__names">
+        <li><span class="k" data-i18n="intro.k1">学名</span><span class="v" data-i18n="intro.v1">進京</span></li>
+        <li><span class="k" data-i18n="intro.k2">字</span><span class="v" data-i18n="intro.v2">子京</span></li>
+        <li><span class="k" data-i18n="intro.k3">号</span><span class="v" data-i18n="intro.v3">乌莲居士 · 乌莲先生</span></li>
+        <li><span class="k" data-i18n="intro.k4">英文名</span><span class="v" data-i18n="intro.v4">Joss.Song</span></li>
+        <li><span class="k" data-i18n="intro.k5">国籍</span><span class="v" data-i18n="intro.v5">中国</span></li>
+      </ul>
+
+      <p class="intro__role" data-i18n="intro.role">
+        创业者 · 投资人 · 懂点技术 · 偶尔写作 · 喜欢喝茶 · 广交好友
+      </p>
+      <p class="intro__sub" data-i18n="intro.sub">金融投资顾问 / 工程师</p>
+
+      <h2 class="intro__sec-title" data-i18n="intro.secContact">联系我</h2>
+      <!-- Language-conditional social pill row: EN shows 6, ZH shows 4 -->
+      <div class="intro__socials" aria-label="Social links" data-i18n-aria="social.aria">
+        <!-- English chips -->
+        <a class="chip-pill" data-show-lang="en" href="https://notion.so/JossSong" target="_blank" rel="noopener">Notion</a>
+        <a class="chip-pill" data-show-lang="en" href="https://figma.com/@JossSong" target="_blank" rel="noopener">Figma</a>
+        <a class="chip-pill" data-show-lang="en" href="https://github.com/JossSong" target="_blank" rel="noopener">Github</a>
+        <a class="chip-pill" data-show-lang="en" href="https://youtube.com/@JossSong" target="_blank" rel="noopener">Youtube</a>
+        <a class="chip-pill" data-show-lang="en" href="https://x.com/JossSong" target="_blank" rel="noopener">X</a>
+        <a class="chip-pill" data-show-lang="en" href="mailto:Joss@88.com">Email</a>
+
+        <!-- Chinese chips -->
+        <a class="chip-pill" data-show-lang="zh" href="https://gitee.com/JossSong" target="_blank" rel="noopener">码云</a>
+        <a class="chip-pill" data-show-lang="zh" href="https://space.bilibili.com/JossSong" target="_blank" rel="noopener">B站</a>
+        <a class="chip-pill" data-show-lang="zh" href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众号</a>
+        <a class="chip-pill" data-show-lang="zh" href="mailto:Joss@88.com">邮箱</a>
+      </div>
+
+      <h2 class="intro__sec-title" data-i18n="intro.secSkills">爱好领域</h2>
+      <div class="intro__skills">
+        <span class="chip" data-i18n="chip.1">教育</span><span class="chip" data-i18n="chip.2">心理</span><span class="chip" data-i18n="chip.3">管理</span>
+        <span class="chip" data-i18n="chip.4">历史</span><span class="chip" data-i18n="chip.5">产品</span><span class="chip" data-i18n="chip.6">设计</span>
+        <span class="chip" data-i18n="chip.7">编程</span><span class="chip" data-i18n="chip.8">文学</span><span class="chip" data-i18n="chip.9">经济</span>
+        <span class="chip" data-i18n="chip.10">艺术</span><span class="chip" data-i18n="chip.11">科普</span><span class="chip" data-i18n="chip.12">超文明</span>
+        <span class="chip" data-i18n="chip.13">科创</span><span class="chip" data-i18n="chip.14">文艺</span><span class="chip" data-i18n="chip.15">美食</span>
+        <span class="chip" data-i18n="chip.16">旅行</span><span class="chip" data-i18n="chip.17">健身</span><span class="chip" data-i18n="chip.18">茶道</span>
+        <span class="chip" data-i18n="chip.19">写作</span>
+      </div>
+
+      <h2 class="intro__sec-title" data-i18n="intro.secWorks">作品</h2>
+      <div class="intro__works">
+        <div class="work">
+          <span class="work__icon" aria-hidden="true">📖</span>
+          <span class="work__title" data-i18n="work.1.title">《简~道》</span>
+          <span class="work__sub" data-i18n="work.1.sub">简道奠基之作</span>
+        </div>
+        <div class="work">
+          <span class="work__icon" aria-hidden="true">🌌</span>
+          <span class="work__title" data-i18n="work.2.title">《元宇集》</span>
+          <span class="work__sub" data-i18n="work.2.sub">元宇宙思辨文集</span>
+        </div>
+      </div>
+
+      <h2 class="intro__sec-title" data-i18n="intro.secTimeline">详细介绍</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__year">1998</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.1.title">出生于山东菏泽</p>
+            <p class="timeline__desc" data-i18n="tl.1.desc">男，汉族，无党派人士。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2024</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.3.title">考入天津大学</p>
+            <p class="timeline__desc" data-i18n="tl.3.desc">通过自学考入 MEM 专业在职研究生。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2025</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.4.title">「中国最杰出的未来主义者」</p>
+            <p class="timeline__desc" data-i18n="tl.4.desc">被《时代》周刊评价。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2026</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.5.title">一战成名</p>
+            <p class="timeline__desc" data-i18n="tl.5.desc">发表学术论文《数字社会及其未来》引发大量关注；结识互联网大佬，共同研发两款超级 APP；同年登上《时代周刊》与《商界》，后《经济学人》《纽约时报》《路透社》争相报道。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2028</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.6.title">通识集团香港挂牌</p>
+            <p class="timeline__desc" data-i18n="tl.6.desc">通识集团创始人兼首席执行官（CEO）。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2030</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.7.title">销声匿迹</p>
+            <p class="timeline__desc" data-i18n="tl.7.desc">暂别公众视野，潜心修行。</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2033</span>
+          <div class="timeline__body">
+            <p class="timeline__title" data-i18n="tl.8.title">创办宋京基金会 · 出版《简道》</p>
+            <p class="timeline__desc" data-i18n="tl.8.desc">同年 9 月出书《简道》。</p>
+          </div>
+        </li>
+      </ol>
+
+      <blockquote class="intro__quote">
+        <p data-i18n="intro.quote">当地著名企业家，著名学者。</p>
+        <cite data-i18n="intro.quoteCite">—— 地位评价</cite>
+      </blockquote>
+    </div>
+
+    <!-- ===== Journey map card ===== -->
+    <div class="intro__card intro__card--map reveal">
+      <h2 class="intro__sec-title intro__sec-title--map">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="map-pin"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+        <span data-i18n="map.title">足迹 · 人生轨迹</span>
+      </h2>
+      <p class="map__sub" data-i18n="map.sub">先环游中国，再环游世界</p>
+
+      <div class="map__scroller">
+        <svg class="map map--world" viewBox="0 0 1600 632" role="img" aria-label="World journey map" data-i18n-aria="map.aria">
+          <defs>
+            <linearGradient id="routeGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffd58a"/>
+              <stop offset="55%" stop-color="#ff9a76"/>
+              <stop offset="100%" stop-color="#8fd0ff"/>
+            </linearGradient>
+          </defs>
+
+          <!-- land dot-matrix world map (no borders; Taiwan & S. China Sea islands included) -->
+          <path class="map-land" d="M24.4,44.1l0,0 M34.2,34.3l0,0 M34.2,44.1l0,0 M34.2,53.9l0,0 M44.0,34.3l0,0 M44.0,44.1l0,0 M44.0,53.9l0,0 M44.0,63.6l0,0 M53.8,24.5l0,0 M53.8,34.3l0,0 M53.8,44.1l0,0 M53.8,53.9l0,0 M53.8,63.6l0,0 M63.6,24.5l0,0 M63.6,34.3l0,0 M63.6,44.1l0,0 M63.6,53.9l0,0 M63.6,63.6l0,0 M63.6,73.4l0,0 M73.3,24.5l0,0 M73.3,34.3l0,0 M73.3,44.1l0,0 M73.3,53.9l0,0 M73.3,63.6l0,0 M73.3,73.4l0,0 M73.3,83.2l0,0 M83.1,24.5l0,0 M83.1,34.3l0,0 M83.1,44.1l0,0 M83.1,53.9l0,0 M83.1,63.6l0,0 M83.1,73.4l0,0 M83.1,83.2l0,0 M92.9,24.5l0,0 M92.9,34.3l0,0 M92.9,44.1l0,0 M92.9,53.9l0,0 M92.9,63.6l0,0 M92.9,73.4l0,0 M92.9,83.2l0,0 M102.7,24.5l0,0 M102.7,34.3l0,0 M102.7,44.1l0,0 M102.7,53.9l0,0 M102.7,63.6l0,0 M102.7,73.4l0,0 M102.7,83.2l0,0 M112.4,14.7l0,0 M112.4,24.5l0,0 M112.4,34.3l0,0 M112.4,44.1l0,0 M112.4,53.9l0,0 M112.4,63.6l0,0 M112.4,73.4l0,0 M112.4,83.2l0,0 M122.2,14.7l0,0 M122.2,24.5l0,0 M122.2,34.3l0,0 M122.2,44.1l0,0 M122.2,53.9l0,0 M122.2,63.6l0,0 M122.2,73.4l0,0 M122.2,83.2l0,0 M122.2,93.0l0,0 M132.0,14.7l0,0 M132.0,24.5l0,0 M132.0,34.3l0,0 M132.0,44.1l0,0 M132.0,53.9l0,0 M132.0,63.6l0,0 M132.0,73.4l0,0 M132.0,83.2l0,0 M132.0,93.0l0,0 M141.8,14.7l0,0 M141.8,24.5l0,0 M141.8,34.3l0,0 M141.8,44.1l0,0 M141.8,53.9l0,0 M141.8,63.6l0,0 M141.8,73.4l0,0 M141.8,83.2l0,0 M141.8,93.0l0,0 M151.6,14.7l0,0 M151.6,24.5l0,0 M151.6,34.3l0,0 M151.6,44.1l0,0 M151.6,53.9l0,0 M151.6,63.6l0,0 M151.6,73.4l0,0 M151.6,83.2l0,0 M151.6,93.0l0,0 M161.3,14.7l0,0 M161.3,24.5l0,0 M161.3,34.3l0,0 M161.3,44.1l0,0 M161.3,53.9l0,0 M161.3,63.6l0,0 M161.3,73.4l0,0 M161.3,83.2l0,0 M161.3,93.0l0,0 M171.1,14.7l0,0 M171.1,24.5l0,0 M171.1,34.3l0,0 M171.1,44.1l0,0 M171.1,53.9l0,0 M171.1,63.6l0,0 M171.1,73.4l0,0 M171.1,83.2l0,0 M171.1,93.0l0,0 M180.9,14.7l0,0 M180.9,24.5l0,0 M180.9,34.3l0,0 M180.9,44.1l0,0 M180.9,53.9l0,0 M180.9,63.6l0,0 M180.9,73.4l0,0 M180.9,83.2l0,0 M180.9,93.0l0,0 M190.7,4.9l0,0 M190.7,14.7l0,0 M190.7,24.5l0,0 M190.7,34.3l0,0 M190.7,44.1l0,0 M190.7,53.9l0,0 M190.7,63.6l0,0 M190.7,73.4l0,0 M190.7,83.2l0,0 M190.7,93.0l0,0 M200.4,4.9l0,0 M200.4,14.7l0,0 M200.4,24.5l0,0 M200.4,34.3l0,0 M200.4,44.1l0,0 M200.4,53.9l0,0 M200.4,63.6l0,0 M200.4,73.4l0,0 M200.4,83.2l0,0 M200.4,93.0l0,0 M200.4,102.8l0,0 M210.2,4.9l0,0 M210.2,14.7l0,0 M210.2,24.5l0,0 M210.2,34.3l0,0 M210.2,44.1l0,0 M210.2,53.9l0,0 M210.2,63.6l0,0 M210.2,73.4l0,0 M210.2,83.2l0,0 M210.2,93.0l0,0 M210.2,102.8l0,0 M210.2,112.6l0,0 M220.0,4.9l0,0 M220.0,14.7l0,0 M220.0,24.5l0,0 M220.0,34.3l0,0 M220.0,44.1l0,0 M220.0,53.9l0,0 M220.0,63.6l0,0 M220.0,73.4l0,0 M220.0,83.2l0,0 M220.0,93.0l0,0 M220.0,102.8l0,0 M220.0,112.6l0,0 M229.8,4.9l0,0 M229.8,14.7l0,0 M229.8,24.5l0,0 M229.8,34.3l0,0 M229.8,44.1l0,0 M229.8,53.9l0,0 M229.8,63.6l0,0 M229.8,73.4l0,0 M229.8,83.2l0,0 M229.8,93.0l0,0 M229.8,102.8l0,0 M229.8,112.6l0,0 M229.8,122.4l0,0 M239.6,4.9l0,0 M239.6,14.7l0,0 M239.6,24.5l0,0 M239.6,34.3l0,0 M239.6,44.1l0,0 M239.6,53.9l0,0 M239.6,63.6l0,0 M239.6,73.4l0,0 M239.6,83.2l0,0 M239.6,93.0l0,0 M239.6,102.8l0,0 M239.6,112.6l0,0 M239.6,122.4l0,0 M239.6,142.0l0,0 M239.6,151.8l0,0 M239.6,161.6l0,0 M249.3,4.9l0,0 M249.3,14.7l0,0 M249.3,24.5l0,0 M249.3,34.3l0,0 M249.3,44.1l0,0 M249.3,53.9l0,0 M249.3,63.6l0,0 M249.3,73.4l0,0 M249.3,83.2l0,0 M249.3,93.0l0,0 M249.3,102.8l0,0 M249.3,112.6l0,0 M249.3,122.4l0,0 M249.3,142.0l0,0 M249.3,151.8l0,0 M249.3,161.6l0,0 M249.3,171.4l0,0 M259.1,4.9l0,0 M259.1,14.7l0,0 M259.1,24.5l0,0 M259.1,34.3l0,0 M259.1,44.1l0,0 M259.1,53.9l0,0 M259.1,63.6l0,0 M259.1,73.4l0,0 M259.1,83.2l0,0 M259.1,93.0l0,0 M259.1,102.8l0,0 M259.1,112.6l0,0 M259.1,122.4l0,0 M259.1,142.0l0,0 M259.1,151.8l0,0 M259.1,161.6l0,0 M259.1,171.4l0,0 M259.1,181.1l0,0 M259.1,190.9l0,0 M268.9,4.9l0,0 M268.9,14.7l0,0 M268.9,24.5l0,0 M268.9,34.3l0,0 M268.9,44.1l0,0 M268.9,53.9l0,0 M268.9,63.6l0,0 M268.9,73.4l0,0 M268.9,83.2l0,0 M268.9,93.0l0,0 M268.9,102.8l0,0 M268.9,112.6l0,0 M268.9,142.0l0,0 M268.9,151.8l0,0 M268.9,161.6l0,0 M268.9,171.4l0,0 M268.9,181.1l0,0 M268.9,190.9l0,0 M278.7,4.9l0,0 M278.7,14.7l0,0 M278.7,24.5l0,0 M278.7,34.3l0,0 M278.7,44.1l0,0 M278.7,53.9l0,0 M278.7,63.6l0,0 M278.7,73.4l0,0 M278.7,83.2l0,0 M278.7,93.0l0,0 M278.7,102.8l0,0 M278.7,112.6l0,0 M278.7,142.0l0,0 M278.7,151.8l0,0 M278.7,161.6l0,0 M278.7,171.4l0,0 M278.7,181.1l0,0 M278.7,190.9l0,0 M288.4,4.9l0,0 M288.4,14.7l0,0 M288.4,24.5l0,0 M288.4,34.3l0,0 M288.4,44.1l0,0 M288.4,53.9l0,0 M288.4,63.6l0,0 M288.4,73.4l0,0 M288.4,83.2l0,0 M288.4,93.0l0,0 M288.4,102.8l0,0 M288.4,142.0l0,0 M288.4,151.8l0,0 M288.4,161.6l0,0 M288.4,171.4l0,0 M288.4,181.1l0,0 M288.4,190.9l0,0 M288.4,220.3l0,0 M298.2,4.9l0,0 M298.2,14.7l0,0 M298.2,24.5l0,0 M298.2,34.3l0,0 M298.2,44.1l0,0 M298.2,53.9l0,0 M298.2,63.6l0,0 M298.2,73.4l0,0 M298.2,83.2l0,0 M298.2,93.0l0,0 M298.2,102.8l0,0 M298.2,142.0l0,0 M298.2,151.8l0,0 M298.2,161.6l0,0 M298.2,171.4l0,0 M298.2,181.1l0,0 M298.2,210.5l0,0 M298.2,220.3l0,0 M308.0,4.9l0,0 M308.0,14.7l0,0 M308.0,24.5l0,0 M308.0,34.3l0,0 M308.0,44.1l0,0 M308.0,53.9l0,0 M308.0,63.6l0,0 M308.0,73.4l0,0 M308.0,83.2l0,0 M308.0,93.0l0,0 M308.0,102.8l0,0 M308.0,142.0l0,0 M308.0,151.8l0,0 M308.0,161.6l0,0 M308.0,171.4l0,0 M308.0,181.1l0,0 M308.0,190.9l0,0 M308.0,200.7l0,0 M308.0,210.5l0,0 M308.0,220.3l0,0 M317.8,4.9l0,0 M317.8,14.7l0,0 M317.8,24.5l0,0 M317.8,34.3l0,0 M317.8,44.1l0,0 M317.8,53.9l0,0 M317.8,63.6l0,0 M317.8,73.4l0,0 M317.8,83.2l0,0 M317.8,93.0l0,0 M317.8,102.8l0,0 M317.8,142.0l0,0 M317.8,151.8l0,0 M317.8,161.6l0,0 M317.8,171.4l0,0 M317.8,181.1l0,0 M317.8,190.9l0,0 M317.8,200.7l0,0 M317.8,210.5l0,0 M317.8,220.3l0,0 M317.8,230.1l0,0 M327.6,4.9l0,0 M327.6,14.7l0,0 M327.6,24.5l0,0 M327.6,34.3l0,0 M327.6,44.1l0,0 M327.6,53.9l0,0 M327.6,63.6l0,0 M327.6,73.4l0,0 M327.6,83.2l0,0 M327.6,93.0l0,0 M327.6,102.8l0,0 M327.6,142.0l0,0 M327.6,151.8l0,0 M327.6,161.6l0,0 M327.6,171.4l0,0 M327.6,181.1l0,0 M327.6,190.9l0,0 M327.6,200.7l0,0 M327.6,210.5l0,0 M327.6,220.3l0,0 M327.6,230.1l0,0 M327.6,239.9l0,0 M327.6,249.7l0,0 M327.6,259.5l0,0 M337.3,4.9l0,0 M337.3,14.7l0,0 M337.3,24.5l0,0 M337.3,34.3l0,0 M337.3,44.1l0,0 M337.3,53.9l0,0 M337.3,63.6l0,0 M337.3,73.4l0,0 M337.3,83.2l0,0 M337.3,93.0l0,0 M337.3,102.8l0,0 M337.3,112.6l0,0 M337.3,122.4l0,0 M337.3,142.0l0,0 M337.3,151.8l0,0 M337.3,161.6l0,0 M337.3,171.4l0,0 M337.3,181.1l0,0 M337.3,190.9l0,0 M337.3,200.7l0,0 M337.3,210.5l0,0 M337.3,220.3l0,0 M337.3,230.1l0,0 M337.3,239.9l0,0 M337.3,249.7l0,0 M337.3,259.5l0,0 M347.1,4.9l0,0 M347.1,14.7l0,0 M347.1,24.5l0,0 M347.1,34.3l0,0 M347.1,44.1l0,0 M347.1,53.9l0,0 M347.1,63.6l0,0 M347.1,73.4l0,0 M347.1,83.2l0,0 M347.1,93.0l0,0 M347.1,102.8l0,0 M347.1,112.6l0,0 M347.1,122.4l0,0 M347.1,142.0l0,0 M347.1,151.8l0,0 M347.1,161.6l0,0 M347.1,171.4l0,0 M347.1,181.1l0,0 M347.1,190.9l0,0 M347.1,200.7l0,0 M347.1,210.5l0,0 M347.1,220.3l0,0 M347.1,230.1l0,0 M347.1,239.9l0,0 M347.1,249.7l0,0 M347.1,259.5l0,0 M356.9,4.9l0,0 M356.9,14.7l0,0 M356.9,24.5l0,0 M356.9,34.3l0,0 M356.9,44.1l0,0 M356.9,53.9l0,0 M356.9,63.6l0,0 M356.9,73.4l0,0 M356.9,83.2l0,0 M356.9,93.0l0,0 M356.9,102.8l0,0 M356.9,112.6l0,0 M356.9,122.4l0,0 M356.9,132.2l0,0 M356.9,142.0l0,0 M356.9,151.8l0,0 M356.9,161.6l0,0 M356.9,171.4l0,0 M356.9,181.1l0,0 M356.9,190.9l0,0 M356.9,200.7l0,0 M356.9,210.5l0,0 M356.9,220.3l0,0 M356.9,230.1l0,0 M356.9,239.9l0,0 M356.9,249.7l0,0 M356.9,259.5l0,0 M366.7,4.9l0,0 M366.7,14.7l0,0 M366.7,24.5l0,0 M366.7,34.3l0,0 M366.7,44.1l0,0 M366.7,53.9l0,0 M366.7,63.6l0,0 M366.7,73.4l0,0 M366.7,83.2l0,0 M366.7,93.0l0,0 M366.7,102.8l0,0 M366.7,112.6l0,0 M366.7,122.4l0,0 M366.7,132.2l0,0 M366.7,142.0l0,0 M366.7,151.8l0,0 M366.7,161.6l0,0 M366.7,171.4l0,0 M366.7,181.1l0,0 M366.7,190.9l0,0 M366.7,200.7l0,0 M366.7,210.5l0,0 M366.7,220.3l0,0 M366.7,230.1l0,0 M366.7,239.9l0,0 M366.7,249.7l0,0 M366.7,259.5l0,0 M366.7,269.3l0,0 M376.4,4.9l0,0 M376.4,14.7l0,0 M376.4,24.5l0,0 M376.4,34.3l0,0 M376.4,44.1l0,0 M376.4,53.9l0,0 M376.4,63.6l0,0 M376.4,73.4l0,0 M376.4,83.2l0,0 M376.4,93.0l0,0 M376.4,102.8l0,0 M376.4,112.6l0,0 M376.4,122.4l0,0 M376.4,132.2l0,0 M376.4,142.0l0,0 M376.4,151.8l0,0 M376.4,161.6l0,0 M376.4,171.4l0,0 M376.4,181.1l0,0 M376.4,190.9l0,0 M376.4,200.7l0,0 M376.4,210.5l0,0 M376.4,220.3l0,0 M376.4,230.1l0,0 M376.4,239.9l0,0 M376.4,249.7l0,0 M376.4,259.5l0,0 M376.4,269.3l0,0 M386.2,4.9l0,0 M386.2,14.7l0,0 M386.2,24.5l0,0 M386.2,34.3l0,0 M386.2,44.1l0,0 M386.2,53.9l0,0 M386.2,63.6l0,0 M386.2,73.4l0,0 M386.2,83.2l0,0 M386.2,93.0l0,0 M386.2,102.8l0,0 M386.2,112.6l0,0 M386.2,122.4l0,0 M386.2,132.2l0,0 M386.2,142.0l0,0 M386.2,151.8l0,0 M386.2,161.6l0,0 M386.2,171.4l0,0 M386.2,181.1l0,0 M386.2,190.9l0,0 M386.2,200.7l0,0 M386.2,210.5l0,0 M386.2,220.3l0,0 M386.2,239.9l0,0 M386.2,249.7l0,0 M386.2,259.5l0,0 M386.2,269.3l0,0 M396.0,4.9l0,0 M396.0,14.7l0,0 M396.0,24.5l0,0 M396.0,34.3l0,0 M396.0,44.1l0,0 M396.0,53.9l0,0 M396.0,63.6l0,0 M396.0,73.4l0,0 M396.0,83.2l0,0 M396.0,93.0l0,0 M396.0,102.8l0,0 M396.0,112.6l0,0 M396.0,122.4l0,0 M396.0,132.2l0,0 M396.0,142.0l0,0 M396.0,151.8l0,0 M396.0,161.6l0,0 M396.0,171.4l0,0 M396.0,181.1l0,0 M396.0,190.9l0,0 M396.0,200.7l0,0 M396.0,210.5l0,0 M396.0,220.3l0,0 M396.0,249.7l0,0 M396.0,259.5l0,0 M396.0,269.3l0,0 M396.0,279.1l0,0 M405.8,4.9l0,0 M405.8,14.7l0,0 M405.8,24.5l0,0 M405.8,34.3l0,0 M405.8,44.1l0,0 M405.8,53.9l0,0 M405.8,63.6l0,0 M405.8,73.4l0,0 M405.8,83.2l0,0 M405.8,93.0l0,0 M405.8,102.8l0,0 M405.8,112.6l0,0 M405.8,122.4l0,0 M405.8,132.2l0,0 M405.8,142.0l0,0 M405.8,151.8l0,0 M405.8,161.6l0,0 M405.8,171.4l0,0 M405.8,181.1l0,0 M405.8,190.9l0,0 M405.8,200.7l0,0 M405.8,210.5l0,0 M405.8,220.3l0,0 M405.8,259.5l0,0 M405.8,269.3l0,0 M405.8,279.1l0,0 M415.6,4.9l0,0 M415.6,14.7l0,0 M415.6,24.5l0,0 M415.6,34.3l0,0 M415.6,44.1l0,0 M415.6,53.9l0,0 M415.6,63.6l0,0 M415.6,73.4l0,0 M415.6,83.2l0,0 M415.6,93.0l0,0 M415.6,102.8l0,0 M415.6,112.6l0,0 M415.6,122.4l0,0 M415.6,132.2l0,0 M415.6,142.0l0,0 M415.6,151.8l0,0 M415.6,161.6l0,0 M415.6,171.4l0,0 M415.6,181.1l0,0 M415.6,190.9l0,0 M415.6,200.7l0,0 M415.6,210.5l0,0 M415.6,259.5l0,0 M415.6,269.3l0,0 M415.6,279.1l0,0 M415.6,288.9l0,0 M425.3,4.9l0,0 M425.3,14.7l0,0 M425.3,24.5l0,0 M425.3,34.3l0,0 M425.3,44.1l0,0 M425.3,53.9l0,0 M425.3,63.6l0,0 M425.3,73.4l0,0 M425.3,83.2l0,0 M425.3,93.0l0,0 M425.3,102.8l0,0 M425.3,112.6l0,0 M425.3,122.4l0,0 M425.3,132.2l0,0 M425.3,142.0l0,0 M425.3,151.8l0,0 M425.3,161.6l0,0 M425.3,171.4l0,0 M425.3,181.1l0,0 M425.3,190.9l0,0 M425.3,200.7l0,0 M425.3,210.5l0,0 M425.3,269.3l0,0 M425.3,279.1l0,0 M425.3,288.9l0,0 M435.1,4.9l0,0 M435.1,14.7l0,0 M435.1,24.5l0,0 M435.1,34.3l0,0 M435.1,44.1l0,0 M435.1,53.9l0,0 M435.1,63.6l0,0 M435.1,73.4l0,0 M435.1,83.2l0,0 M435.1,93.0l0,0 M435.1,102.8l0,0 M435.1,112.6l0,0 M435.1,122.4l0,0 M435.1,132.2l0,0 M435.1,142.0l0,0 M435.1,151.8l0,0 M435.1,161.6l0,0 M435.1,171.4l0,0 M435.1,181.1l0,0 M435.1,190.9l0,0 M435.1,200.7l0,0 M435.1,210.5l0,0 M435.1,220.3l0,0 M435.1,230.1l0,0 M435.1,328.0l0,0 M435.1,337.8l0,0 M435.1,347.6l0,0 M444.9,4.9l0,0 M444.9,14.7l0,0 M444.9,24.5l0,0 M444.9,34.3l0,0 M444.9,44.1l0,0 M444.9,53.9l0,0 M444.9,63.6l0,0 M444.9,73.4l0,0 M444.9,83.2l0,0 M444.9,93.0l0,0 M444.9,102.8l0,0 M444.9,112.6l0,0 M444.9,122.4l0,0 M444.9,132.2l0,0 M444.9,142.0l0,0 M444.9,151.8l0,0 M444.9,161.6l0,0 M444.9,171.4l0,0 M444.9,181.1l0,0 M444.9,190.9l0,0 M444.9,200.7l0,0 M444.9,210.5l0,0 M444.9,220.3l0,0 M444.9,230.1l0,0 M444.9,239.9l0,0 M444.9,318.2l0,0 M444.9,328.0l0,0 M444.9,337.8l0,0 M444.9,347.6l0,0 M444.9,357.4l0,0 M444.9,367.2l0,0 M444.9,377.0l0,0 M444.9,386.8l0,0 M454.7,4.9l0,0 M454.7,14.7l0,0 M454.7,24.5l0,0 M454.7,34.3l0,0 M454.7,44.1l0,0 M454.7,53.9l0,0 M454.7,63.6l0,0 M454.7,73.4l0,0 M454.7,83.2l0,0 M454.7,93.0l0,0 M454.7,102.8l0,0 M454.7,112.6l0,0 M454.7,122.4l0,0 M454.7,132.2l0,0 M454.7,151.8l0,0 M454.7,161.6l0,0 M454.7,171.4l0,0 M454.7,181.1l0,0 M454.7,190.9l0,0 M454.7,220.3l0,0 M454.7,230.1l0,0 M454.7,239.9l0,0 M454.7,298.6l0,0 M454.7,308.4l0,0 M454.7,318.2l0,0 M454.7,328.0l0,0 M454.7,337.8l0,0 M454.7,347.6l0,0 M454.7,357.4l0,0 M454.7,367.2l0,0 M454.7,377.0l0,0 M454.7,386.8l0,0 M454.7,396.6l0,0 M454.7,406.3l0,0 M454.7,416.1l0,0 M454.7,533.6l0,0 M454.7,543.4l0,0 M454.7,553.2l0,0 M464.4,4.9l0,0 M464.4,14.7l0,0 M464.4,24.5l0,0 M464.4,34.3l0,0 M464.4,44.1l0,0 M464.4,53.9l0,0 M464.4,63.6l0,0 M464.4,73.4l0,0 M464.4,83.2l0,0 M464.4,93.0l0,0 M464.4,102.8l0,0 M464.4,112.6l0,0 M464.4,122.4l0,0 M464.4,132.2l0,0 M464.4,161.6l0,0 M464.4,171.4l0,0 M464.4,181.1l0,0 M464.4,298.6l0,0 M464.4,308.4l0,0 M464.4,318.2l0,0 M464.4,328.0l0,0 M464.4,337.8l0,0 M464.4,347.6l0,0 M464.4,357.4l0,0 M464.4,367.2l0,0 M464.4,377.0l0,0 M464.4,386.8l0,0 M464.4,396.6l0,0 M464.4,406.3l0,0 M464.4,416.1l0,0 M464.4,425.9l0,0 M464.4,435.7l0,0 M464.4,445.5l0,0 M464.4,455.3l0,0 M464.4,465.1l0,0 M464.4,474.9l0,0 M464.4,484.7l0,0 M464.4,494.5l0,0 M464.4,504.3l0,0 M464.4,514.1l0,0 M464.4,523.8l0,0 M464.4,533.6l0,0 M464.4,543.4l0,0 M464.4,553.2l0,0 M474.2,4.9l0,0 M474.2,14.7l0,0 M474.2,24.5l0,0 M474.2,34.3l0,0 M474.2,44.1l0,0 M474.2,53.9l0,0 M474.2,63.6l0,0 M474.2,73.4l0,0 M474.2,83.2l0,0 M474.2,93.0l0,0 M474.2,102.8l0,0 M474.2,112.6l0,0 M474.2,122.4l0,0 M474.2,132.2l0,0 M474.2,279.1l0,0 M474.2,288.9l0,0 M474.2,298.6l0,0 M474.2,308.4l0,0 M474.2,318.2l0,0 M474.2,328.0l0,0 M474.2,337.8l0,0 M474.2,357.4l0,0 M474.2,367.2l0,0 M474.2,377.0l0,0 M474.2,386.8l0,0 M474.2,396.6l0,0 M474.2,406.3l0,0 M474.2,416.1l0,0 M474.2,425.9l0,0 M474.2,435.7l0,0 M474.2,445.5l0,0 M474.2,455.3l0,0 M474.2,465.1l0,0 M474.2,474.9l0,0 M474.2,484.7l0,0 M474.2,494.5l0,0 M474.2,504.3l0,0 M474.2,514.1l0,0 M474.2,523.8l0,0 M474.2,533.6l0,0 M474.2,543.4l0,0 M474.2,553.2l0,0 M474.2,572.8l0,0 M484.0,4.9l0,0 M484.0,14.7l0,0 M484.0,24.5l0,0 M484.0,34.3l0,0 M484.0,44.1l0,0 M484.0,53.9l0,0 M484.0,63.6l0,0 M484.0,73.4l0,0 M484.0,83.2l0,0 M484.0,93.0l0,0 M484.0,102.8l0,0 M484.0,112.6l0,0 M484.0,122.4l0,0 M484.0,279.1l0,0 M484.0,288.9l0,0 M484.0,298.6l0,0 M484.0,308.4l0,0 M484.0,318.2l0,0 M484.0,328.0l0,0 M484.0,367.2l0,0 M484.0,377.0l0,0 M484.0,386.8l0,0 M484.0,396.6l0,0 M484.0,406.3l0,0 M484.0,416.1l0,0 M484.0,425.9l0,0 M484.0,435.7l0,0 M484.0,445.5l0,0 M484.0,455.3l0,0 M484.0,465.1l0,0 M484.0,474.9l0,0 M484.0,484.7l0,0 M484.0,494.5l0,0 M484.0,504.3l0,0 M484.0,514.1l0,0 M484.0,523.8l0,0 M484.0,533.6l0,0 M484.0,543.4l0,0 M484.0,553.2l0,0 M484.0,563.0l0,0 M484.0,572.8l0,0 M493.8,4.9l0,0 M493.8,14.7l0,0 M493.8,24.5l0,0 M493.8,34.3l0,0 M493.8,44.1l0,0 M493.8,53.9l0,0 M493.8,63.6l0,0 M493.8,73.4l0,0 M493.8,83.2l0,0 M493.8,93.0l0,0 M493.8,102.8l0,0 M493.8,112.6l0,0 M493.8,122.4l0,0 M493.8,279.1l0,0 M493.8,288.9l0,0 M493.8,298.6l0,0 M493.8,308.4l0,0 M493.8,386.8l0,0 M493.8,396.6l0,0 M493.8,406.3l0,0 M493.8,416.1l0,0 M493.8,425.9l0,0 M493.8,435.7l0,0 M493.8,445.5l0,0 M493.8,455.3l0,0 M493.8,465.1l0,0 M493.8,474.9l0,0 M493.8,484.7l0,0 M493.8,494.5l0,0 M493.8,504.3l0,0 M493.8,514.1l0,0 M493.8,523.8l0,0 M493.8,533.6l0,0 M493.8,543.4l0,0 M493.8,553.2l0,0 M493.8,563.0l0,0 M493.8,572.8l0,0 M493.8,582.6l0,0 M503.6,4.9l0,0 M503.6,14.7l0,0 M503.6,24.5l0,0 M503.6,34.3l0,0 M503.6,44.1l0,0 M503.6,53.9l0,0 M503.6,63.6l0,0 M503.6,73.4l0,0 M503.6,83.2l0,0 M503.6,93.0l0,0 M503.6,279.1l0,0 M503.6,288.9l0,0 M503.6,298.6l0,0 M503.6,308.4l0,0 M503.6,396.6l0,0 M503.6,406.3l0,0 M503.6,416.1l0,0 M503.6,425.9l0,0 M503.6,435.7l0,0 M503.6,445.5l0,0 M503.6,455.3l0,0 M503.6,465.1l0,0 M503.6,474.9l0,0 M503.6,484.7l0,0 M503.6,494.5l0,0 M503.6,504.3l0,0 M503.6,514.1l0,0 M503.6,523.8l0,0 M503.6,533.6l0,0 M503.6,563.0l0,0 M503.6,572.8l0,0 M513.3,4.9l0,0 M513.3,14.7l0,0 M513.3,24.5l0,0 M513.3,34.3l0,0 M513.3,44.1l0,0 M513.3,53.9l0,0 M513.3,63.6l0,0 M513.3,73.4l0,0 M513.3,83.2l0,0 M513.3,367.2l0,0 M513.3,377.0l0,0 M513.3,435.7l0,0 M513.3,445.5l0,0 M513.3,455.3l0,0 M513.3,465.1l0,0 M513.3,474.9l0,0 M513.3,484.7l0,0 M513.3,494.5l0,0 M513.3,504.3l0,0 M513.3,514.1l0,0 M513.3,523.8l0,0 M513.3,533.6l0,0 M513.3,572.8l0,0 M523.1,4.9l0,0 M523.1,14.7l0,0 M523.1,24.5l0,0 M523.1,34.3l0,0 M523.1,44.1l0,0 M523.1,53.9l0,0 M523.1,63.6l0,0 M523.1,73.4l0,0 M523.1,357.4l0,0 M523.1,367.2l0,0 M523.1,377.0l0,0 M523.1,386.8l0,0 M523.1,484.7l0,0 M523.1,494.5l0,0 M523.1,504.3l0,0 M523.1,514.1l0,0 M523.1,523.8l0,0 M523.1,533.6l0,0 M532.9,4.9l0,0 M532.9,14.7l0,0 M532.9,24.5l0,0 M532.9,34.3l0,0 M532.9,44.1l0,0 M532.9,53.9l0,0 M532.9,63.6l0,0 M532.9,73.4l0,0 M532.9,357.4l0,0 M532.9,367.2l0,0 M532.9,377.0l0,0 M532.9,386.8l0,0 M532.9,416.1l0,0 M532.9,425.9l0,0 M532.9,435.7l0,0 M532.9,455.3l0,0 M532.9,465.1l0,0 M532.9,474.9l0,0 M532.9,484.7l0,0 M532.9,494.5l0,0 M532.9,504.3l0,0 M532.9,514.1l0,0 M532.9,523.8l0,0 M542.7,4.9l0,0 M542.7,14.7l0,0 M542.7,24.5l0,0 M542.7,34.3l0,0 M542.7,44.1l0,0 M542.7,53.9l0,0 M542.7,63.6l0,0 M542.7,337.8l0,0 M542.7,347.6l0,0 M542.7,357.4l0,0 M542.7,367.2l0,0 M542.7,377.0l0,0 M542.7,386.8l0,0 M542.7,416.1l0,0 M542.7,425.9l0,0 M542.7,435.7l0,0 M542.7,445.5l0,0 M542.7,455.3l0,0 M542.7,465.1l0,0 M542.7,474.9l0,0 M542.7,484.7l0,0 M542.7,494.5l0,0 M542.7,504.3l0,0 M542.7,514.1l0,0 M552.4,4.9l0,0 M552.4,14.7l0,0 M552.4,24.5l0,0 M552.4,34.3l0,0 M552.4,44.1l0,0 M552.4,53.9l0,0 M552.4,328.0l0,0 M552.4,337.8l0,0 M552.4,347.6l0,0 M552.4,357.4l0,0 M552.4,367.2l0,0 M552.4,377.0l0,0 M552.4,406.3l0,0 M552.4,416.1l0,0 M552.4,425.9l0,0 M552.4,435.7l0,0 M552.4,445.5l0,0 M552.4,455.3l0,0 M552.4,465.1l0,0 M552.4,474.9l0,0 M552.4,484.7l0,0 M552.4,494.5l0,0 M562.2,4.9l0,0 M562.2,14.7l0,0 M562.2,24.5l0,0 M562.2,34.3l0,0 M562.2,44.1l0,0 M562.2,53.9l0,0 M562.2,328.0l0,0 M562.2,337.8l0,0 M562.2,347.6l0,0 M562.2,357.4l0,0 M562.2,367.2l0,0 M562.2,377.0l0,0 M562.2,416.1l0,0 M562.2,425.9l0,0 M562.2,435.7l0,0 M562.2,445.5l0,0 M562.2,455.3l0,0 M562.2,465.1l0,0 M562.2,474.9l0,0 M562.2,484.7l0,0 M572.0,4.9l0,0 M572.0,14.7l0,0 M572.0,24.5l0,0 M572.0,34.3l0,0 M572.0,44.1l0,0 M572.0,53.9l0,0 M572.0,337.8l0,0 M572.0,347.6l0,0 M572.0,357.4l0,0 M572.0,367.2l0,0 M572.0,377.0l0,0 M572.0,425.9l0,0 M572.0,435.7l0,0 M572.0,445.5l0,0 M572.0,455.3l0,0 M572.0,465.1l0,0 M572.0,474.9l0,0 M581.8,4.9l0,0 M581.8,14.7l0,0 M581.8,24.5l0,0 M581.8,34.3l0,0 M581.8,44.1l0,0 M581.8,53.9l0,0 M581.8,337.8l0,0 M581.8,347.6l0,0 M581.8,357.4l0,0 M581.8,367.2l0,0 M581.8,377.0l0,0 M581.8,386.8l0,0 M581.8,416.1l0,0 M581.8,425.9l0,0 M581.8,435.7l0,0 M581.8,445.5l0,0 M581.8,455.3l0,0 M581.8,465.1l0,0 M581.8,474.9l0,0 M591.6,4.9l0,0 M591.6,14.7l0,0 M591.6,24.5l0,0 M591.6,34.3l0,0 M591.6,44.1l0,0 M591.6,53.9l0,0 M591.6,337.8l0,0 M591.6,347.6l0,0 M591.6,357.4l0,0 M591.6,367.2l0,0 M591.6,377.0l0,0 M591.6,386.8l0,0 M591.6,396.6l0,0 M591.6,416.1l0,0 M591.6,425.9l0,0 M591.6,435.7l0,0 M591.6,445.5l0,0 M591.6,455.3l0,0 M601.3,4.9l0,0 M601.3,14.7l0,0 M601.3,24.5l0,0 M601.3,34.3l0,0 M601.3,44.1l0,0 M601.3,53.9l0,0 M601.3,337.8l0,0 M601.3,347.6l0,0 M601.3,357.4l0,0 M601.3,367.2l0,0 M601.3,377.0l0,0 M601.3,386.8l0,0 M601.3,396.6l0,0 M601.3,406.3l0,0 M601.3,416.1l0,0 M601.3,425.9l0,0 M601.3,435.7l0,0 M601.3,445.5l0,0 M611.1,4.9l0,0 M611.1,14.7l0,0 M611.1,24.5l0,0 M611.1,34.3l0,0 M611.1,44.1l0,0 M611.1,53.9l0,0 M611.1,337.8l0,0 M611.1,347.6l0,0 M611.1,357.4l0,0 M611.1,367.2l0,0 M611.1,377.0l0,0 M611.1,386.8l0,0 M611.1,396.6l0,0 M611.1,406.3l0,0 M611.1,416.1l0,0 M611.1,425.9l0,0 M611.1,435.7l0,0 M620.9,4.9l0,0 M620.9,14.7l0,0 M620.9,24.5l0,0 M620.9,34.3l0,0 M620.9,44.1l0,0 M620.9,53.9l0,0 M620.9,347.6l0,0 M620.9,357.4l0,0 M620.9,367.2l0,0 M620.9,377.0l0,0 M620.9,386.8l0,0 M620.9,406.3l0,0 M620.9,416.1l0,0 M620.9,425.9l0,0 M620.9,435.7l0,0 M630.7,4.9l0,0 M630.7,14.7l0,0 M630.7,24.5l0,0 M630.7,34.3l0,0 M630.7,44.1l0,0 M630.7,53.9l0,0 M630.7,367.2l0,0 M630.7,377.0l0,0 M630.7,406.3l0,0 M630.7,416.1l0,0 M630.7,425.9l0,0 M640.4,4.9l0,0 M640.4,14.7l0,0 M640.4,24.5l0,0 M640.4,34.3l0,0 M640.4,44.1l0,0 M640.4,53.9l0,0 M640.4,357.4l0,0 M640.4,367.2l0,0 M640.4,377.0l0,0 M650.2,4.9l0,0 M650.2,14.7l0,0 M650.2,24.5l0,0 M650.2,34.3l0,0 M650.2,44.1l0,0 M650.2,53.9l0,0 M650.2,357.4l0,0 M650.2,367.2l0,0 M650.2,377.0l0,0 M660.0,4.9l0,0 M660.0,14.7l0,0 M660.0,24.5l0,0 M660.0,34.3l0,0 M660.0,44.1l0,0 M660.0,53.9l0,0 M669.8,4.9l0,0 M669.8,14.7l0,0 M669.8,24.5l0,0 M669.8,34.3l0,0 M669.8,44.1l0,0 M679.6,4.9l0,0 M679.6,14.7l0,0 M679.6,24.5l0,0 M679.6,34.3l0,0 M689.3,4.9l0,0 M689.3,14.7l0,0 M689.3,24.5l0,0 M689.3,34.3l0,0 M699.1,4.9l0,0 M699.1,14.7l0,0 M699.1,24.5l0,0 M699.1,34.3l0,0 M708.9,4.9l0,0 M708.9,14.7l0,0 M708.9,24.5l0,0 M708.9,34.3l0,0 M708.9,44.1l0,0 M708.9,53.9l0,0 M718.7,4.9l0,0 M718.7,14.7l0,0 M718.7,24.5l0,0 M718.7,44.1l0,0 M718.7,53.9l0,0 M728.4,4.9l0,0 M728.4,14.7l0,0 M728.4,44.1l0,0 M728.4,53.9l0,0 M738.2,4.9l0,0 M738.2,269.3l0,0 M738.2,279.1l0,0 M738.2,288.9l0,0 M738.2,298.6l0,0 M748.0,4.9l0,0 M748.0,190.9l0,0 M748.0,200.7l0,0 M748.0,269.3l0,0 M748.0,279.1l0,0 M748.0,288.9l0,0 M748.0,298.6l0,0 M757.8,102.8l0,0 M757.8,171.4l0,0 M757.8,181.1l0,0 M757.8,190.9l0,0 M757.8,200.7l0,0 M757.8,210.5l0,0 M757.8,230.1l0,0 M757.8,239.9l0,0 M757.8,249.7l0,0 M757.8,259.5l0,0 M757.8,269.3l0,0 M757.8,279.1l0,0 M757.8,288.9l0,0 M757.8,298.6l0,0 M767.6,102.8l0,0 M767.6,151.8l0,0 M767.6,161.6l0,0 M767.6,171.4l0,0 M767.6,181.1l0,0 M767.6,190.9l0,0 M767.6,200.7l0,0 M767.6,210.5l0,0 M767.6,220.3l0,0 M767.6,230.1l0,0 M767.6,239.9l0,0 M767.6,249.7l0,0 M767.6,259.5l0,0 M767.6,269.3l0,0 M767.6,279.1l0,0 M767.6,288.9l0,0 M777.3,83.2l0,0 M777.3,93.0l0,0 M777.3,102.8l0,0 M777.3,112.6l0,0 M777.3,151.8l0,0 M777.3,161.6l0,0 M777.3,171.4l0,0 M777.3,181.1l0,0 M777.3,190.9l0,0 M777.3,200.7l0,0 M777.3,210.5l0,0 M777.3,220.3l0,0 M777.3,230.1l0,0 M777.3,239.9l0,0 M777.3,249.7l0,0 M777.3,259.5l0,0 M777.3,269.3l0,0 M777.3,279.1l0,0 M787.1,83.2l0,0 M787.1,93.0l0,0 M787.1,102.8l0,0 M787.1,112.6l0,0 M787.1,122.4l0,0 M787.1,132.2l0,0 M787.1,142.0l0,0 M787.1,151.8l0,0 M787.1,161.6l0,0 M787.1,171.4l0,0 M787.1,181.1l0,0 M787.1,190.9l0,0 M787.1,200.7l0,0 M787.1,210.5l0,0 M787.1,220.3l0,0 M787.1,230.1l0,0 M787.1,239.9l0,0 M787.1,249.7l0,0 M787.1,259.5l0,0 M796.9,83.2l0,0 M796.9,93.0l0,0 M796.9,102.8l0,0 M796.9,112.6l0,0 M796.9,122.4l0,0 M796.9,132.2l0,0 M796.9,142.0l0,0 M796.9,151.8l0,0 M796.9,161.6l0,0 M796.9,171.4l0,0 M796.9,181.1l0,0 M796.9,190.9l0,0 M796.9,200.7l0,0 M796.9,230.1l0,0 M796.9,239.9l0,0 M796.9,249.7l0,0 M796.9,259.5l0,0 M796.9,269.3l0,0 M806.7,73.4l0,0 M806.7,83.2l0,0 M806.7,93.0l0,0 M806.7,102.8l0,0 M806.7,112.6l0,0 M806.7,122.4l0,0 M806.7,132.2l0,0 M806.7,142.0l0,0 M806.7,171.4l0,0 M806.7,181.1l0,0 M806.7,190.9l0,0 M806.7,200.7l0,0 M806.7,230.1l0,0 M806.7,239.9l0,0 M806.7,249.7l0,0 M806.7,259.5l0,0 M806.7,269.3l0,0 M816.4,63.6l0,0 M816.4,73.4l0,0 M816.4,83.2l0,0 M816.4,93.0l0,0 M816.4,102.8l0,0 M816.4,112.6l0,0 M816.4,122.4l0,0 M816.4,132.2l0,0 M816.4,142.0l0,0 M816.4,171.4l0,0 M816.4,181.1l0,0 M816.4,190.9l0,0 M816.4,200.7l0,0 M816.4,210.5l0,0 M816.4,230.1l0,0 M816.4,239.9l0,0 M816.4,249.7l0,0 M816.4,259.5l0,0 M816.4,269.3l0,0 M826.2,34.3l0,0 M826.2,44.1l0,0 M826.2,63.6l0,0 M826.2,73.4l0,0 M826.2,83.2l0,0 M826.2,93.0l0,0 M826.2,102.8l0,0 M826.2,112.6l0,0 M826.2,122.4l0,0 M826.2,132.2l0,0 M826.2,142.0l0,0 M826.2,161.6l0,0 M826.2,171.4l0,0 M826.2,181.1l0,0 M826.2,190.9l0,0 M826.2,200.7l0,0 M826.2,210.5l0,0 M826.2,220.3l0,0 M826.2,230.1l0,0 M826.2,239.9l0,0 M826.2,249.7l0,0 M826.2,259.5l0,0 M826.2,269.3l0,0 M836.0,24.5l0,0 M836.0,34.3l0,0 M836.0,44.1l0,0 M836.0,53.9l0,0 M836.0,63.6l0,0 M836.0,73.4l0,0 M836.0,83.2l0,0 M836.0,102.8l0,0 M836.0,112.6l0,0 M836.0,122.4l0,0 M836.0,132.2l0,0 M836.0,142.0l0,0 M836.0,161.6l0,0 M836.0,171.4l0,0 M836.0,181.1l0,0 M836.0,190.9l0,0 M836.0,200.7l0,0 M836.0,210.5l0,0 M836.0,220.3l0,0 M836.0,230.1l0,0 M836.0,239.9l0,0 M836.0,249.7l0,0 M836.0,259.5l0,0 M836.0,269.3l0,0 M845.8,24.5l0,0 M845.8,34.3l0,0 M845.8,44.1l0,0 M845.8,53.9l0,0 M845.8,63.6l0,0 M845.8,73.4l0,0 M845.8,83.2l0,0 M845.8,102.8l0,0 M845.8,112.6l0,0 M845.8,122.4l0,0 M845.8,132.2l0,0 M845.8,142.0l0,0 M845.8,151.8l0,0 M845.8,161.6l0,0 M845.8,171.4l0,0 M845.8,181.1l0,0 M845.8,190.9l0,0 M845.8,200.7l0,0 M845.8,210.5l0,0 M845.8,220.3l0,0 M845.8,230.1l0,0 M845.8,239.9l0,0 M845.8,249.7l0,0 M845.8,259.5l0,0 M845.8,269.3l0,0 M845.8,504.3l0,0 M845.8,514.1l0,0 M855.6,24.5l0,0 M855.6,34.3l0,0 M855.6,44.1l0,0 M855.6,53.9l0,0 M855.6,63.6l0,0 M855.6,73.4l0,0 M855.6,83.2l0,0 M855.6,102.8l0,0 M855.6,112.6l0,0 M855.6,122.4l0,0 M855.6,132.2l0,0 M855.6,142.0l0,0 M855.6,151.8l0,0 M855.6,161.6l0,0 M855.6,171.4l0,0 M855.6,181.1l0,0 M855.6,190.9l0,0 M855.6,200.7l0,0 M855.6,210.5l0,0 M855.6,220.3l0,0 M855.6,230.1l0,0 M855.6,239.9l0,0 M855.6,249.7l0,0 M855.6,259.5l0,0 M855.6,269.3l0,0 M855.6,494.5l0,0 M855.6,504.3l0,0 M855.6,514.1l0,0 M865.3,24.5l0,0 M865.3,34.3l0,0 M865.3,44.1l0,0 M865.3,53.9l0,0 M865.3,63.6l0,0 M865.3,73.4l0,0 M865.3,83.2l0,0 M865.3,102.8l0,0 M865.3,112.6l0,0 M865.3,122.4l0,0 M865.3,132.2l0,0 M865.3,142.0l0,0 M865.3,151.8l0,0 M865.3,161.6l0,0 M865.3,171.4l0,0 M865.3,181.1l0,0 M865.3,190.9l0,0 M865.3,200.7l0,0 M865.3,210.5l0,0 M865.3,220.3l0,0 M865.3,230.1l0,0 M865.3,239.9l0,0 M865.3,249.7l0,0 M865.3,259.5l0,0 M865.3,347.6l0,0 M865.3,357.4l0,0 M865.3,367.2l0,0 M865.3,377.0l0,0 M865.3,445.5l0,0 M865.3,455.3l0,0 M865.3,484.7l0,0 M865.3,494.5l0,0 M865.3,504.3l0,0 M865.3,514.1l0,0 M875.1,24.5l0,0 M875.1,34.3l0,0 M875.1,44.1l0,0 M875.1,53.9l0,0 M875.1,63.6l0,0 M875.1,73.4l0,0 M875.1,102.8l0,0 M875.1,112.6l0,0 M875.1,122.4l0,0 M875.1,132.2l0,0 M875.1,142.0l0,0 M875.1,151.8l0,0 M875.1,161.6l0,0 M875.1,181.1l0,0 M875.1,190.9l0,0 M875.1,200.7l0,0 M875.1,210.5l0,0 M875.1,220.3l0,0 M875.1,230.1l0,0 M875.1,239.9l0,0 M875.1,249.7l0,0 M875.1,259.5l0,0 M875.1,298.6l0,0 M875.1,308.4l0,0 M875.1,318.2l0,0 M875.1,328.0l0,0 M875.1,347.6l0,0 M875.1,357.4l0,0 M875.1,367.2l0,0 M875.1,377.0l0,0 M875.1,435.7l0,0 M875.1,445.5l0,0 M875.1,455.3l0,0 M875.1,465.1l0,0 M875.1,474.9l0,0 M875.1,484.7l0,0 M875.1,494.5l0,0 M884.9,24.5l0,0 M884.9,34.3l0,0 M884.9,44.1l0,0 M884.9,53.9l0,0 M884.9,63.6l0,0 M884.9,73.4l0,0 M884.9,102.8l0,0 M884.9,112.6l0,0 M884.9,122.4l0,0 M884.9,132.2l0,0 M884.9,142.0l0,0 M884.9,151.8l0,0 M884.9,161.6l0,0 M884.9,171.4l0,0 M884.9,181.1l0,0 M884.9,190.9l0,0 M884.9,200.7l0,0 M884.9,210.5l0,0 M884.9,220.3l0,0 M884.9,230.1l0,0 M884.9,239.9l0,0 M884.9,249.7l0,0 M884.9,298.6l0,0 M884.9,308.4l0,0 M884.9,318.2l0,0 M884.9,328.0l0,0 M884.9,337.8l0,0 M884.9,347.6l0,0 M884.9,357.4l0,0 M884.9,367.2l0,0 M884.9,377.0l0,0 M884.9,386.8l0,0 M884.9,396.6l0,0 M884.9,435.7l0,0 M884.9,445.5l0,0 M884.9,455.3l0,0 M884.9,465.1l0,0 M884.9,474.9l0,0 M884.9,484.7l0,0 M884.9,494.5l0,0 M894.7,14.7l0,0 M894.7,24.5l0,0 M894.7,34.3l0,0 M894.7,44.1l0,0 M894.7,53.9l0,0 M894.7,63.6l0,0 M894.7,112.6l0,0 M894.7,122.4l0,0 M894.7,132.2l0,0 M894.7,142.0l0,0 M894.7,151.8l0,0 M894.7,161.6l0,0 M894.7,171.4l0,0 M894.7,181.1l0,0 M894.7,190.9l0,0 M894.7,200.7l0,0 M894.7,210.5l0,0 M894.7,220.3l0,0 M894.7,230.1l0,0 M894.7,239.9l0,0 M894.7,298.6l0,0 M894.7,308.4l0,0 M894.7,318.2l0,0 M894.7,328.0l0,0 M894.7,347.6l0,0 M894.7,357.4l0,0 M894.7,367.2l0,0 M894.7,377.0l0,0 M894.7,386.8l0,0 M894.7,396.6l0,0 M894.7,406.3l0,0 M894.7,416.1l0,0 M894.7,425.9l0,0 M894.7,435.7l0,0 M894.7,445.5l0,0 M894.7,455.3l0,0 M894.7,465.1l0,0 M894.7,484.7l0,0 M894.7,494.5l0,0 M904.4,14.7l0,0 M904.4,24.5l0,0 M904.4,34.3l0,0 M904.4,44.1l0,0 M904.4,53.9l0,0 M904.4,122.4l0,0 M904.4,132.2l0,0 M904.4,142.0l0,0 M904.4,151.8l0,0 M904.4,161.6l0,0 M904.4,171.4l0,0 M904.4,181.1l0,0 M904.4,190.9l0,0 M904.4,200.7l0,0 M904.4,210.5l0,0 M904.4,220.3l0,0 M904.4,230.1l0,0 M904.4,239.9l0,0 M904.4,298.6l0,0 M904.4,308.4l0,0 M904.4,318.2l0,0 M904.4,328.0l0,0 M904.4,377.0l0,0 M904.4,386.8l0,0 M904.4,396.6l0,0 M904.4,406.3l0,0 M904.4,416.1l0,0 M904.4,425.9l0,0 M904.4,435.7l0,0 M904.4,445.5l0,0 M904.4,455.3l0,0 M904.4,465.1l0,0 M904.4,474.9l0,0 M904.4,484.7l0,0 M904.4,494.5l0,0 M914.2,14.7l0,0 M914.2,24.5l0,0 M914.2,34.3l0,0 M914.2,44.1l0,0 M914.2,53.9l0,0 M914.2,122.4l0,0 M914.2,132.2l0,0 M914.2,142.0l0,0 M914.2,151.8l0,0 M914.2,161.6l0,0 M914.2,181.1l0,0 M914.2,190.9l0,0 M914.2,200.7l0,0 M914.2,210.5l0,0 M914.2,220.3l0,0 M914.2,230.1l0,0 M914.2,298.6l0,0 M914.2,308.4l0,0 M914.2,318.2l0,0 M914.2,328.0l0,0 M914.2,337.8l0,0 M914.2,377.0l0,0 M914.2,386.8l0,0 M914.2,396.6l0,0 M914.2,406.3l0,0 M914.2,416.1l0,0 M914.2,425.9l0,0 M914.2,435.7l0,0 M914.2,445.5l0,0 M914.2,455.3l0,0 M914.2,465.1l0,0 M914.2,474.9l0,0 M914.2,484.7l0,0 M914.2,494.5l0,0 M924.0,14.7l0,0 M924.0,24.5l0,0 M924.0,34.3l0,0 M924.0,44.1l0,0 M924.0,102.8l0,0 M924.0,112.6l0,0 M924.0,122.4l0,0 M924.0,132.2l0,0 M924.0,142.0l0,0 M924.0,151.8l0,0 M924.0,161.6l0,0 M924.0,181.1l0,0 M924.0,190.9l0,0 M924.0,200.7l0,0 M924.0,210.5l0,0 M924.0,220.3l0,0 M924.0,230.1l0,0 M924.0,239.9l0,0 M924.0,298.6l0,0 M924.0,308.4l0,0 M924.0,318.2l0,0 M924.0,328.0l0,0 M924.0,386.8l0,0 M924.0,396.6l0,0 M924.0,406.3l0,0 M924.0,416.1l0,0 M924.0,425.9l0,0 M924.0,435.7l0,0 M924.0,445.5l0,0 M924.0,455.3l0,0 M924.0,465.1l0,0 M924.0,474.9l0,0 M924.0,484.7l0,0 M933.8,24.5l0,0 M933.8,34.3l0,0 M933.8,93.0l0,0 M933.8,102.8l0,0 M933.8,112.6l0,0 M933.8,122.4l0,0 M933.8,132.2l0,0 M933.8,142.0l0,0 M933.8,151.8l0,0 M933.8,190.9l0,0 M933.8,200.7l0,0 M933.8,210.5l0,0 M933.8,220.3l0,0 M933.8,230.1l0,0 M933.8,239.9l0,0 M933.8,269.3l0,0 M933.8,298.6l0,0 M933.8,308.4l0,0 M933.8,318.2l0,0 M933.8,328.0l0,0 M933.8,337.8l0,0 M933.8,386.8l0,0 M933.8,396.6l0,0 M933.8,406.3l0,0 M933.8,416.1l0,0 M933.8,425.9l0,0 M933.8,435.7l0,0 M933.8,445.5l0,0 M933.8,455.3l0,0 M933.8,465.1l0,0 M933.8,474.9l0,0 M943.6,24.5l0,0 M943.6,83.2l0,0 M943.6,93.0l0,0 M943.6,102.8l0,0 M943.6,112.6l0,0 M943.6,122.4l0,0 M943.6,132.2l0,0 M943.6,142.0l0,0 M943.6,151.8l0,0 M943.6,181.1l0,0 M943.6,190.9l0,0 M943.6,200.7l0,0 M943.6,210.5l0,0 M943.6,220.3l0,0 M943.6,230.1l0,0 M943.6,239.9l0,0 M943.6,259.5l0,0 M943.6,269.3l0,0 M943.6,279.1l0,0 M943.6,288.9l0,0 M943.6,298.6l0,0 M943.6,308.4l0,0 M943.6,318.2l0,0 M943.6,328.0l0,0 M943.6,386.8l0,0 M943.6,396.6l0,0 M943.6,406.3l0,0 M943.6,416.1l0,0 M943.6,435.7l0,0 M943.6,445.5l0,0 M943.6,455.3l0,0 M943.6,465.1l0,0 M953.3,83.2l0,0 M953.3,93.0l0,0 M953.3,102.8l0,0 M953.3,112.6l0,0 M953.3,122.4l0,0 M953.3,132.2l0,0 M953.3,142.0l0,0 M953.3,171.4l0,0 M953.3,181.1l0,0 M953.3,190.9l0,0 M953.3,200.7l0,0 M953.3,210.5l0,0 M953.3,220.3l0,0 M953.3,230.1l0,0 M953.3,249.7l0,0 M953.3,259.5l0,0 M953.3,269.3l0,0 M953.3,279.1l0,0 M953.3,288.9l0,0 M953.3,308.4l0,0 M953.3,318.2l0,0 M953.3,337.8l0,0 M953.3,396.6l0,0 M953.3,406.3l0,0 M953.3,435.7l0,0 M953.3,445.5l0,0 M953.3,455.3l0,0 M963.1,73.4l0,0 M963.1,83.2l0,0 M963.1,93.0l0,0 M963.1,102.8l0,0 M963.1,112.6l0,0 M963.1,122.4l0,0 M963.1,132.2l0,0 M963.1,161.6l0,0 M963.1,171.4l0,0 M963.1,181.1l0,0 M963.1,190.9l0,0 M963.1,210.5l0,0 M963.1,220.3l0,0 M963.1,259.5l0,0 M963.1,269.3l0,0 M963.1,279.1l0,0 M963.1,288.9l0,0 M963.1,308.4l0,0 M963.1,318.2l0,0 M963.1,328.0l0,0 M963.1,337.8l0,0 M963.1,347.6l0,0 M972.9,73.4l0,0 M972.9,83.2l0,0 M972.9,93.0l0,0 M972.9,102.8l0,0 M972.9,112.6l0,0 M972.9,122.4l0,0 M972.9,132.2l0,0 M972.9,142.0l0,0 M972.9,161.6l0,0 M972.9,171.4l0,0 M972.9,181.1l0,0 M972.9,259.5l0,0 M972.9,269.3l0,0 M972.9,279.1l0,0 M972.9,288.9l0,0 M972.9,308.4l0,0 M972.9,318.2l0,0 M972.9,328.0l0,0 M972.9,337.8l0,0 M972.9,347.6l0,0 M982.7,73.4l0,0 M982.7,83.2l0,0 M982.7,93.0l0,0 M982.7,102.8l0,0 M982.7,112.6l0,0 M982.7,122.4l0,0 M982.7,132.2l0,0 M982.7,142.0l0,0 M982.7,161.6l0,0 M982.7,171.4l0,0 M982.7,181.1l0,0 M982.7,190.9l0,0 M982.7,200.7l0,0 M982.7,269.3l0,0 M982.7,279.1l0,0 M982.7,288.9l0,0 M982.7,298.6l0,0 M982.7,308.4l0,0 M982.7,318.2l0,0 M982.7,328.0l0,0 M982.7,337.8l0,0 M982.7,347.6l0,0 M992.4,73.4l0,0 M992.4,83.2l0,0 M992.4,93.0l0,0 M992.4,102.8l0,0 M992.4,112.6l0,0 M992.4,122.4l0,0 M992.4,132.2l0,0 M992.4,151.8l0,0 M992.4,161.6l0,0 M992.4,171.4l0,0 M992.4,181.1l0,0 M992.4,190.9l0,0 M992.4,200.7l0,0 M992.4,269.3l0,0 M992.4,279.1l0,0 M992.4,288.9l0,0 M992.4,298.6l0,0 M992.4,308.4l0,0 M992.4,318.2l0,0 M992.4,435.7l0,0 M1002.2,73.4l0,0 M1002.2,83.2l0,0 M1002.2,93.0l0,0 M1002.2,102.8l0,0 M1002.2,112.6l0,0 M1002.2,122.4l0,0 M1002.2,132.2l0,0 M1002.2,151.8l0,0 M1002.2,161.6l0,0 M1002.2,171.4l0,0 M1002.2,181.1l0,0 M1002.2,190.9l0,0 M1002.2,200.7l0,0 M1002.2,210.5l0,0 M1002.2,220.3l0,0 M1002.2,279.1l0,0 M1002.2,288.9l0,0 M1002.2,298.6l0,0 M1002.2,308.4l0,0 M1002.2,396.6l0,0 M1002.2,406.3l0,0 M1002.2,416.1l0,0 M1002.2,425.9l0,0 M1002.2,435.7l0,0 M1012.0,73.4l0,0 M1012.0,83.2l0,0 M1012.0,93.0l0,0 M1012.0,102.8l0,0 M1012.0,112.6l0,0 M1012.0,122.4l0,0 M1012.0,132.2l0,0 M1012.0,142.0l0,0 M1012.0,151.8l0,0 M1012.0,161.6l0,0 M1012.0,171.4l0,0 M1012.0,181.1l0,0 M1012.0,190.9l0,0 M1012.0,200.7l0,0 M1012.0,210.5l0,0 M1012.0,220.3l0,0 M1012.0,298.6l0,0 M1012.0,308.4l0,0 M1012.0,396.6l0,0 M1012.0,406.3l0,0 M1012.0,416.1l0,0 M1012.0,425.9l0,0 M1012.0,435.7l0,0 M1021.8,44.1l0,0 M1021.8,53.9l0,0 M1021.8,63.6l0,0 M1021.8,73.4l0,0 M1021.8,83.2l0,0 M1021.8,93.0l0,0 M1021.8,102.8l0,0 M1021.8,112.6l0,0 M1021.8,122.4l0,0 M1021.8,132.2l0,0 M1021.8,142.0l0,0 M1021.8,161.6l0,0 M1021.8,171.4l0,0 M1021.8,181.1l0,0 M1021.8,190.9l0,0 M1021.8,200.7l0,0 M1021.8,210.5l0,0 M1021.8,220.3l0,0 M1021.8,298.6l0,0 M1021.8,308.4l0,0 M1021.8,406.3l0,0 M1021.8,425.9l0,0 M1031.6,24.5l0,0 M1031.6,34.3l0,0 M1031.6,44.1l0,0 M1031.6,53.9l0,0 M1031.6,63.6l0,0 M1031.6,73.4l0,0 M1031.6,83.2l0,0 M1031.6,93.0l0,0 M1031.6,102.8l0,0 M1031.6,112.6l0,0 M1031.6,122.4l0,0 M1031.6,132.2l0,0 M1031.6,142.0l0,0 M1031.6,151.8l0,0 M1031.6,161.6l0,0 M1031.6,171.4l0,0 M1031.6,181.1l0,0 M1031.6,190.9l0,0 M1031.6,200.7l0,0 M1031.6,210.5l0,0 M1031.6,220.3l0,0 M1041.3,14.7l0,0 M1041.3,24.5l0,0 M1041.3,34.3l0,0 M1041.3,44.1l0,0 M1041.3,53.9l0,0 M1041.3,63.6l0,0 M1041.3,73.4l0,0 M1041.3,83.2l0,0 M1041.3,93.0l0,0 M1041.3,102.8l0,0 M1041.3,112.6l0,0 M1041.3,122.4l0,0 M1041.3,132.2l0,0 M1041.3,142.0l0,0 M1041.3,151.8l0,0 M1041.3,161.6l0,0 M1041.3,171.4l0,0 M1041.3,190.9l0,0 M1041.3,200.7l0,0 M1041.3,210.5l0,0 M1041.3,220.3l0,0 M1041.3,230.1l0,0 M1051.1,14.7l0,0 M1051.1,24.5l0,0 M1051.1,34.3l0,0 M1051.1,44.1l0,0 M1051.1,53.9l0,0 M1051.1,63.6l0,0 M1051.1,73.4l0,0 M1051.1,83.2l0,0 M1051.1,93.0l0,0 M1051.1,102.8l0,0 M1051.1,112.6l0,0 M1051.1,122.4l0,0 M1051.1,132.2l0,0 M1051.1,142.0l0,0 M1051.1,151.8l0,0 M1051.1,161.6l0,0 M1051.1,200.7l0,0 M1051.1,210.5l0,0 M1051.1,220.3l0,0 M1051.1,230.1l0,0 M1060.9,14.7l0,0 M1060.9,24.5l0,0 M1060.9,34.3l0,0 M1060.9,44.1l0,0 M1060.9,53.9l0,0 M1060.9,63.6l0,0 M1060.9,73.4l0,0 M1060.9,83.2l0,0 M1060.9,93.0l0,0 M1060.9,102.8l0,0 M1060.9,112.6l0,0 M1060.9,122.4l0,0 M1060.9,132.2l0,0 M1060.9,142.0l0,0 M1060.9,151.8l0,0 M1060.9,161.6l0,0 M1060.9,210.5l0,0 M1060.9,220.3l0,0 M1060.9,230.1l0,0 M1060.9,239.9l0,0 M1070.7,14.7l0,0 M1070.7,24.5l0,0 M1070.7,34.3l0,0 M1070.7,44.1l0,0 M1070.7,53.9l0,0 M1070.7,63.6l0,0 M1070.7,73.4l0,0 M1070.7,83.2l0,0 M1070.7,93.0l0,0 M1070.7,102.8l0,0 M1070.7,112.6l0,0 M1070.7,122.4l0,0 M1070.7,132.2l0,0 M1070.7,142.0l0,0 M1070.7,151.8l0,0 M1070.7,161.6l0,0 M1070.7,230.1l0,0 M1080.4,4.9l0,0 M1080.4,14.7l0,0 M1080.4,24.5l0,0 M1080.4,34.3l0,0 M1080.4,44.1l0,0 M1080.4,53.9l0,0 M1080.4,63.6l0,0 M1080.4,73.4l0,0 M1080.4,83.2l0,0 M1080.4,93.0l0,0 M1080.4,102.8l0,0 M1080.4,112.6l0,0 M1080.4,122.4l0,0 M1080.4,132.2l0,0 M1080.4,142.0l0,0 M1080.4,151.8l0,0 M1080.4,161.6l0,0 M1090.2,4.9l0,0 M1090.2,14.7l0,0 M1090.2,24.5l0,0 M1090.2,34.3l0,0 M1090.2,44.1l0,0 M1090.2,53.9l0,0 M1090.2,63.6l0,0 M1090.2,73.4l0,0 M1090.2,83.2l0,0 M1090.2,93.0l0,0 M1090.2,102.8l0,0 M1090.2,112.6l0,0 M1090.2,122.4l0,0 M1090.2,132.2l0,0 M1090.2,142.0l0,0 M1090.2,151.8l0,0 M1090.2,161.6l0,0 M1100.0,4.9l0,0 M1100.0,14.7l0,0 M1100.0,24.5l0,0 M1100.0,34.3l0,0 M1100.0,44.1l0,0 M1100.0,53.9l0,0 M1100.0,63.6l0,0 M1100.0,73.4l0,0 M1100.0,83.2l0,0 M1100.0,93.0l0,0 M1100.0,102.8l0,0 M1100.0,112.6l0,0 M1100.0,122.4l0,0 M1100.0,132.2l0,0 M1100.0,142.0l0,0 M1100.0,151.8l0,0 M1100.0,161.6l0,0 M1100.0,171.4l0,0 M1109.8,4.9l0,0 M1109.8,14.7l0,0 M1109.8,24.5l0,0 M1109.8,34.3l0,0 M1109.8,44.1l0,0 M1109.8,53.9l0,0 M1109.8,63.6l0,0 M1109.8,73.4l0,0 M1109.8,83.2l0,0 M1109.8,93.0l0,0 M1109.8,102.8l0,0 M1109.8,112.6l0,0 M1109.8,122.4l0,0 M1109.8,132.2l0,0 M1109.8,142.0l0,0 M1109.8,151.8l0,0 M1109.8,161.6l0,0 M1109.8,171.4l0,0 M1109.8,210.5l0,0 M1109.8,239.9l0,0 M1109.8,249.7l0,0 M1109.8,259.5l0,0 M1119.6,4.9l0,0 M1119.6,14.7l0,0 M1119.6,24.5l0,0 M1119.6,34.3l0,0 M1119.6,44.1l0,0 M1119.6,53.9l0,0 M1119.6,63.6l0,0 M1119.6,73.4l0,0 M1119.6,83.2l0,0 M1119.6,93.0l0,0 M1119.6,102.8l0,0 M1119.6,112.6l0,0 M1119.6,122.4l0,0 M1119.6,132.2l0,0 M1119.6,142.0l0,0 M1119.6,151.8l0,0 M1119.6,161.6l0,0 M1119.6,171.4l0,0 M1119.6,210.5l0,0 M1119.6,220.3l0,0 M1119.6,230.1l0,0 M1119.6,239.9l0,0 M1119.6,249.7l0,0 M1119.6,259.5l0,0 M1119.6,279.1l0,0 M1119.6,288.9l0,0 M1129.3,4.9l0,0 M1129.3,14.7l0,0 M1129.3,24.5l0,0 M1129.3,34.3l0,0 M1129.3,44.1l0,0 M1129.3,53.9l0,0 M1129.3,63.6l0,0 M1129.3,73.4l0,0 M1129.3,83.2l0,0 M1129.3,102.8l0,0 M1129.3,112.6l0,0 M1129.3,122.4l0,0 M1129.3,132.2l0,0 M1129.3,142.0l0,0 M1129.3,151.8l0,0 M1129.3,161.6l0,0 M1129.3,210.5l0,0 M1129.3,220.3l0,0 M1129.3,230.1l0,0 M1129.3,239.9l0,0 M1129.3,249.7l0,0 M1129.3,259.5l0,0 M1129.3,269.3l0,0 M1139.1,4.9l0,0 M1139.1,14.7l0,0 M1139.1,24.5l0,0 M1139.1,34.3l0,0 M1139.1,44.1l0,0 M1139.1,53.9l0,0 M1139.1,63.6l0,0 M1139.1,73.4l0,0 M1139.1,83.2l0,0 M1139.1,93.0l0,0 M1139.1,102.8l0,0 M1139.1,112.6l0,0 M1139.1,122.4l0,0 M1139.1,132.2l0,0 M1139.1,142.0l0,0 M1139.1,151.8l0,0 M1139.1,161.6l0,0 M1139.1,171.4l0,0 M1139.1,181.1l0,0 M1139.1,210.5l0,0 M1139.1,220.3l0,0 M1139.1,230.1l0,0 M1139.1,239.9l0,0 M1139.1,249.7l0,0 M1139.1,259.5l0,0 M1139.1,269.3l0,0 M1139.1,279.1l0,0 M1139.1,288.9l0,0 M1139.1,298.6l0,0 M1139.1,308.4l0,0 M1148.9,4.9l0,0 M1148.9,14.7l0,0 M1148.9,24.5l0,0 M1148.9,34.3l0,0 M1148.9,44.1l0,0 M1148.9,53.9l0,0 M1148.9,63.6l0,0 M1148.9,73.4l0,0 M1148.9,83.2l0,0 M1148.9,93.0l0,0 M1148.9,102.8l0,0 M1148.9,112.6l0,0 M1148.9,122.4l0,0 M1148.9,132.2l0,0 M1148.9,142.0l0,0 M1148.9,151.8l0,0 M1148.9,161.6l0,0 M1148.9,171.4l0,0 M1148.9,181.1l0,0 M1148.9,210.5l0,0 M1148.9,220.3l0,0 M1148.9,230.1l0,0 M1148.9,239.9l0,0 M1148.9,249.7l0,0 M1148.9,259.5l0,0 M1148.9,269.3l0,0 M1148.9,279.1l0,0 M1148.9,288.9l0,0 M1148.9,298.6l0,0 M1148.9,308.4l0,0 M1158.7,4.9l0,0 M1158.7,14.7l0,0 M1158.7,24.5l0,0 M1158.7,34.3l0,0 M1158.7,44.1l0,0 M1158.7,53.9l0,0 M1158.7,63.6l0,0 M1158.7,73.4l0,0 M1158.7,83.2l0,0 M1158.7,93.0l0,0 M1158.7,102.8l0,0 M1158.7,112.6l0,0 M1158.7,122.4l0,0 M1158.7,132.2l0,0 M1158.7,142.0l0,0 M1158.7,151.8l0,0 M1158.7,161.6l0,0 M1158.7,171.4l0,0 M1158.7,181.1l0,0 M1158.7,210.5l0,0 M1158.7,220.3l0,0 M1158.7,230.1l0,0 M1158.7,239.9l0,0 M1158.7,259.5l0,0 M1158.7,269.3l0,0 M1158.7,279.1l0,0 M1158.7,288.9l0,0 M1158.7,298.6l0,0 M1158.7,308.4l0,0 M1168.4,4.9l0,0 M1168.4,14.7l0,0 M1168.4,24.5l0,0 M1168.4,34.3l0,0 M1168.4,44.1l0,0 M1168.4,53.9l0,0 M1168.4,63.6l0,0 M1168.4,73.4l0,0 M1168.4,83.2l0,0 M1168.4,93.0l0,0 M1168.4,102.8l0,0 M1168.4,112.6l0,0 M1168.4,122.4l0,0 M1168.4,132.2l0,0 M1168.4,142.0l0,0 M1168.4,151.8l0,0 M1168.4,161.6l0,0 M1168.4,171.4l0,0 M1168.4,181.1l0,0 M1168.4,220.3l0,0 M1168.4,230.1l0,0 M1168.4,239.9l0,0 M1168.4,288.9l0,0 M1168.4,298.6l0,0 M1178.2,4.9l0,0 M1178.2,14.7l0,0 M1178.2,24.5l0,0 M1178.2,34.3l0,0 M1178.2,44.1l0,0 M1178.2,53.9l0,0 M1178.2,63.6l0,0 M1178.2,73.4l0,0 M1178.2,83.2l0,0 M1178.2,93.0l0,0 M1178.2,102.8l0,0 M1178.2,112.6l0,0 M1178.2,122.4l0,0 M1178.2,132.2l0,0 M1178.2,142.0l0,0 M1178.2,151.8l0,0 M1178.2,161.6l0,0 M1178.2,220.3l0,0 M1178.2,230.1l0,0 M1178.2,239.9l0,0 M1188.0,4.9l0,0 M1188.0,14.7l0,0 M1188.0,24.5l0,0 M1188.0,34.3l0,0 M1188.0,44.1l0,0 M1188.0,53.9l0,0 M1188.0,63.6l0,0 M1188.0,73.4l0,0 M1188.0,83.2l0,0 M1188.0,93.0l0,0 M1188.0,102.8l0,0 M1188.0,112.6l0,0 M1188.0,122.4l0,0 M1188.0,132.2l0,0 M1188.0,142.0l0,0 M1188.0,151.8l0,0 M1188.0,161.6l0,0 M1188.0,190.9l0,0 M1188.0,210.5l0,0 M1188.0,220.3l0,0 M1188.0,230.1l0,0 M1188.0,239.9l0,0 M1188.0,249.7l0,0 M1197.8,14.7l0,0 M1197.8,24.5l0,0 M1197.8,34.3l0,0 M1197.8,44.1l0,0 M1197.8,53.9l0,0 M1197.8,63.6l0,0 M1197.8,73.4l0,0 M1197.8,83.2l0,0 M1197.8,93.0l0,0 M1197.8,102.8l0,0 M1197.8,112.6l0,0 M1197.8,122.4l0,0 M1197.8,132.2l0,0 M1197.8,142.0l0,0 M1197.8,151.8l0,0 M1197.8,181.1l0,0 M1197.8,190.9l0,0 M1197.8,200.7l0,0 M1197.8,210.5l0,0 M1197.8,220.3l0,0 M1197.8,230.1l0,0 M1197.8,239.9l0,0 M1197.8,249.7l0,0 M1207.6,14.7l0,0 M1207.6,24.5l0,0 M1207.6,34.3l0,0 M1207.6,44.1l0,0 M1207.6,53.9l0,0 M1207.6,63.6l0,0 M1207.6,73.4l0,0 M1207.6,83.2l0,0 M1207.6,93.0l0,0 M1207.6,102.8l0,0 M1207.6,112.6l0,0 M1207.6,122.4l0,0 M1207.6,132.2l0,0 M1207.6,142.0l0,0 M1207.6,151.8l0,0 M1207.6,181.1l0,0 M1207.6,190.9l0,0 M1207.6,200.7l0,0 M1207.6,210.5l0,0 M1207.6,220.3l0,0 M1217.3,4.9l0,0 M1217.3,14.7l0,0 M1217.3,24.5l0,0 M1217.3,34.3l0,0 M1217.3,44.1l0,0 M1217.3,53.9l0,0 M1217.3,63.6l0,0 M1217.3,73.4l0,0 M1217.3,83.2l0,0 M1217.3,93.0l0,0 M1217.3,102.8l0,0 M1217.3,112.6l0,0 M1217.3,122.4l0,0 M1217.3,132.2l0,0 M1217.3,142.0l0,0 M1217.3,151.8l0,0 M1217.3,171.4l0,0 M1217.3,181.1l0,0 M1217.3,190.9l0,0 M1217.3,200.7l0,0 M1217.3,210.5l0,0 M1217.3,220.3l0,0 M1217.3,249.7l0,0 M1227.1,4.9l0,0 M1227.1,14.7l0,0 M1227.1,24.5l0,0 M1227.1,34.3l0,0 M1227.1,44.1l0,0 M1227.1,53.9l0,0 M1227.1,63.6l0,0 M1227.1,73.4l0,0 M1227.1,83.2l0,0 M1227.1,93.0l0,0 M1227.1,102.8l0,0 M1227.1,112.6l0,0 M1227.1,122.4l0,0 M1227.1,132.2l0,0 M1227.1,142.0l0,0 M1227.1,151.8l0,0 M1227.1,161.6l0,0 M1227.1,171.4l0,0 M1227.1,181.1l0,0 M1227.1,190.9l0,0 M1227.1,200.7l0,0 M1227.1,210.5l0,0 M1227.1,220.3l0,0 M1227.1,239.9l0,0 M1227.1,249.7l0,0 M1227.1,259.5l0,0 M1227.1,269.3l0,0 M1227.1,328.0l0,0 M1236.9,4.9l0,0 M1236.9,14.7l0,0 M1236.9,24.5l0,0 M1236.9,34.3l0,0 M1236.9,44.1l0,0 M1236.9,53.9l0,0 M1236.9,63.6l0,0 M1236.9,73.4l0,0 M1236.9,83.2l0,0 M1236.9,93.0l0,0 M1236.9,102.8l0,0 M1236.9,112.6l0,0 M1236.9,122.4l0,0 M1236.9,132.2l0,0 M1236.9,142.0l0,0 M1236.9,151.8l0,0 M1236.9,161.6l0,0 M1236.9,171.4l0,0 M1236.9,181.1l0,0 M1236.9,190.9l0,0 M1236.9,200.7l0,0 M1236.9,210.5l0,0 M1236.9,220.3l0,0 M1236.9,230.1l0,0 M1236.9,239.9l0,0 M1236.9,249.7l0,0 M1236.9,259.5l0,0 M1236.9,269.3l0,0 M1236.9,279.1l0,0 M1236.9,298.6l0,0 M1236.9,328.0l0,0 M1236.9,337.8l0,0 M1236.9,347.6l0,0 M1246.7,4.9l0,0 M1246.7,14.7l0,0 M1246.7,24.5l0,0 M1246.7,34.3l0,0 M1246.7,44.1l0,0 M1246.7,53.9l0,0 M1246.7,63.6l0,0 M1246.7,73.4l0,0 M1246.7,83.2l0,0 M1246.7,93.0l0,0 M1246.7,102.8l0,0 M1246.7,112.6l0,0 M1246.7,122.4l0,0 M1246.7,132.2l0,0 M1246.7,142.0l0,0 M1246.7,151.8l0,0 M1246.7,161.6l0,0 M1246.7,171.4l0,0 M1246.7,181.1l0,0 M1246.7,190.9l0,0 M1246.7,200.7l0,0 M1246.7,210.5l0,0 M1246.7,220.3l0,0 M1246.7,230.1l0,0 M1246.7,259.5l0,0 M1246.7,269.3l0,0 M1246.7,279.1l0,0 M1246.7,288.9l0,0 M1246.7,298.6l0,0 M1246.7,308.4l0,0 M1246.7,318.2l0,0 M1246.7,328.0l0,0 M1246.7,337.8l0,0 M1246.7,347.6l0,0 M1246.7,357.4l0,0 M1256.4,4.9l0,0 M1256.4,14.7l0,0 M1256.4,24.5l0,0 M1256.4,34.3l0,0 M1256.4,44.1l0,0 M1256.4,53.9l0,0 M1256.4,63.6l0,0 M1256.4,73.4l0,0 M1256.4,83.2l0,0 M1256.4,93.0l0,0 M1256.4,102.8l0,0 M1256.4,112.6l0,0 M1256.4,122.4l0,0 M1256.4,132.2l0,0 M1256.4,151.8l0,0 M1256.4,161.6l0,0 M1256.4,171.4l0,0 M1256.4,181.1l0,0 M1256.4,190.9l0,0 M1256.4,200.7l0,0 M1256.4,210.5l0,0 M1256.4,220.3l0,0 M1256.4,230.1l0,0 M1256.4,239.9l0,0 M1256.4,269.3l0,0 M1256.4,279.1l0,0 M1256.4,288.9l0,0 M1256.4,298.6l0,0 M1256.4,318.2l0,0 M1256.4,328.0l0,0 M1256.4,337.8l0,0 M1256.4,347.6l0,0 M1256.4,357.4l0,0 M1256.4,367.2l0,0 M1266.2,4.9l0,0 M1266.2,14.7l0,0 M1266.2,24.5l0,0 M1266.2,34.3l0,0 M1266.2,44.1l0,0 M1266.2,53.9l0,0 M1266.2,63.6l0,0 M1266.2,73.4l0,0 M1266.2,83.2l0,0 M1266.2,93.0l0,0 M1266.2,102.8l0,0 M1266.2,112.6l0,0 M1266.2,122.4l0,0 M1266.2,132.2l0,0 M1266.2,142.0l0,0 M1266.2,151.8l0,0 M1266.2,161.6l0,0 M1266.2,171.4l0,0 M1266.2,181.1l0,0 M1266.2,190.9l0,0 M1266.2,200.7l0,0 M1266.2,210.5l0,0 M1266.2,220.3l0,0 M1266.2,230.1l0,0 M1266.2,239.9l0,0 M1266.2,249.7l0,0 M1266.2,259.5l0,0 M1266.2,269.3l0,0 M1266.2,279.1l0,0 M1266.2,288.9l0,0 M1266.2,337.8l0,0 M1266.2,347.6l0,0 M1266.2,357.4l0,0 M1266.2,367.2l0,0 M1276.0,4.9l0,0 M1276.0,14.7l0,0 M1276.0,24.5l0,0 M1276.0,34.3l0,0 M1276.0,44.1l0,0 M1276.0,53.9l0,0 M1276.0,63.6l0,0 M1276.0,73.4l0,0 M1276.0,83.2l0,0 M1276.0,93.0l0,0 M1276.0,102.8l0,0 M1276.0,112.6l0,0 M1276.0,122.4l0,0 M1276.0,132.2l0,0 M1276.0,142.0l0,0 M1276.0,151.8l0,0 M1276.0,161.6l0,0 M1276.0,171.4l0,0 M1276.0,181.1l0,0 M1276.0,190.9l0,0 M1276.0,200.7l0,0 M1276.0,210.5l0,0 M1276.0,220.3l0,0 M1276.0,230.1l0,0 M1276.0,239.9l0,0 M1276.0,249.7l0,0 M1276.0,259.5l0,0 M1276.0,269.3l0,0 M1276.0,279.1l0,0 M1276.0,288.9l0,0 M1276.0,337.8l0,0 M1276.0,347.6l0,0 M1276.0,357.4l0,0 M1276.0,367.2l0,0 M1285.8,4.9l0,0 M1285.8,14.7l0,0 M1285.8,24.5l0,0 M1285.8,34.3l0,0 M1285.8,44.1l0,0 M1285.8,53.9l0,0 M1285.8,63.6l0,0 M1285.8,73.4l0,0 M1285.8,83.2l0,0 M1285.8,93.0l0,0 M1285.8,102.8l0,0 M1285.8,112.6l0,0 M1285.8,122.4l0,0 M1285.8,132.2l0,0 M1285.8,142.0l0,0 M1285.8,151.8l0,0 M1285.8,161.6l0,0 M1285.8,171.4l0,0 M1285.8,181.1l0,0 M1285.8,190.9l0,0 M1285.8,200.7l0,0 M1285.8,210.5l0,0 M1285.8,220.3l0,0 M1285.8,230.1l0,0 M1285.8,239.9l0,0 M1285.8,288.9l0,0 M1285.8,298.6l0,0 M1285.8,318.2l0,0 M1285.8,328.0l0,0 M1285.8,337.8l0,0 M1285.8,347.6l0,0 M1285.8,357.4l0,0 M1295.6,4.9l0,0 M1295.6,14.7l0,0 M1295.6,24.5l0,0 M1295.6,34.3l0,0 M1295.6,44.1l0,0 M1295.6,53.9l0,0 M1295.6,63.6l0,0 M1295.6,73.4l0,0 M1295.6,83.2l0,0 M1295.6,93.0l0,0 M1295.6,102.8l0,0 M1295.6,112.6l0,0 M1295.6,122.4l0,0 M1295.6,132.2l0,0 M1295.6,142.0l0,0 M1295.6,151.8l0,0 M1295.6,161.6l0,0 M1295.6,171.4l0,0 M1295.6,181.1l0,0 M1295.6,190.9l0,0 M1295.6,200.7l0,0 M1295.6,210.5l0,0 M1295.6,220.3l0,0 M1295.6,230.1l0,0 M1295.6,239.9l0,0 M1295.6,269.3l0,0 M1295.6,328.0l0,0 M1295.6,337.8l0,0 M1295.6,347.6l0,0 M1295.6,357.4l0,0 M1305.3,4.9l0,0 M1305.3,14.7l0,0 M1305.3,24.5l0,0 M1305.3,34.3l0,0 M1305.3,44.1l0,0 M1305.3,53.9l0,0 M1305.3,63.6l0,0 M1305.3,73.4l0,0 M1305.3,83.2l0,0 M1305.3,93.0l0,0 M1305.3,102.8l0,0 M1305.3,112.6l0,0 M1305.3,122.4l0,0 M1305.3,132.2l0,0 M1305.3,142.0l0,0 M1305.3,151.8l0,0 M1305.3,161.6l0,0 M1305.3,171.4l0,0 M1305.3,181.1l0,0 M1305.3,190.9l0,0 M1305.3,200.7l0,0 M1305.3,210.5l0,0 M1305.3,220.3l0,0 M1305.3,230.1l0,0 M1305.3,239.9l0,0 M1305.3,249.7l0,0 M1305.3,318.2l0,0 M1305.3,347.6l0,0 M1305.3,357.4l0,0 M1305.3,367.2l0,0 M1305.3,377.0l0,0 M1305.3,445.5l0,0 M1305.3,455.3l0,0 M1305.3,465.1l0,0 M1305.3,474.9l0,0 M1315.1,4.9l0,0 M1315.1,14.7l0,0 M1315.1,24.5l0,0 M1315.1,34.3l0,0 M1315.1,44.1l0,0 M1315.1,53.9l0,0 M1315.1,63.6l0,0 M1315.1,73.4l0,0 M1315.1,83.2l0,0 M1315.1,102.8l0,0 M1315.1,112.6l0,0 M1315.1,122.4l0,0 M1315.1,132.2l0,0 M1315.1,142.0l0,0 M1315.1,151.8l0,0 M1315.1,161.6l0,0 M1315.1,171.4l0,0 M1315.1,181.1l0,0 M1315.1,190.9l0,0 M1315.1,200.7l0,0 M1315.1,210.5l0,0 M1315.1,220.3l0,0 M1315.1,230.1l0,0 M1315.1,239.9l0,0 M1315.1,249.7l0,0 M1315.1,337.8l0,0 M1315.1,347.6l0,0 M1315.1,357.4l0,0 M1315.1,367.2l0,0 M1315.1,377.0l0,0 M1315.1,435.7l0,0 M1315.1,445.5l0,0 M1315.1,455.3l0,0 M1315.1,465.1l0,0 M1315.1,474.9l0,0 M1315.1,484.7l0,0 M1324.9,4.9l0,0 M1324.9,14.7l0,0 M1324.9,24.5l0,0 M1324.9,34.3l0,0 M1324.9,44.1l0,0 M1324.9,53.9l0,0 M1324.9,63.6l0,0 M1324.9,73.4l0,0 M1324.9,83.2l0,0 M1324.9,102.8l0,0 M1324.9,112.6l0,0 M1324.9,122.4l0,0 M1324.9,132.2l0,0 M1324.9,142.0l0,0 M1324.9,151.8l0,0 M1324.9,161.6l0,0 M1324.9,171.4l0,0 M1324.9,181.1l0,0 M1324.9,190.9l0,0 M1324.9,200.7l0,0 M1324.9,210.5l0,0 M1324.9,220.3l0,0 M1324.9,230.1l0,0 M1324.9,239.9l0,0 M1324.9,337.8l0,0 M1324.9,347.6l0,0 M1324.9,357.4l0,0 M1324.9,367.2l0,0 M1324.9,377.0l0,0 M1324.9,425.9l0,0 M1324.9,435.7l0,0 M1324.9,445.5l0,0 M1324.9,455.3l0,0 M1324.9,465.1l0,0 M1324.9,474.9l0,0 M1324.9,484.7l0,0 M1334.7,14.7l0,0 M1334.7,24.5l0,0 M1334.7,34.3l0,0 M1334.7,44.1l0,0 M1334.7,53.9l0,0 M1334.7,63.6l0,0 M1334.7,73.4l0,0 M1334.7,83.2l0,0 M1334.7,102.8l0,0 M1334.7,112.6l0,0 M1334.7,122.4l0,0 M1334.7,132.2l0,0 M1334.7,142.0l0,0 M1334.7,151.8l0,0 M1334.7,161.6l0,0 M1334.7,171.4l0,0 M1334.7,181.1l0,0 M1334.7,190.9l0,0 M1334.7,200.7l0,0 M1334.7,210.5l0,0 M1334.7,220.3l0,0 M1334.7,230.1l0,0 M1334.7,259.5l0,0 M1334.7,269.3l0,0 M1334.7,279.1l0,0 M1334.7,288.9l0,0 M1334.7,347.6l0,0 M1334.7,357.4l0,0 M1334.7,367.2l0,0 M1334.7,377.0l0,0 M1334.7,386.8l0,0 M1334.7,425.9l0,0 M1334.7,435.7l0,0 M1334.7,445.5l0,0 M1334.7,455.3l0,0 M1334.7,465.1l0,0 M1334.7,474.9l0,0 M1334.7,484.7l0,0 M1334.7,494.5l0,0 M1344.4,14.7l0,0 M1344.4,24.5l0,0 M1344.4,34.3l0,0 M1344.4,44.1l0,0 M1344.4,53.9l0,0 M1344.4,63.6l0,0 M1344.4,73.4l0,0 M1344.4,83.2l0,0 M1344.4,102.8l0,0 M1344.4,112.6l0,0 M1344.4,122.4l0,0 M1344.4,132.2l0,0 M1344.4,142.0l0,0 M1344.4,151.8l0,0 M1344.4,161.6l0,0 M1344.4,171.4l0,0 M1344.4,181.1l0,0 M1344.4,190.9l0,0 M1344.4,200.7l0,0 M1344.4,210.5l0,0 M1344.4,259.5l0,0 M1344.4,269.3l0,0 M1344.4,279.1l0,0 M1344.4,288.9l0,0 M1344.4,357.4l0,0 M1344.4,367.2l0,0 M1344.4,377.0l0,0 M1344.4,425.9l0,0 M1344.4,435.7l0,0 M1344.4,445.5l0,0 M1344.4,455.3l0,0 M1344.4,465.1l0,0 M1344.4,474.9l0,0 M1344.4,484.7l0,0 M1344.4,494.5l0,0 M1354.2,14.7l0,0 M1354.2,24.5l0,0 M1354.2,34.3l0,0 M1354.2,44.1l0,0 M1354.2,53.9l0,0 M1354.2,63.6l0,0 M1354.2,73.4l0,0 M1354.2,83.2l0,0 M1354.2,102.8l0,0 M1354.2,112.6l0,0 M1354.2,122.4l0,0 M1354.2,132.2l0,0 M1354.2,142.0l0,0 M1354.2,151.8l0,0 M1354.2,161.6l0,0 M1354.2,171.4l0,0 M1354.2,181.1l0,0 M1354.2,190.9l0,0 M1354.2,200.7l0,0 M1354.2,288.9l0,0 M1354.2,298.6l0,0 M1354.2,308.4l0,0 M1354.2,347.6l0,0 M1354.2,357.4l0,0 M1354.2,367.2l0,0 M1354.2,377.0l0,0 M1354.2,435.7l0,0 M1354.2,445.5l0,0 M1354.2,455.3l0,0 M1354.2,465.1l0,0 M1354.2,474.9l0,0 M1354.2,484.7l0,0 M1354.2,494.5l0,0 M1364.0,14.7l0,0 M1364.0,24.5l0,0 M1364.0,34.3l0,0 M1364.0,44.1l0,0 M1364.0,53.9l0,0 M1364.0,63.6l0,0 M1364.0,73.4l0,0 M1364.0,83.2l0,0 M1364.0,102.8l0,0 M1364.0,112.6l0,0 M1364.0,122.4l0,0 M1364.0,132.2l0,0 M1364.0,142.0l0,0 M1364.0,151.8l0,0 M1364.0,161.6l0,0 M1364.0,171.4l0,0 M1364.0,181.1l0,0 M1364.0,347.6l0,0 M1364.0,357.4l0,0 M1364.0,445.5l0,0 M1364.0,455.3l0,0 M1364.0,465.1l0,0 M1364.0,474.9l0,0 M1364.0,484.7l0,0 M1364.0,494.5l0,0 M1373.8,24.5l0,0 M1373.8,44.1l0,0 M1373.8,53.9l0,0 M1373.8,63.6l0,0 M1373.8,73.4l0,0 M1373.8,83.2l0,0 M1373.8,102.8l0,0 M1373.8,112.6l0,0 M1373.8,122.4l0,0 M1373.8,132.2l0,0 M1373.8,142.0l0,0 M1373.8,151.8l0,0 M1373.8,161.6l0,0 M1373.8,171.4l0,0 M1373.8,181.1l0,0 M1373.8,190.9l0,0 M1373.8,200.7l0,0 M1373.8,347.6l0,0 M1373.8,357.4l0,0 M1373.8,367.2l0,0 M1373.8,377.0l0,0 M1373.8,416.1l0,0 M1373.8,425.9l0,0 M1373.8,435.7l0,0 M1373.8,445.5l0,0 M1373.8,455.3l0,0 M1373.8,465.1l0,0 M1373.8,474.9l0,0 M1373.8,484.7l0,0 M1373.8,494.5l0,0 M1383.6,44.1l0,0 M1383.6,53.9l0,0 M1383.6,63.6l0,0 M1383.6,73.4l0,0 M1383.6,83.2l0,0 M1383.6,102.8l0,0 M1383.6,112.6l0,0 M1383.6,122.4l0,0 M1383.6,132.2l0,0 M1383.6,142.0l0,0 M1383.6,151.8l0,0 M1383.6,181.1l0,0 M1383.6,190.9l0,0 M1383.6,200.7l0,0 M1383.6,347.6l0,0 M1383.6,357.4l0,0 M1383.6,367.2l0,0 M1383.6,377.0l0,0 M1383.6,416.1l0,0 M1383.6,425.9l0,0 M1383.6,435.7l0,0 M1383.6,445.5l0,0 M1383.6,455.3l0,0 M1383.6,465.1l0,0 M1383.6,474.9l0,0 M1383.6,484.7l0,0 M1383.6,494.5l0,0 M1383.6,504.3l0,0 M1393.3,44.1l0,0 M1393.3,53.9l0,0 M1393.3,63.6l0,0 M1393.3,73.4l0,0 M1393.3,83.2l0,0 M1393.3,93.0l0,0 M1393.3,112.6l0,0 M1393.3,122.4l0,0 M1393.3,132.2l0,0 M1393.3,142.0l0,0 M1393.3,151.8l0,0 M1393.3,181.1l0,0 M1393.3,190.9l0,0 M1393.3,347.6l0,0 M1393.3,357.4l0,0 M1393.3,416.1l0,0 M1393.3,425.9l0,0 M1393.3,435.7l0,0 M1393.3,445.5l0,0 M1393.3,455.3l0,0 M1393.3,465.1l0,0 M1393.3,474.9l0,0 M1393.3,484.7l0,0 M1393.3,494.5l0,0 M1393.3,504.3l0,0 M1403.1,44.1l0,0 M1403.1,53.9l0,0 M1403.1,63.6l0,0 M1403.1,73.4l0,0 M1403.1,83.2l0,0 M1403.1,93.0l0,0 M1403.1,102.8l0,0 M1403.1,112.6l0,0 M1403.1,122.4l0,0 M1403.1,132.2l0,0 M1403.1,142.0l0,0 M1403.1,171.4l0,0 M1403.1,181.1l0,0 M1403.1,190.9l0,0 M1403.1,347.6l0,0 M1403.1,357.4l0,0 M1403.1,425.9l0,0 M1403.1,435.7l0,0 M1403.1,445.5l0,0 M1403.1,455.3l0,0 M1403.1,465.1l0,0 M1403.1,484.7l0,0 M1403.1,494.5l0,0 M1403.1,504.3l0,0 M1412.9,44.1l0,0 M1412.9,53.9l0,0 M1412.9,63.6l0,0 M1412.9,73.4l0,0 M1412.9,83.2l0,0 M1412.9,93.0l0,0 M1412.9,112.6l0,0 M1412.9,122.4l0,0 M1412.9,132.2l0,0 M1412.9,142.0l0,0 M1412.9,151.8l0,0 M1412.9,161.6l0,0 M1412.9,171.4l0,0 M1412.9,181.1l0,0 M1412.9,190.9l0,0 M1412.9,347.6l0,0 M1412.9,357.4l0,0 M1412.9,367.2l0,0 M1412.9,377.0l0,0 M1412.9,416.1l0,0 M1412.9,425.9l0,0 M1412.9,435.7l0,0 M1412.9,445.5l0,0 M1412.9,455.3l0,0 M1412.9,465.1l0,0 M1412.9,484.7l0,0 M1412.9,494.5l0,0 M1412.9,504.3l0,0 M1412.9,514.1l0,0 M1422.7,53.9l0,0 M1422.7,63.6l0,0 M1422.7,73.4l0,0 M1422.7,83.2l0,0 M1422.7,93.0l0,0 M1422.7,112.6l0,0 M1422.7,122.4l0,0 M1422.7,132.2l0,0 M1422.7,142.0l0,0 M1422.7,151.8l0,0 M1422.7,161.6l0,0 M1422.7,171.4l0,0 M1422.7,181.1l0,0 M1422.7,190.9l0,0 M1422.7,347.6l0,0 M1422.7,357.4l0,0 M1422.7,367.2l0,0 M1422.7,377.0l0,0 M1422.7,416.1l0,0 M1422.7,425.9l0,0 M1422.7,435.7l0,0 M1422.7,445.5l0,0 M1422.7,455.3l0,0 M1422.7,465.1l0,0 M1422.7,494.5l0,0 M1422.7,504.3l0,0 M1422.7,514.1l0,0 M1432.4,53.9l0,0 M1432.4,63.6l0,0 M1432.4,73.4l0,0 M1432.4,83.2l0,0 M1432.4,93.0l0,0 M1432.4,112.6l0,0 M1432.4,122.4l0,0 M1432.4,132.2l0,0 M1432.4,142.0l0,0 M1432.4,151.8l0,0 M1432.4,161.6l0,0 M1432.4,171.4l0,0 M1432.4,181.1l0,0 M1432.4,347.6l0,0 M1432.4,357.4l0,0 M1432.4,367.2l0,0 M1432.4,377.0l0,0 M1432.4,386.8l0,0 M1432.4,416.1l0,0 M1432.4,425.9l0,0 M1432.4,435.7l0,0 M1432.4,445.5l0,0 M1432.4,455.3l0,0 M1432.4,465.1l0,0 M1432.4,494.5l0,0 M1432.4,504.3l0,0 M1432.4,514.1l0,0 M1442.2,53.9l0,0 M1442.2,63.6l0,0 M1442.2,73.4l0,0 M1442.2,83.2l0,0 M1442.2,93.0l0,0 M1442.2,102.8l0,0 M1442.2,112.6l0,0 M1442.2,122.4l0,0 M1442.2,132.2l0,0 M1442.2,142.0l0,0 M1442.2,151.8l0,0 M1442.2,347.6l0,0 M1442.2,357.4l0,0 M1442.2,367.2l0,0 M1442.2,377.0l0,0 M1442.2,416.1l0,0 M1442.2,425.9l0,0 M1442.2,435.7l0,0 M1442.2,445.5l0,0 M1442.2,455.3l0,0 M1442.2,465.1l0,0 M1442.2,474.9l0,0 M1442.2,484.7l0,0 M1442.2,494.5l0,0 M1442.2,504.3l0,0 M1442.2,514.1l0,0 M1452.0,53.9l0,0 M1452.0,63.6l0,0 M1452.0,73.4l0,0 M1452.0,83.2l0,0 M1452.0,93.0l0,0 M1452.0,112.6l0,0 M1452.0,122.4l0,0 M1452.0,132.2l0,0 M1452.0,142.0l0,0 M1452.0,357.4l0,0 M1452.0,367.2l0,0 M1452.0,377.0l0,0 M1452.0,416.1l0,0 M1452.0,425.9l0,0 M1452.0,435.7l0,0 M1452.0,445.5l0,0 M1452.0,455.3l0,0 M1452.0,465.1l0,0 M1452.0,474.9l0,0 M1452.0,484.7l0,0 M1452.0,494.5l0,0 M1452.0,504.3l0,0 M1452.0,514.1l0,0 M1452.0,523.8l0,0 M1461.8,53.9l0,0 M1461.8,63.6l0,0 M1461.8,73.4l0,0 M1461.8,83.2l0,0 M1461.8,93.0l0,0 M1461.8,112.6l0,0 M1461.8,122.4l0,0 M1461.8,132.2l0,0 M1461.8,142.0l0,0 M1461.8,367.2l0,0 M1461.8,377.0l0,0 M1461.8,425.9l0,0 M1461.8,435.7l0,0 M1461.8,445.5l0,0 M1461.8,455.3l0,0 M1461.8,465.1l0,0 M1461.8,474.9l0,0 M1461.8,484.7l0,0 M1461.8,494.5l0,0 M1461.8,504.3l0,0 M1461.8,514.1l0,0 M1461.8,523.8l0,0 M1471.6,53.9l0,0 M1471.6,63.6l0,0 M1471.6,73.4l0,0 M1471.6,83.2l0,0 M1471.6,93.0l0,0 M1471.6,102.8l0,0 M1471.6,112.6l0,0 M1471.6,122.4l0,0 M1471.6,132.2l0,0 M1471.6,367.2l0,0 M1471.6,377.0l0,0 M1471.6,425.9l0,0 M1471.6,435.7l0,0 M1471.6,445.5l0,0 M1471.6,455.3l0,0 M1471.6,465.1l0,0 M1471.6,474.9l0,0 M1471.6,484.7l0,0 M1471.6,494.5l0,0 M1481.3,53.9l0,0 M1481.3,63.6l0,0 M1481.3,73.4l0,0 M1481.3,83.2l0,0 M1481.3,93.0l0,0 M1481.3,102.8l0,0 M1481.3,112.6l0,0 M1481.3,122.4l0,0 M1481.3,132.2l0,0 M1481.3,425.9l0,0 M1481.3,435.7l0,0 M1481.3,445.5l0,0 M1481.3,455.3l0,0 M1481.3,465.1l0,0 M1481.3,474.9l0,0 M1491.1,44.1l0,0 M1491.1,53.9l0,0 M1491.1,63.6l0,0 M1491.1,73.4l0,0 M1491.1,83.2l0,0 M1491.1,93.0l0,0 M1491.1,102.8l0,0 M1491.1,112.6l0,0 M1491.1,122.4l0,0 M1491.1,132.2l0,0 M1491.1,445.5l0,0 M1491.1,455.3l0,0 M1491.1,465.1l0,0 M1500.9,44.1l0,0 M1500.9,53.9l0,0 M1500.9,63.6l0,0 M1500.9,73.4l0,0 M1500.9,83.2l0,0 M1500.9,102.8l0,0 M1500.9,112.6l0,0 M1500.9,122.4l0,0 M1500.9,455.3l0,0 M1500.9,465.1l0,0 M1510.7,44.1l0,0 M1510.7,53.9l0,0 M1510.7,63.6l0,0 M1510.7,73.4l0,0 M1510.7,83.2l0,0 M1510.7,93.0l0,0 M1510.7,112.6l0,0 M1510.7,122.4l0,0 M1520.4,44.1l0,0 M1520.4,53.9l0,0 M1520.4,63.6l0,0 M1520.4,73.4l0,0 M1520.4,83.2l0,0 M1520.4,93.0l0,0 M1530.2,44.1l0,0 M1530.2,53.9l0,0 M1530.2,63.6l0,0 M1530.2,73.4l0,0 M1530.2,83.2l0,0 M1530.2,93.0l0,0 M1540.0,44.1l0,0 M1540.0,53.9l0,0 M1540.0,63.6l0,0 M1540.0,73.4l0,0 M1540.0,83.2l0,0 M1540.0,93.0l0,0 M1549.8,44.1l0,0 M1549.8,53.9l0,0 M1549.8,63.6l0,0 M1549.8,73.4l0,0 M1549.8,83.2l0,0 M1549.8,93.0l0,0 M1549.8,533.6l0,0 M1549.8,543.4l0,0 M1559.6,44.1l0,0 M1559.6,53.9l0,0 M1559.6,63.6l0,0 M1559.6,73.4l0,0 M1559.6,83.2l0,0 M1559.6,93.0l0,0 M1559.6,523.8l0,0 M1559.6,533.6l0,0 M1559.6,543.4l0,0 M1569.3,44.1l0,0 M1569.3,53.9l0,0 M1569.3,63.6l0,0 M1569.3,73.4l0,0 M1569.3,83.2l0,0 M1569.3,93.0l0,0 M1569.3,504.3l0,0 M1569.3,523.8l0,0 M1569.3,533.6l0,0 M1579.1,44.1l0,0 M1579.1,53.9l0,0 M1579.1,63.6l0,0 M1579.1,73.4l0,0 M1579.1,83.2l0,0 M1579.1,504.3l0,0 M1579.1,514.1l0,0 M1579.1,523.8l0,0 M1588.9,53.9l0,0 M1588.9,63.6l0,0 M1588.9,73.4l0,0 M1588.9,83.2l0,0 M1588.9,514.1l0,0 M1598.7,53.9l0,0 M1598.7,63.6l0,0" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+
+          <!-- equator + tropics, very faint -->
+          <g stroke="rgba(160,180,220,.10)" stroke-width="1" stroke-dasharray="2 8">
+            <line x1="0" y1="332.2" x2="1600" y2="332.2"/>
+            <line x1="0" y1="227.4" x2="1600" y2="227.4"/>
+            <line x1="0" y1="437.1" x2="1600" y2="437.1"/>
+          </g>
+
+          <!-- base route -->
+          <path class="route route--base" d="M1288.9,191.4 C1293.3,188.8 1307.4,181.0 1315.6,175.8 C1323.7,170.6 1331.1,165.4 1337.8,160.2 C1344.4,155.0 1348.9,149.8 1355.6,144.6 C1362.2,139.5 1405.9,128.7 1377.8,129.1 C1349.6,129.4 1215.6,134.3 1186.7,146.9 C1157.8,159.5 1191.5,195.8 1204.4,204.7 C1217.4,213.6 1256.3,195.8 1264.4,200.3 C1272.6,204.7 1247.4,227.0 1253.3,231.4 C1259.3,235.9 1285.2,232.2 1300.0,227.0 C1314.8,221.8 1340.0,197.3 1342.2,200.3 C1344.4,203.2 1326.8,222.8 1313.3,244.8 C1299.9,266.8 1243.4,343.1 1261.3,332.2 C1279.3,321.3 1385.8,153.2 1420.9,179.4 C1456.0,205.5 1575.6,500.9 1472.0,489.1 C1368.4,477.4 909.7,170.4 799.4,109.0 C689.2,47.7 865.2,112.8 810.4,120.8 C755.7,128.8 563.5,148.9 471.1,157.1 C378.7,165.3 291.9,167.9 256.0,170.0"/>
+          <!-- flowing dashes -->
+          <path class="route route--flow" d="M1288.9,191.4 C1293.3,188.8 1307.4,181.0 1315.6,175.8 C1323.7,170.6 1331.1,165.4 1337.8,160.2 C1344.4,155.0 1348.9,149.8 1355.6,144.6 C1362.2,139.5 1405.9,128.7 1377.8,129.1 C1349.6,129.4 1215.6,134.3 1186.7,146.9 C1157.8,159.5 1191.5,195.8 1204.4,204.7 C1217.4,213.6 1256.3,195.8 1264.4,200.3 C1272.6,204.7 1247.4,227.0 1253.3,231.4 C1259.3,235.9 1285.2,232.2 1300.0,227.0 C1314.8,221.8 1340.0,197.3 1342.2,200.3 C1344.4,203.2 1326.8,222.8 1313.3,244.8 C1299.9,266.8 1243.4,343.1 1261.3,332.2 C1279.3,321.3 1385.8,153.2 1420.9,179.4 C1456.0,205.5 1575.6,500.9 1472.0,489.1 C1368.4,477.4 909.7,170.4 799.4,109.0 C689.2,47.7 865.2,112.8 810.4,120.8 C755.7,128.8 563.5,148.9 471.1,157.1 C378.7,165.3 291.9,167.9 256.0,170.0"/>
+          <!-- future dashed extension -->
+          <path class="route route--future" d="M256.0,170.0 Q216.0,144.0 115.6,222.5"/>
+
+          <text class="map-phase map-phase--1" x="1350" y="312" text-anchor="middle" data-i18n="map.phase1">① 环游中国</text>
+          <text class="map-phase map-phase--2" x="630" y="110" text-anchor="middle" data-i18n="map.phase2">② 环游世界</text>
+
+          <g class="node" transform="translate(1288.9,191.4)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city node__city--tiny" x="0" y="22" text-anchor="middle" data-i18n="map.c1">·</text><text class="node__year" x="0" y="36" text-anchor="middle" data-i18n="map.c1y">·</text>
+          </g>
+          <g class="node" transform="translate(1315.6,175.8)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2" style="animation-delay:0.4s"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city node__city--tiny" x="-13" y="4" text-anchor="end" data-i18n="map.c2">·</text>
+          </g>
+          <g class="node" transform="translate(1337.8,160.2)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2" style="animation-delay:0.8s"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city node__city--tiny" x="14" y="4" text-anchor="start" data-i18n="map.c3">·</text>
+          </g>
+          <g class="node" transform="translate(1355.6,144.6)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2" style="animation-delay:1.2s"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city node__city--tiny" x="0" y="-14" text-anchor="middle" data-i18n="map.c4">·</text>
+          </g>
+          <g class="node" transform="translate(1377.8,129.1)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2" style="animation-delay:1.6s"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city node__city--tiny" x="0" y="-14" text-anchor="middle" data-i18n="map.c5">·</text>
+          </g>
+          <g class="node" transform="translate(1186.7,146.9)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ffd58a" stroke-width="2" style="animation-delay:2.0s"/>
+            <circle class="node__core" r="5.5" fill="#ffd58a" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="-14" text-anchor="middle" data-i18n="map.c6">·</text>
+          </g>
+          <g class="node" transform="translate(1204.4,204.7)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:2.4s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="14" y="0" text-anchor="start" data-i18n="map.c7">·</text>
+          </g>
+          <g class="node" transform="translate(1264.4,200.3)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:2.8s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="14" y="-8" text-anchor="start" data-i18n="map.c8">·</text>
+          </g>
+          <g class="node" transform="translate(1253.3,231.4)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:3.2s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c9">·</text>
+          </g>
+          <g class="node" transform="translate(1300.0,227.0)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:3.6s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c10">·</text>
+          </g>
+          <g class="node" transform="translate(1342.2,200.3)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:4.0s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="14" y="4" text-anchor="start" data-i18n="map.c11">·</text><text class="node__year" x="14" y="18" text-anchor="start" data-i18n="map.c11y">·</text>
+          </g>
+          <g class="node" transform="translate(1313.3,244.8)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#ff9a76" stroke-width="2" style="animation-delay:4.4s"/>
+            <circle class="node__core" r="5.5" fill="#ff9a76" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c12">·</text><text class="node__year" x="0" y="36" text-anchor="middle" data-i18n="map.c12y">·</text>
+          </g>
+          <g class="node" transform="translate(1261.3,332.2)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:4.8s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c13">·</text><text class="node__year" x="0" y="36" text-anchor="middle" data-i18n="map.c13y">·</text>
+          </g>
+          <g class="node" transform="translate(1420.9,179.4)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:5.2s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="-16" text-anchor="middle" data-i18n="map.c14">·</text><text class="node__year" x="0" y="-30" text-anchor="middle" data-i18n="map.c14y">·</text>
+          </g>
+          <g class="node" transform="translate(1472.0,489.1)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:5.6s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c15">·</text>
+          </g>
+          <g class="node" transform="translate(799.4,109.0)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:6.0s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="-16" text-anchor="middle" data-i18n="map.c16">·</text><text class="node__year" x="0" y="-30" text-anchor="middle" data-i18n="map.c16y">·</text>
+          </g>
+          <g class="node" transform="translate(810.4,120.8)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:6.4s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="10" y="18" text-anchor="start" data-i18n="map.c17">·</text>
+          </g>
+          <g class="node" transform="translate(471.1,157.1)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:6.8s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="-16" text-anchor="middle" data-i18n="map.c18">·</text><text class="node__year" x="0" y="-30" text-anchor="middle" data-i18n="map.c18y">·</text>
+          </g>
+          <g class="node" transform="translate(256.0,170.0)">
+            <circle class="node__pulse" r="12" fill="none" stroke="#8fd0ff" stroke-width="2" style="animation-delay:7.2s"/>
+            <circle class="node__core" r="5.5" fill="#8fd0ff" stroke="#2a3450" stroke-width="2"/>
+            <text class="node__city" x="0" y="22" text-anchor="middle" data-i18n="map.c19">·</text><text class="node__year" x="0" y="36" text-anchor="middle" data-i18n="map.c19y">·</text>
+          </g>
+
+          <g class="node node--future" transform="translate(115.6,222.5)">
+            <circle class="node__core" r="6" fill="none" stroke="#8fd0ff" stroke-width="2" stroke-dasharray="3 4"/>
+            <text class="node__city" x="0" y="-16" text-anchor="middle" opacity=".75" data-i18n="map.future">未来 …</text>
+          </g>
+
+          <g class="compass" transform="translate(70,548)">
+            <circle r="26" fill="rgba(255,255,255,.05)" stroke="rgba(160,180,220,.35)" stroke-width="1.4"/>
+            <g class="compass__needle">
+              <polygon points="0,-16 4,0 0,4 -4,0" fill="#ff9a76"/>
+              <polygon points="0,16 4,0 0,-4 -4,0" fill="rgba(160,180,220,.5)"/>
+            </g>
+            <circle r="2.4" fill="#eaf0ff"/>
+            <text x="0" y="-32" text-anchor="middle" font-size="9" fill="rgba(200,215,240,.7)" font-family="Outfit, sans-serif">N</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>
