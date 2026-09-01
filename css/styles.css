@@ -20,16 +20,18 @@
   --radius: 18px;
   --tx: 0px;
   --ty: 0px;
-  /* theme-dependent */
+  /* theme-dependent — dramatic night sky: top aurora tint + horizon glow */
   --sky-bg:
-    radial-gradient(120% 90% at 50% 110%, #0e1a3a 0%, #070b22 45%, #03050f 100%);
+    radial-gradient(140% 48% at 50% 100%, rgba(46,110,150,0.55) 0%, rgba(46,110,150,0) 70%),
+    radial-gradient(95% 55% at 50% 0%, rgba(120, 90, 210, 0.30) 0%, transparent 60%),
+    linear-gradient(180deg, #060a1f 0%, #0a1132 22%, #101a48 48%, #182456 72%, #1f2c6a 90%, #0e1a3a 100%);
   --night-els: 1;   /* opacity of night-only elements */
   --day-els: 0;     /* opacity of day-only elements */
   --bird-ink: #1c2748;
   --win-color: #ffd58a;
   --glow-strength: 1;
   --brand-ink: #ffffff;
-  --meta-theme: #05081a;
+  --meta-theme: #0a1132;
   --hint-bg: rgba(12,18,38,.72);
   --hint-ink: #ffe9c2;
   --hint-border: rgba(255,213,138,.45);
@@ -116,15 +118,24 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
   transition: opacity 1.1s ease;
 }
-.nebula--a { width: 520px; height: 520px; left: -120px; top: 8%;
-  background: radial-gradient(circle, #5b6cff 0%, transparent 60%);
-  animation: drift 32s ease-in-out infinite alternate; }
+.nebula--a { 
+  /* Top aurora scrim — colors the status-bar area so it blends into the scene */
+  width: 100%; height: 360px;
+  left: 0; top: -50px;
+  border-radius: 0;
+  background: radial-gradient(ellipse 78% 100% at 50% 0%,
+    rgba(155, 120, 235, 0.50) 0%,
+    rgba(115, 85, 210, 0.22) 38%,
+    transparent 72%);
+  filter: blur(28px);
+  opacity: calc(.85 * var(--night-els));
+  animation: drift 44s ease-in-out infinite alternate; }
 .nebula--b { width: 640px; height: 640px; right: -160px; top: 18%;
   background: radial-gradient(circle, #c46bff 0%, transparent 60%);
   animation: drift 38s ease-in-out infinite alternate-reverse; }
 .nebula--c { width: 480px; height: 480px; left: 38%; top: 50%;
   background: radial-gradient(circle, #6aa9ff 0%, transparent 60%);
-  opacity: calc(.35 * var(--night-els));
+  opacity: calc(.45 * var(--night-els));
   animation: drift 44s ease-in-out infinite alternate; }
 
 @keyframes drift {
@@ -233,8 +244,8 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   width: 130px;
   height: 130px;
-  left: 7%;
-  top: 30%;
+  left: 6%;
+  top: 11%;
   border-radius: 50%;
   opacity: var(--night-els);
   transition: opacity 1.1s ease;
@@ -362,12 +373,68 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Earth ---------- */
 .layer.earth-layer { z-index: 4; }
 
+/* Earth atmosphere / horizon glow: fills the strip above the planet's arc and
+   the very bottom edge so the home indicator fuses with a glowing earth. */
+.earth-layer::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 36%;
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      transparent 48%,
+      rgba(70, 185, 150, 0.55) 74%,
+      rgba(30, 95, 72, 0.78) 90%,
+      #16301f 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ground rim-light: luminous planet-edge glow at the very bottom so the
+   navigation-bar area reads as a lit atmosphere, not a flat green patch. */
+.ground-mist {
+  position: absolute;
+  left: -25%; right: -25%;
+  bottom: 0;
+  height: 24%;
+  background:
+    radial-gradient(36% 100% at 50% 100%, rgba(210, 255, 225, 0.72) 0%, rgba(140, 240, 185, 0.42) 18%, rgba(80, 200, 140, 0.20) 40%, transparent 62%),
+    radial-gradient(85% 55% at 50% 100%, rgba(110, 225, 160, 0.50) 0%, rgba(60, 170, 110, 0.22) 32%, transparent 62%),
+    radial-gradient(102% 38% at 50% 100%, rgba(90, 190, 130, 0.36) 0%, transparent 58%);
+  filter: blur(5px);
+  pointer-events: none;
+  z-index: 3;
+  opacity: var(--night-els);
+  transition: opacity 1.1s ease;
+}
+
+/* Horizon atmosphere band — a soft teal glow sitting in the sky just above
+   the planet's edge. Placed in the sky layer so it shows wherever the earth
+   is transparent (above the arc), creating a luminous horizon on every device. */
+.horizon-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  width: 200%;
+  height: 24%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(45% 100% at 50% 100%, rgba(70, 210, 180, 0.50) 0%, rgba(40, 160, 140, 0.25) 45%, transparent 75%),
+    radial-gradient(95% 65% at 50% 100%, rgba(50, 180, 160, 0.32) 0%, transparent 68%);
+  filter: blur(16px);
+  pointer-events: none;
+  opacity: var(--night-els);
+  transition: opacity 1.1s ease;
+}
+
 .earth {
   position: absolute;
   left: 50%;
   bottom: -8%;
   width: min(1800px, 112%);
   transform: translateX(-50%);
+  z-index: 2;
   filter: drop-shadow(0 30px 80px rgba(0,0,0,.6));
   animation: earth-breath 8s ease-in-out infinite alternate;
 }
@@ -913,21 +980,44 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Day theme: keep the About page readable on the bright homepage sky ---------- */
 [data-theme="day"] .intro {
+  --ink-0: #14253c;          /* brightest text (titles/values) — was near-white, invisible on the light card */
   --ink-1: #1c2c44;
   --ink-2: #4a6a94;
 }
 [data-theme="day"] .intro__card {
-  background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.74));
-  border-color: rgba(255,255,255,.7);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.86));
+  border-color: rgba(255,255,255,.85);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.9),
-    0 30px 80px rgba(40,80,130,.22);
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 30px 80px rgba(40,80,130,.28);
 }
 [data-theme="day"] .intro__name { color: #10243f; }
 [data-theme="day"] .intro__name span { color: var(--accent-2); }
+
+/* chips / list items / work cards: swap the near-transparent night whites for a soft dark tint */
+[data-theme="day"] .intro__names li {
+  background: rgba(20,42,72,.05);
+  border-color: rgba(20,42,72,.14);
+}
+[data-theme="day"] .chip {
+  background: rgba(20,42,72,.05);
+  border-color: rgba(20,42,72,.14);
+}
+[data-theme="day"] .work {
+  background: rgba(20,42,72,.05);
+  border-color: rgba(20,42,72,.14);
+}
+/* section-title divider + timeline accent: readable on the light card */
+[data-theme="day"] .intro__sec-title::after {
+  background: linear-gradient(90deg, rgba(20,42,72,.28), transparent);
+}
+[data-theme="day"] .timeline__year { color: #b9762e; }
+[data-theme="day"] .timeline::before {
+  background: linear-gradient(180deg, rgba(185,118,46,.55), rgba(40,110,160,.4));
+}
 [data-theme="day"] .intro__socials .chip-pill {
-  background: rgba(255,255,255,.7);
-  border-color: rgba(40,80,130,.18);
+  background: rgba(255,255,255,.8);
+  border-color: rgba(40,80,130,.22);
   color: #1c2c44;
 }
 [data-theme="day"] .intro::after {
@@ -1350,7 +1440,7 @@ a { color: inherit; text-decoration: none; }
   .hint { font-size: 15px; padding: 8px 16px; gap: 8px; }
   .moon { width: 64px; height: 64px; }
   .sun { width: 80px; height: 80px; }
-  .planet--ring { width: 90px; height: 90px; }
+  .planet--ring { width: 90px; height: 90px; top: 9%; left: 5%; }
 }
 
 @media (max-width: 600px) {
