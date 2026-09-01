@@ -63,7 +63,7 @@ body {
   margin: 0;
   font-family: 'Outfit', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--ink-1);
-  background: var(--bg-0);
+  background: var(--sky-bg);          /* full-bleed fallback so any area outside the fixed scene still shows sky */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow: hidden;
@@ -79,8 +79,9 @@ a { color: inherit; text-decoration: none; }
    HERO SCENE
 ============================================ */
 .home.scene-root {
-  position: relative;
-  width: 100vw;
+  position: fixed;          /* edge-to-edge: extends under the status bar and home indicator */
+  inset: 0;
+  width: 100%;
   height: 100dvh;
   min-height: 600px;
   overflow: hidden;
@@ -671,8 +672,8 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Brand / Signature / Theme toggle ---------- */
 .brand {
   position: absolute;
-  top: 22px;
-  left: 28px;
+  top: max(22px, env(safe-area-inset-top) + 14px);
+  left: max(28px, env(safe-area-inset-left) + 14px);
   z-index: 10;
   display: flex;
   align-items: baseline;
@@ -697,8 +698,8 @@ a { color: inherit; text-decoration: none; }
 
 .theme-toggle {
   position: fixed;
-  top: 20px;
-  right: 24px;
+  top: max(20px, env(safe-area-inset-top) + 12px);
+  right: max(24px, env(safe-area-inset-right) + 14px);
   z-index: 10;
   width: 44px;
   height: 44px;
@@ -724,8 +725,8 @@ a { color: inherit; text-decoration: none; }
 /* Language toggle (next to theme toggle) */
 .lang-toggle {
   position: fixed;
-  top: 20px;
-  right: 78px;
+  top: max(20px, env(safe-area-inset-top) + 12px);
+  right: max(78px, env(safe-area-inset-right) + 68px);
   z-index: 10;
   width: 44px;
   height: 44px;
@@ -785,7 +786,7 @@ a { color: inherit; text-decoration: none; }
 
 .signature {
   position: fixed;
-  bottom: 22px;
+  bottom: max(22px, env(safe-area-inset-bottom) + 18px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -817,15 +818,25 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   inset: 0;
   z-index: 50;
-  background:
-    radial-gradient(80% 60% at 50% 0%, rgba(106,140,210,.15), transparent 70%),
-    radial-gradient(120% 100% at 50% 100%, #0a1234 0%, #05081a 70%);
+  background: var(--sky-bg);            /* same sky as the homepage, theme-adaptive */
+  background-color: var(--bg-0);
   transform: translateY(100%);
-  transition: transform .9s cubic-bezier(.16,1,.3,1);
+  transition: transform .9s cubic-bezier(.16,1,.3,1), background 1.1s ease;
   overflow: hidden;   /* .intro no longer scrolls; .intro__inner is the scroller so the back button can stay pinned */
   color: var(--ink-1);
 }
 .intro.is-open { transform: translateY(0); }
+
+/* Earth-horizon glow at the bottom, echoing the homepage scene so the page blends in */
+.intro::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 42%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, rgba(94,160,120,.10) 55%, rgba(70,120,80,.22) 100%);
+  z-index: 0;
+}
 
 .intro__bg {
   position: absolute;
@@ -845,15 +856,15 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(1px 1px at 20% 80%, #cfe2ff 50%, transparent 51%),
     radial-gradient(1px 1px at 50% 92%, #fff 50%, transparent 51%),
     radial-gradient(1.4px 1.4px at 6%  62%, #fff 50%, transparent 51%);
-  opacity: .85;
+  opacity: var(--night-els);           /* visible at night, hidden in day mode */
   animation: twinkle 5s ease-in-out infinite alternate;
 }
-@keyframes twinkle { to { opacity: .55; } }
+@keyframes twinkle { to { filter: brightness(.55); } }
 
 .intro__back {
   position: absolute;   /* pinned top-left of the non-scrolling .intro wrapper; stays put while .intro__inner scrolls */
-  top: 20px;
-  left: 22px;
+  top: max(20px, env(safe-area-inset-top) + 12px);
+  left: max(22px, env(safe-area-inset-left) + 14px);
   z-index: 60;          /* above intro content, level with the theme/lang toggles */
   width: fit-content;
   display: inline-flex;
@@ -899,6 +910,29 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(14px);
 }
 .intro__card--map { width: min(1100px, 100%); padding: 36px 36px 32px; }
+
+/* ---------- Day theme: keep the About page readable on the bright homepage sky ---------- */
+[data-theme="day"] .intro {
+  --ink-1: #1c2c44;
+  --ink-2: #4a6a94;
+}
+[data-theme="day"] .intro__card {
+  background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.74));
+  border-color: rgba(255,255,255,.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 30px 80px rgba(40,80,130,.22);
+}
+[data-theme="day"] .intro__name { color: #10243f; }
+[data-theme="day"] .intro__name span { color: var(--accent-2); }
+[data-theme="day"] .intro__socials .chip-pill {
+  background: rgba(255,255,255,.7);
+  border-color: rgba(40,80,130,.18);
+  color: #1c2c44;
+}
+[data-theme="day"] .intro::after {
+  background: linear-gradient(180deg, transparent 0%, rgba(94,160,120,.16) 55%, rgba(70,120,80,.30) 100%);
+}
 
 /* scroll reveal */
 .reveal {
@@ -1320,13 +1354,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 600px) {
-  .brand { top: 14px; left: 16px; }
+  .brand { top: max(14px, env(safe-area-inset-top) + 10px); left: max(16px, env(safe-area-inset-left) + 10px); }
   .brand__mark { font-size: 20px; }
   .brand__sub { font-size: 10px; }
-  .theme-toggle { top: 14px; right: 14px; width: 40px; height: 40px; }
-  .lang-toggle { top: 14px; right: 62px; width: 40px; height: 40px; font-size: 12px; }
-  .intro__back { top: 14px; left: 16px; padding: 8px 13px; font-size: 12px; }
-  .signature { font-size: 10px; bottom: 12px; letter-spacing: .14em; padding: 5px 14px; }
+  .theme-toggle { top: max(14px, env(safe-area-inset-top) + 10px); right: max(14px, env(safe-area-inset-right) + 10px); width: 40px; height: 40px; }
+  .lang-toggle { top: max(14px, env(safe-area-inset-top) + 10px); right: max(62px, env(safe-area-inset-right) + 58px); width: 40px; height: 40px; font-size: 12px; }
+  .intro__back { top: max(14px, env(safe-area-inset-top) + 10px); left: max(16px, env(safe-area-inset-left) + 10px); padding: 8px 13px; font-size: 12px; }
+  .signature { font-size: 10px; bottom: max(12px, env(safe-area-inset-bottom) + 10px); letter-spacing: .14em; padding: 5px 14px; }
   .intro__card { padding: 40px 20px 32px; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
   .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
