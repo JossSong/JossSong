@@ -221,7 +221,7 @@
   const I18N = {
     zh: {
       'meta.title': '宋京 SONG JING · 仰望星辰 脚踏实地',
-      'meta.desc': '宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶，广交好友。',
+      'meta.desc': '宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡，广交好友。',
       'hero.hint': '点我 · about',
       'hero.brandSub': 'Joss.Song',
       'hero.signature': '仰望星辰 · 脚踏实地',
@@ -288,7 +288,7 @@
       'lang.toggleAria': 'Switch to English',
     },
     en: {
-      'meta.title': 'Song Jing SONG JING · Eyes on the Stars, Feet on the Ground',
+      'meta.title': 'Joss Song · Be All You Can Be!',
       'meta.desc': 'Song Jing (Joss.Song) — Founder & CEO of Tongshi Group, Song Jing Studio, founder of Jiandao. Entrepreneur, investor, tech-savvy, occasional writer, tea lover, and a friend to all.',
       'hero.hint': 'Tap me · About',
       'hero.brandSub': 'Joss.Song',
