@@ -1331,8 +1331,8 @@ a { color: inherit; text-decoration: none; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
   .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
   .earth { width: 260%; bottom: -4%; }
-  .villa { width: 135px; left: 3%; bottom: clamp(34%, 38vh, 44%); }
-  .rv { width: 150px; right: 2%; bottom: clamp(34%, 38vh, 44%); }
+  .villa { width: 135px; left: 3%; bottom: clamp(26%, 30vh, 36%); }
+  .rv { width: 150px; right: 2%; bottom: clamp(26%, 30vh, 36%); }
   .character { width: 150px; height: 125px; bottom: clamp(20%, 26vh, 32%); }
   .hint { font-size: 14px; padding: 7px 14px; gap: 7px; }
   .intro__names { grid-template-columns: 1fr 1fr; gap: 6px 8px; }
