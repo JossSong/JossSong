@@ -827,12 +827,11 @@ a { color: inherit; text-decoration: none; }
 @keyframes twinkle { to { opacity: .55; } }
 
 .intro__back {
-  position: sticky;   /* stays pinned at the top while the about page scrolls */
-  top: 18px;
+  position: fixed;   /* pinned to the top of the About overlay (contained by its transform), same line as the right toggles */
+  top: 20px;
   left: 22px;
-  margin: 22px 0 -56px 22px;
+  z-index: 60;          /* above intro content, level with the theme/lang toggles */
   width: fit-content;
-  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1297,11 +1296,12 @@ a { color: inherit; text-decoration: none; }
   .brand__sub { font-size: 10px; }
   .theme-toggle { top: 14px; right: 14px; width: 40px; height: 40px; }
   .lang-toggle { top: 14px; right: 62px; width: 40px; height: 40px; font-size: 12px; }
+  .intro__back { top: 14px; left: 16px; padding: 8px 13px; font-size: 12px; }
   .signature { font-size: 10px; bottom: 12px; letter-spacing: .14em; padding: 5px 14px; }
   .intro__card { padding: 40px 20px 32px; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
   .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
-  .earth { width: 260%; bottom: 10%; }
+  .earth { width: 260%; bottom: -4%; }
   .villa { width: 135px; left: 3%; bottom: 42%; }
   .rv { width: 150px; right: 2%; bottom: 42%; }
   .character { width: 150px; height: 125px; bottom: 41%; }
