@@ -403,12 +403,34 @@ a { color: inherit; text-decoration: none; }
 .trees .tree-sway:nth-child(7) { animation-delay: -3.2s; animation-duration: 6.2s; }
 @keyframes tree-sway { 0%,100% { transform: rotate(-2deg);} 50% { transform: rotate(2deg);} }
 
+/* Pond ripples */
+.pond .ripple { transform-box: fill-box; transform-origin: center; animation: ripple-expand 4.5s ease-out infinite; }
+.pond .ripple.r2 { animation-delay: -2.2s; }
+@keyframes ripple-expand {
+  0%   { transform: scale(.35); opacity: .6; }
+  70%  { opacity: .25; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* Fish swim + tail wag */
+.fish { animation: fish-swim 7.5s ease-in-out infinite; }
+@keyframes fish-swim {
+  0%,100% { transform: translateX(-32px); }
+  50%     { transform: translateX(30px); }
+}
+.fish-tail { transform-box: fill-box; transform-origin: 12px 0; animation: tail-wag .8s ease-in-out infinite; }
+@keyframes tail-wag { 0%,100% { transform: rotate(-13deg); } 50% { transform: rotate(13deg); } }
+
+/* Frog blink */
+.frog-eye { transform-box: fill-box; transform-origin: center; animation: frog-blink 4.5s ease-in-out infinite; }
+@keyframes frog-blink { 0%,92%,100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+
 /* ---------- Villa ---------- */
 .villa {
   position: absolute;
   width: 250px;
   left: 22%;
-  bottom: 38%;
+  bottom: clamp(32%, 36vh, 42%);   /* distance from earth scales with viewport height, like the character */
   z-index: 5;
   filter: drop-shadow(0 8px 14px rgba(0,0,0,.45));
 }
@@ -452,7 +474,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   width: 280px;
   right: 18%;
-  bottom: 38%;
+  bottom: clamp(32%, 36vh, 42%);   /* distance from earth scales with viewport height, like the character */
   filter: drop-shadow(0 8px 14px rgba(0,0,0,.45));
   z-index: 5;
   animation: rv-bob 5s ease-in-out infinite alternate;
@@ -594,7 +616,8 @@ a { color: inherit; text-decoration: none; }
 .hint {
   position: absolute;
   left: 50%;
-  bottom: calc(34% + 208px);
+  bottom: 100%;          /* anchored just above the character's head on every device */
+  margin-bottom: 16px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
@@ -799,9 +822,8 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(120% 100% at 50% 100%, #0a1234 0%, #05081a 70%);
   transform: translateY(100%);
   transition: transform .9s cubic-bezier(.16,1,.3,1);
-  overflow-y: auto;
+  overflow: hidden;   /* .intro no longer scrolls; .intro__inner is the scroller so the back button can stay pinned */
   color: var(--ink-1);
-  overscroll-behavior: contain;
 }
 .intro.is-open { transform: translateY(0); }
 
@@ -829,7 +851,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes twinkle { to { opacity: .55; } }
 
 .intro__back {
-  position: fixed;   /* pinned to the top of the About overlay (contained by its transform), same line as the right toggles */
+  position: absolute;   /* pinned top-left of the non-scrolling .intro wrapper; stays put while .intro__inner scrolls */
   top: 20px;
   left: 22px;
   z-index: 60;          /* above intro content, level with the theme/lang toggles */
@@ -850,7 +872,12 @@ a { color: inherit; text-decoration: none; }
 .intro__back:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .intro__inner {
-  min-height: 100dvh;
+  position: absolute;   /* the actual scroll container inside the non-scrolling .intro wrapper */
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1283,10 +1310,10 @@ a { color: inherit; text-decoration: none; }
    RESPONSIVE
 ============================================ */
 @media (max-width: 900px) {
-  .villa { width: 195px; left: 6%; bottom: 36%; }
-  .rv    { width: 220px; right: 3%; bottom: 36%; }
+  .villa { width: 195px; left: 6%; bottom: clamp(30%, 34vh, 40%); }
+  .rv    { width: 220px; right: 3%; bottom: clamp(30%, 34vh, 40%); }
   .character { width: 185px; height: 155px; bottom: clamp(24%, 28vh, 34%); }
-  .hint { bottom: calc(33% + 172px); font-size: 15px; padding: 8px 16px; gap: 8px; }
+  .hint { font-size: 15px; padding: 8px 16px; gap: 8px; }
   .moon { width: 64px; height: 64px; }
   .sun { width: 80px; height: 80px; }
   .planet--ring { width: 90px; height: 90px; }
@@ -1304,10 +1331,10 @@ a { color: inherit; text-decoration: none; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
   .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
   .earth { width: 260%; bottom: -4%; }
-  .villa { width: 135px; left: 3%; bottom: 42%; }
-  .rv { width: 150px; right: 2%; bottom: 42%; }
+  .villa { width: 135px; left: 3%; bottom: clamp(34%, 38vh, 44%); }
+  .rv { width: 150px; right: 2%; bottom: clamp(34%, 38vh, 44%); }
   .character { width: 150px; height: 125px; bottom: clamp(20%, 26vh, 32%); }
-  .hint { bottom: calc(41% + 140px); font-size: 14px; padding: 7px 14px; gap: 7px; }
+  .hint { font-size: 14px; padding: 7px 14px; gap: 7px; }
   .intro__names { grid-template-columns: 1fr 1fr; gap: 6px 8px; }
   .timeline::before { left: 38px; }
   .timeline__year { width: 74px; font-size: 15px; }

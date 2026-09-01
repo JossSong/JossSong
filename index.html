@@ -128,6 +128,15 @@
             <stop offset="0%" stop-color="#7ab35a"/>
             <stop offset="100%" stop-color="#2c5236"/>
           </linearGradient>
+          <radialGradient id="pondGrad" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#9fd4ec"/>
+            <stop offset="60%" stop-color="#5b97bd"/>
+            <stop offset="100%" stop-color="#3c6f93"/>
+          </radialGradient>
+          <linearGradient id="trunkGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#7a4a24"/>
+            <stop offset="100%" stop-color="#4f2e14"/>
+          </linearGradient>
           <clipPath id="surfaceClip">
             <ellipse cx="800" cy="900" rx="720" ry="340"/>
           </clipPath>
@@ -180,29 +189,102 @@
           </g>
 
           <!-- Pond -->
-          <ellipse cx="700" cy="780" rx="68" ry="18" fill="#6fa7c8" opacity=".9"/>
-          <ellipse cx="700" cy="780" rx="68" ry="18" fill="none" stroke="#bfe1f0" stroke-width="2" opacity=".75"/>
-          <ellipse cx="688" cy="774" rx="20" ry="5" fill="#bfe1f0" opacity=".5"/>
-
-          <!-- Trees -->
-          <g class="trees">
-            <g transform="translate(420,660)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="34" ry="8" fill="#a8e3a0" opacity=".7"/><rect x="-5" y="-22" width="10" height="26" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.4"/><circle cx="0" cy="-30" r="28" fill="#9be886" stroke="#1a3a1f" stroke-width="2.4"/><circle cx="-15" cy="-22" r="22" fill="#b8f29c" stroke="#1a3a1f" stroke-width="2"/><circle cx="14" cy="-26" r="22" fill="#7fd86a" stroke="#1a3a1f" stroke-width="2"/></g></g>
-            <g transform="translate(520,690)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="28" ry="6" fill="#a8e3a0" opacity=".7"/><rect x="-4" y="-18" width="8" height="20" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.2"/><circle cx="0" cy="-26" r="22" fill="#9be886" stroke="#1a3a1f" stroke-width="2"/><circle cx="-12" cy="-16" r="16" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
-            <g transform="translate(1060,660)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="34" ry="8" fill="#a8e3a0" opacity=".7"/><rect x="-5" y="-22" width="10" height="26" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.4"/><circle cx="0" cy="-30" r="28" fill="#9be886" stroke="#1a3a1f" stroke-width="2.4"/><circle cx="-15" cy="-22" r="22" fill="#b8f29c" stroke="#1a3a1f" stroke-width="2"/><circle cx="14" cy="-26" r="22" fill="#7fd86a" stroke="#1a3a1f" stroke-width="2"/></g></g>
-            <g transform="translate(1150,684)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="28" ry="6" fill="#a8e3a0" opacity=".7"/><rect x="-4" y="-18" width="8" height="20" fill="#6a3a1a" stroke="#3a1a08" stroke-width="1.2"/><circle cx="0" cy="-26" r="22" fill="#9be886" stroke="#1a3a1f" stroke-width="2"/><circle cx="-10" cy="-18" r="16" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
-            <g transform="translate(1220,718)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="22" ry="5" fill="#a8e3a0" opacity=".6"/><rect x="-3.5" y="-14" width="7" height="16" fill="#6a3a1a"/><circle cx="0" cy="-19" r="16" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
-            <g transform="translate(310,720)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="24" ry="6" fill="#a8e3a0" opacity=".65"/><rect x="-3" y="-12" width="6" height="14" fill="#6a3a1a"/><circle cx="0" cy="-18" r="16" fill="#9be886" stroke="#1a3a1f" stroke-width="1.6"/></g></g>
-            <g transform="translate(1320,748)"><g class="tree-sway"><ellipse cx="0" cy="2" rx="22" ry="5" fill="#a8e3a0" opacity=".6"/><rect x="-3" y="-12" width="6" height="14" fill="#6a3a1a"/><circle cx="0" cy="-16" r="14" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/></g></g>
+          <g class="pond">
+            <ellipse cx="700" cy="788" rx="78" ry="21" fill="#3c6f93" opacity=".55"/>
+            <ellipse cx="700" cy="786" rx="74" ry="19" fill="url(#pondGrad)"/>
+            <ellipse cx="700" cy="786" rx="74" ry="19" fill="none" stroke="#d6eef8" stroke-width="2" opacity=".7"/>
+            <ellipse class="ripple r1" cx="700" cy="786" rx="28" ry="7" fill="none" stroke="#eaf6fc" stroke-width="1.6" opacity=".55"/>
+            <ellipse class="ripple r2" cx="700" cy="786" rx="50" ry="13" fill="none" stroke="#eaf6fc" stroke-width="1.3" opacity=".38"/>
+            <!-- lily pad + bloom -->
+            <g transform="translate(666,778)">
+              <ellipse cx="0" cy="0" rx="23" ry="7" fill="#3f8f5a"/>
+              <path d="M0,-1 L17,1 A17,6 0 0 1 -17,1 Z" fill="#56b377"/>
+              <circle cx="2" cy="-2" r="4.2" fill="#ff9ec4" stroke="#d56a9c" stroke-width="1"/>
+              <circle cx="2" cy="-2" r="1.6" fill="#ffe27a"/>
+            </g>
+            <!-- swimming fish -->
+            <g class="fish">
+              <g class="fish-body" transform="translate(712,790)">
+                <path d="M-15,0 q11,-9 27,0 q-11,9 -27,0 z" fill="#ffcf6b" stroke="#b07a1e" stroke-width="1.2"/>
+                <path class="fish-tail" d="M12,0 l11,-8 v16 z" fill="#ffcf6b" stroke="#b07a1e" stroke-width="1.2"/>
+                <circle cx="-7" cy="-2" r="1.9" fill="#3a2408"/>
+              </g>
+            </g>
+            <!-- frog on the bank -->
+            <g class="frog" transform="translate(778,800)">
+              <ellipse cx="0" cy="7" rx="17" ry="5" fill="#000" opacity=".18"/>
+              <path d="M-15,5 q-2,-17 15,-17 q17,0 15,17 q-15,7 -30,0 z" fill="#7cc24a" stroke="#2f5a1e" stroke-width="1.4"/>
+              <path d="M-13,5 q-6,3 -10,1 M13,5 q6,3 10,1" stroke="#2f5a1e" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="-8" cy="-11" r="6.5" fill="#7cc24a" stroke="#2f5a1e" stroke-width="1.2"/>
+              <circle cx="8" cy="-11" r="6.5" fill="#7cc24a" stroke="#2f5a1e" stroke-width="1.2"/>
+              <circle class="frog-eye" cx="-8" cy="-13" r="3" fill="#fff"/><circle cx="-8" cy="-13" r="1.5" fill="#16240c"/>
+              <circle class="frog-eye" cx="8" cy="-13" r="3" fill="#fff"/><circle cx="8" cy="-13" r="1.5" fill="#16240c"/>
+              <path d="M-6,2 q6,5 12,0" fill="none" stroke="#2f5a1e" stroke-width="1.3" stroke-linecap="round"/>
+            </g>
           </g>
 
-          <!-- Bushes -->
+          <!-- Trees (layered, shaded foliage) -->
+          <g class="trees">
+            <g transform="translate(420,664)"><g class="tree-sway">
+              <ellipse cx="0" cy="8" rx="38" ry="9" fill="#000" opacity=".15"/>
+              <rect x="-6" y="-28" width="12" height="34" rx="3" fill="url(#trunkGrad)" stroke="#3a1a08" stroke-width="1.2"/>
+              <circle cx="0" cy="-42" r="31" fill="#2f6b3a"/>
+              <circle cx="-19" cy="-30" r="25" fill="#4f9a55"/>
+              <circle cx="17" cy="-35" r="23" fill="#69b56e"/>
+              <circle cx="-4" cy="-55" r="21" fill="#86cf7e"/>
+            </g></g>
+            <g transform="translate(520,692)"><g class="tree-sway">
+              <ellipse cx="0" cy="6" rx="30" ry="7" fill="#000" opacity=".15"/>
+              <rect x="-5" y="-22" width="10" height="26" rx="2.5" fill="url(#trunkGrad)" stroke="#3a1a08" stroke-width="1"/>
+              <circle cx="0" cy="-34" r="24" fill="#2f6b3a"/>
+              <circle cx="-13" cy="-24" r="18" fill="#5aa85f"/>
+              <circle cx="12" cy="-28" r="17" fill="#7cc47f"/>
+            </g></g>
+            <!-- pine tree for variety -->
+            <g transform="translate(310,724)"><g class="tree-sway">
+              <ellipse cx="0" cy="4" rx="26" ry="6" fill="#000" opacity=".14"/>
+              <rect x="-4" y="-18" width="8" height="22" fill="url(#trunkGrad)"/>
+              <path d="M0,-58 L22,-18 L-22,-18 Z" fill="#3f8f4a" stroke="#1f4a28" stroke-width="1.4"/>
+              <path d="M0,-44 L18,-10 L-18,-10 Z" fill="#56b377" stroke="#1f4a28" stroke-width="1.2"/>
+              <path d="M0,-30 L14,-2 L-14,-2 Z" fill="#6fc78a"/>
+            </g></g>
+            <g transform="translate(1060,664)"><g class="tree-sway">
+              <ellipse cx="0" cy="8" rx="38" ry="9" fill="#000" opacity=".15"/>
+              <rect x="-6" y="-28" width="12" height="34" rx="3" fill="url(#trunkGrad)" stroke="#3a1a08" stroke-width="1.2"/>
+              <circle cx="0" cy="-42" r="31" fill="#2f6b3a"/>
+              <circle cx="-19" cy="-30" r="25" fill="#4f9a55"/>
+              <circle cx="17" cy="-35" r="23" fill="#69b56e"/>
+              <circle cx="-4" cy="-55" r="21" fill="#86cf7e"/>
+            </g></g>
+            <g transform="translate(1150,688)"><g class="tree-sway">
+              <ellipse cx="0" cy="6" rx="30" ry="7" fill="#000" opacity=".15"/>
+              <rect x="-5" y="-22" width="10" height="26" rx="2.5" fill="url(#trunkGrad)" stroke="#3a1a08" stroke-width="1"/>
+              <circle cx="0" cy="-34" r="24" fill="#2f6b3a"/>
+              <circle cx="-13" cy="-24" r="18" fill="#5aa85f"/>
+              <circle cx="12" cy="-28" r="17" fill="#7cc47f"/>
+            </g></g>
+            <g transform="translate(1220,720)"><g class="tree-sway">
+              <ellipse cx="0" cy="5" rx="24" ry="6" fill="#000" opacity=".14"/>
+              <rect x="-4" y="-18" width="8" height="22" fill="url(#trunkGrad)"/>
+              <circle cx="0" cy="-28" r="20" fill="#2f6b3a"/>
+              <circle cx="-11" cy="-20" r="15" fill="#5aa85f"/>
+              <circle cx="10" cy="-23" r="14" fill="#7cc47f"/>
+            </g></g>
+            <g transform="translate(1320,750)"><g class="tree-sway">
+              <ellipse cx="0" cy="4" rx="22" ry="5" fill="#000" opacity=".13"/>
+              <rect x="-3.5" y="-15" width="7" height="19" fill="url(#trunkGrad)"/>
+              <circle cx="0" cy="-24" r="17" fill="#2f6b3a"/>
+              <circle cx="-9" cy="-17" r="12" fill="#5aa85f"/>
+              <circle cx="9" cy="-19" r="12" fill="#7cc47f"/>
+            </g></g>
+          </g>
+
+          <!-- Bushes (rounded shrub clusters) -->
           <g class="bushes">
-            <ellipse cx="350" cy="690" rx="20" ry="10" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/>
-            <ellipse cx="360" cy="684" rx="14" ry="8" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.2"/>
-            <ellipse cx="1180" cy="706" rx="20" ry="10" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.4"/>
-            <ellipse cx="1192" cy="700" rx="14" ry="8" fill="#b8f29c" stroke="#1a3a1f" stroke-width="1.2"/>
-            <ellipse cx="600" cy="680" rx="14" ry="7" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.2"/>
-            <ellipse cx="990" cy="684" rx="16" ry="8" fill="#7fd86a" stroke="#1a3a1f" stroke-width="1.2"/>
+            <g transform="translate(352,690)"><circle r="15" fill="#3f8f4a"/><circle cx="-11" cy="2" r="11" fill="#5aa85f"/><circle cx="11" cy="1" r="10" fill="#69b56e"/><circle cx="0" cy="-7" r="9" fill="#86cf7e"/></g>
+            <g transform="translate(1182,706)"><circle r="15" fill="#3f8f4a"/><circle cx="-11" cy="2" r="11" fill="#5aa85f"/><circle cx="11" cy="1" r="10" fill="#69b56e"/><circle cx="0" cy="-7" r="9" fill="#86cf7e"/></g>
+            <g transform="translate(600,682)"><circle r="11" fill="#3f8f4a"/><circle cx="-8" cy="1" r="8" fill="#5aa85f"/><circle cx="8" cy="0" r="7" fill="#69b56e"/></g>
+            <g transform="translate(992,686)"><circle r="12" fill="#3f8f4a"/><circle cx="-9" cy="1" r="9" fill="#5aa85f"/><circle cx="9" cy="0" r="8" fill="#69b56e"/></g>
           </g>
 
           <!-- Character platform -->
@@ -211,16 +293,77 @@
             <ellipse cx="800" cy="593" rx="128" ry="18" fill="#b8f29c" opacity=".6"/>
           </g>
 
-          <!-- Flowers -->
+          <!-- Flowers (petals + stem + leaf) -->
           <g class="flowers">
-            <g class="flower f1" transform="translate(330,706)"><g class="flower-inner"><circle r="9" fill="#ffd166" stroke="#a86010" stroke-width="1.6"/><g stroke="#ffd166" stroke-width="4.5" stroke-linecap="round"><line x1="0" y1="-15" x2="0" y2="15"/><line x1="-15" y1="0" x2="15" y2="0"/><line x1="-11" y1="-11" x2="11" y2="11"/><line x1="-11" y1="11" x2="11" y2="-11"/></g><circle r="3.6" fill="#7a3a08"/></g></g>
-            <g class="flower f2" transform="translate(560,712)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
-            <g class="flower f3" transform="translate(630,704)"><g class="flower-inner"><circle r="8" fill="#c4a8ff" stroke="#5a3aa8" stroke-width="1.4"/><g stroke="#c4a8ff" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#2a1a68"/></g></g>
-            <g class="flower f4" transform="translate(950,712)"><g class="flower-inner"><circle r="8" fill="#ffd166" stroke="#a86010" stroke-width="1.4"/><g stroke="#ffd166" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#7a3a08"/></g></g>
-            <g class="flower f5" transform="translate(1020,708)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
-            <g class="flower f1" transform="translate(1100,720)"><g class="flower-inner"><circle r="8" fill="#ffd166" stroke="#a86010" stroke-width="1.4"/><g stroke="#ffd166" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#7a3a08"/></g></g>
-            <g class="flower f3" transform="translate(260,758)"><g class="flower-inner"><circle r="7" fill="#c4a8ff" stroke="#5a3aa8" stroke-width="1.2"/><g stroke="#c4a8ff" stroke-width="3.2" stroke-linecap="round"><line x1="0" y1="-12" x2="0" y2="12"/><line x1="-12" y1="0" x2="12" y2="0"/><line x1="-8" y1="-8" x2="8" y2="8"/><line x1="-8" y1="8" x2="8" y2="-8"/></g><circle r="2.8" fill="#2a1a68"/></g></g>
-            <g class="flower f2" transform="translate(1340,720)"><g class="flower-inner"><circle r="8" fill="#ff8fb1" stroke="#a8305e" stroke-width="1.4"/><g stroke="#ff8fb1" stroke-width="3.6" stroke-linecap="round"><line x1="0" y1="-13" x2="0" y2="13"/><line x1="-13" y1="0" x2="13" y2="0"/><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="-9" y1="9" x2="9" y2="-9"/></g><circle r="3.2" fill="#6a1838"/></g></g>
+            <g class="flower f1" transform="translate(330,708)"><g class="flower-inner">
+              <path d="M0,0 q-4,16 -1,30" stroke="#3f8f4a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <path d="M-1,22 q-11,-2 -13,-9 q11,0 13,7 z" fill="#5aa85f"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-12" rx="5" ry="9" fill="#ffd166"/><ellipse cx="12" cy="0" rx="9" ry="5" fill="#ffd166"/>
+                <ellipse cx="0" cy="12" rx="5" ry="9" fill="#ffd166"/><ellipse cx="-12" cy="0" rx="9" ry="5" fill="#ffd166"/>
+                <circle r="5" fill="#a86010"/>
+              </g>
+            </g></g>
+            <g class="flower f2" transform="translate(560,714)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,26" stroke="#3f8f4a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M-1,19 q-9,-2 -11,-8 q9,0 11,6 z" fill="#5aa85f"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-10" rx="4.4" ry="8" fill="#ff8fb1"/><ellipse cx="10" cy="0" rx="8" ry="4.4" fill="#ff8fb1"/>
+                <ellipse cx="0" cy="10" rx="4.4" ry="8" fill="#ff8fb1"/><ellipse cx="-10" cy="0" rx="8" ry="4.4" fill="#ff8fb1"/>
+                <circle r="4.2" fill="#a8305e"/>
+              </g>
+            </g></g>
+            <g class="flower f3" transform="translate(630,706)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,26" stroke="#3f8f4a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M-1,19 q-9,-2 -11,-8 q9,0 11,6 z" fill="#5aa85f"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-10" rx="4.4" ry="8" fill="#c4a8ff"/><ellipse cx="10" cy="0" rx="8" ry="4.4" fill="#c4a8ff"/>
+                <ellipse cx="0" cy="10" rx="4.4" ry="8" fill="#c4a8ff"/><ellipse cx="-10" cy="0" rx="8" ry="4.4" fill="#c4a8ff"/>
+                <circle r="4.2" fill="#5a3aa8"/>
+              </g>
+            </g></g>
+            <g class="flower f4" transform="translate(950,714)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,26" stroke="#3f8f4a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M-1,19 q-9,-2 -11,-8 q9,0 11,6 z" fill="#5aa85f"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-10" rx="4.4" ry="8" fill="#ffd166"/><ellipse cx="10" cy="0" rx="8" ry="4.4" fill="#ffd166"/>
+                <ellipse cx="0" cy="10" rx="4.4" ry="8" fill="#ffd166"/><ellipse cx="-10" cy="0" rx="8" ry="4.4" fill="#ffd166"/>
+                <circle r="4.2" fill="#a86010"/>
+              </g>
+            </g></g>
+            <g class="flower f5" transform="translate(1020,710)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,26" stroke="#3f8f4a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M-1,19 q-9,-2 -11,-8 q9,0 11,6 z" fill="#5aa85f"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-10" rx="4.4" ry="8" fill="#ff8fb1"/><ellipse cx="10" cy="0" rx="8" ry="4.4" fill="#ff8fb1"/>
+                <ellipse cx="0" cy="10" rx="4.4" ry="8" fill="#ff8fb1"/><ellipse cx="-10" cy="0" rx="8" ry="4.4" fill="#ff8fb1"/>
+                <circle r="4.2" fill="#a8305e"/>
+              </g>
+            </g></g>
+            <g class="flower f1" transform="translate(1100,722)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,24" stroke="#3f8f4a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-9" rx="4" ry="7.5" fill="#ffd166"/><ellipse cx="9" cy="0" rx="7.5" ry="4" fill="#ffd166"/>
+                <ellipse cx="0" cy="9" rx="4" ry="7.5" fill="#ffd166"/><ellipse cx="-9" cy="0" rx="7.5" ry="4" fill="#ffd166"/>
+                <circle r="3.8" fill="#a86010"/>
+              </g>
+            </g></g>
+            <g class="flower f3" transform="translate(262,760)"><g class="flower-inner">
+              <path d="M0,0 q-3,13 -1,22" stroke="#3f8f4a" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-8" rx="3.6" ry="7" fill="#c4a8ff"/><ellipse cx="8" cy="0" rx="7" ry="3.6" fill="#c4a8ff"/>
+                <ellipse cx="0" cy="8" rx="3.6" ry="7" fill="#c4a8ff"/><ellipse cx="-8" cy="0" rx="7" ry="3.6" fill="#c4a8ff"/>
+                <circle r="3.4" fill="#5a3aa8"/>
+              </g>
+            </g></g>
+            <g class="flower f2" transform="translate(1340,722)"><g class="flower-inner">
+              <path d="M0,0 q-4,15 -1,24" stroke="#3f8f4a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <g transform="translate(0,-3)">
+                <ellipse cx="0" cy="-9" rx="4" ry="7.5" fill="#ff8fb1"/><ellipse cx="9" cy="0" rx="7.5" ry="4" fill="#ff8fb1"/>
+                <ellipse cx="0" cy="9" rx="4" ry="7.5" fill="#ff8fb1"/><ellipse cx="-9" cy="0" rx="7.5" ry="4" fill="#ff8fb1"/>
+                <circle r="3.8" fill="#a8305e"/>
+              </g>
+            </g></g>
           </g>
 
           <!-- Surface highlight -->
@@ -474,13 +617,13 @@
 
         <!-- Click halo -->
         <span class="halo" aria-hidden="true"></span>
-      </button>
 
-      <!-- Hint label -->
-      <div class="hint" aria-hidden="true">
-        <span class="hint__dot"></span>
-        <span class="hint__txt" data-i18n="hero.hint">点我 · about</span>
-      </div>
+        <!-- Hint label (anchored above the character's head via CSS bottom:100%) -->
+        <div class="hint" aria-hidden="true">
+          <span class="hint__dot"></span>
+          <span class="hint__txt" data-i18n="hero.hint">点我 · about</span>
+        </div>
+      </button>
     </div>
 
   </div>

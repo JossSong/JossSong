@@ -106,13 +106,14 @@
 
   /* ---------- Intro overlay ---------- */
   const intro = document.getElementById('intro');
+  const scroller = intro ? intro.querySelector('.intro__inner') : null;   // actual scroll container
   const charBtn = document.getElementById('character');
   const backBtn = intro ? intro.querySelector('.intro__back') : null;
   const introTopBtn = document.getElementById('introTop');
 
   function updateIntroTopBtn () {
-    if (!intro || !introTopBtn) return;
-    const shown = intro.classList.contains('is-open') && intro.scrollTop > 320;
+    if (!intro || !introTopBtn || !scroller) return;
+    const shown = intro.classList.contains('is-open') && scroller.scrollTop > 320;
     introTopBtn.classList.toggle('is-shown', shown);
   }
 
@@ -136,12 +137,12 @@
 
   if (charBtn) charBtn.addEventListener('click', openIntro);
   if (backBtn) backBtn.addEventListener('click', closeIntro);
-  if (intro) {
-    intro.addEventListener('scroll', updateIntroTopBtn, { passive: true });
+  if (scroller) {
+    scroller.addEventListener('scroll', updateIntroTopBtn, { passive: true });
   }
-  if (introTopBtn && intro) {
+  if (introTopBtn && scroller) {
     introTopBtn.addEventListener('click', () => {
-      intro.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      scroller.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   }
 
