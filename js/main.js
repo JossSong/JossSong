@@ -159,7 +159,7 @@
     else closeIntro();
   });
 
-  /* ---------- Day / Night / Auto (system) theme ---------- */
+  /* ---------- Day / Night theme (default follows system) ---------- */
   const root = document.documentElement;
   let lang = 'zh';
   const themeToggle = document.getElementById('themeToggle');
@@ -178,14 +178,13 @@
 
   function currentMode () {
     const m = root.dataset.mode;
-    return (m === 'day' || m === 'night') ? m : 'auto';
+    return (m === 'day' || m === 'night') ? m : 'night';
   }
 
   function updateThemeLabels () {
     if (!themeToggle) return;
     const mode = currentMode();
     const labels = {
-      auto: { zh: '主题：跟随系统（点击切换）', en: 'Theme: follow system (click to change)' },
       day:  { zh: '主题：日间（点击切换）', en: 'Theme: day (click to change)' },
       night:{ zh: '主题：夜间（点击切换）', en: 'Theme: night (click to change)' },
     };
@@ -194,25 +193,33 @@
     themeToggle.setAttribute('title', l);
   }
 
-  function applyMode (mode) {
+  // no explicit choice until the user clicks; before that, follow the system live
+  let userChose = false;
+  try {
+    const s = localStorage.getItem('joss-theme');
+    userChose = (s === 'day' || s === 'night');
+  } catch (e) {}
+
+  function applyMode (mode, explicit) {
+    if (explicit) userChose = true;
     root.dataset.mode = mode;
-    applyTheme(mode === 'auto' ? resolveSystemTheme() : mode);
+    applyTheme(mode);
   }
 
   // initial mode was resolved pre-paint by the inline <head> script
-  if (!root.dataset.mode) applyMode('auto');
+  if (!root.dataset.mode) applyMode(resolveSystemTheme());
   else updateThemeLabels();
 
-  // follow the OS while in auto mode
+  // keep tracking the OS until the user makes an explicit choice
   sysLight.addEventListener('change', () => {
-    if (currentMode() === 'auto') applyTheme(resolveSystemTheme());
+    if (!userChose) applyTheme(resolveSystemTheme());
   });
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const order = ['auto', 'day', 'night'];
+      const order = ['day', 'night'];
       const next = order[(order.indexOf(currentMode()) + 1) % order.length];
-      applyMode(next);
+      applyMode(next, true);
       try { localStorage.setItem('joss-theme', next); } catch (e) {}
     });
   }

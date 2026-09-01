@@ -697,10 +697,6 @@ a { color: inherit; text-decoration: none; }
 .theme-toggle .icon { grid-area: 1 / 1; transition: opacity .5s ease, transform .5s ease; }
 .theme-toggle .icon--moon { opacity: var(--night-els); transform: rotate(calc((1 - var(--night-els)) * 90deg)); }
 .theme-toggle .icon--sun  { opacity: var(--day-els);  transform: rotate(calc((1 - var(--day-els)) * -90deg)); }
-.theme-toggle .icon--auto { opacity: 0; transform: rotate(-90deg) scale(.6); }
-[data-mode="auto"] .theme-toggle .icon--auto { opacity: 1; transform: rotate(0deg) scale(1); }
-[data-mode="auto"] .theme-toggle .icon--moon,
-[data-mode="auto"] .theme-toggle .icon--sun { opacity: 0; }
 
 /* Language toggle (next to theme toggle) */
 .lang-toggle {
@@ -765,7 +761,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .signature {
-  position: absolute;
+  position: fixed;
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
@@ -773,7 +769,20 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px;
   letter-spacing: .22em;
   color: var(--ink-2);
-  opacity: .8;
+  opacity: .7;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease, background .35s ease;
+}
+.signature:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-3px);
+  background: rgba(255,255,255,.1);
 }
 
 /* ============================================
@@ -1288,7 +1297,7 @@ a { color: inherit; text-decoration: none; }
   .brand__sub { font-size: 10px; }
   .theme-toggle { top: 14px; right: 14px; width: 40px; height: 40px; }
   .lang-toggle { top: 14px; right: 62px; width: 40px; height: 40px; font-size: 12px; }
-  .signature { font-size: 10px; bottom: 12px; }
+  .signature { font-size: 10px; bottom: 12px; letter-spacing: .14em; padding: 5px 14px; }
   .intro__card { padding: 40px 20px 32px; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
   .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
