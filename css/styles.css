@@ -5,6 +5,7 @@
 
 /* ---------- Theme: Night (default) ---------- */
 :root {
+  color-scheme: dark;      /* Safari reads this to paint its chrome in the dark tone */
   --bg-0: #05081a;
   --bg-1: #0a1234;
   --bg-2: #1a2350;
@@ -31,7 +32,7 @@
   --win-color: #ffd58a;
   --glow-strength: 1;
   --brand-ink: #ffffff;
-  --meta-theme: #1a0f2e;   /* night = 紫黑: purple-black, matches the top of the night sky */
+  --meta-theme: #140d2e;   /* night = 紫黑: purple-black, == .top-wash top == night theme-color */
   --hint-bg: rgba(12,18,38,.72);
   --hint-ink: #ffe9c2;
   --hint-border: rgba(255,213,138,.45);
@@ -41,6 +42,7 @@
 
 /* ---------- Theme: Day ---------- */
 [data-theme="day"] {
+  color-scheme: light;     /* Safari paints its chrome in the light tone */
   --sky-bg:
     linear-gradient(180deg, #4a9fdc 0%, #79bde8 38%, #a8d8f0 66%, #d4ecf6 100%);
   --night-els: 0;
@@ -140,17 +142,19 @@ a { color: inherit; text-decoration: none; }
   opacity: calc(.45 * var(--night-els));
   animation: drift 44s ease-in-out infinite alternate; }
 
-/* Status-bar cap: a flat, full-width purple-black (紫黑) band pinned to the very
-   top so the iOS status bar / notch area is uniform edge-to-edge and fuses with
-   the night sky. Tuned so its colour lands on the --meta-theme tint (#1a0f2e);
-   the darker cap also makes the stars read more clearly. */
+/* Status-bar cap: pinned to the very top so the iOS/Android status bar melts into
+   the sky edge-to-edge. Its TOP pixel is solid --meta-theme (== night theme-color),
+   so the OS chrome and the page share the exact same colour and there is no seam on
+   ANY browser (Chrome paints it as the bar; Safari paints a translucent bar over it).
+   It then fades into the starry sky below so the stars still read clearly. */
 .top-wash {
   position: absolute;
   left: 0; right: 0; top: 0;
-  height: 76px;
+  height: 84px;
   background: linear-gradient(180deg,
-    rgba(38, 14, 47, 0.55) 0%,
-    rgba(34, 13, 42, 0.30) 55%,
+    var(--meta-theme) 0%,
+    rgba(20, 13, 46, 0.78) 34%,
+    rgba(20, 13, 46, 0.34) 64%,
     transparent 100%);
   pointer-events: none;
   z-index: 2;
@@ -1235,6 +1239,8 @@ a { color: inherit; text-decoration: none; }
   transition: transform .2s ease, border-color .2s ease;
 }
 .work:hover { transform: translateY(-2px); border-color: rgba(255,213,138,.3); }
+.work--proj { text-decoration: none; color: inherit; cursor: pointer; }
+.work--proj:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .work__icon { font-size: 26px; }
 .work__title {
   font-family: 'Noto Serif SC', serif;

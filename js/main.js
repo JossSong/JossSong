@@ -8,6 +8,7 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const introEl = document.getElementById('intro');   // referenced by the starfield loop below
 
   /* ---------- Starfield (canvas) ---------- */
   const canvas = document.getElementById('starfield');
@@ -46,6 +47,17 @@
     }
 
     let t = 0;
+    let rafId = 0;
+
+    // The starfield is invisible while the About overlay covers the sky, and while
+    // the tab is hidden (e.g. phone screen dimmed / app backgrounded). Running the
+    // canvas loop in those states wastes CPU and makes the phone heat up for nothing.
+    function sceneActive () {
+      if (document.hidden) return false;
+      if (introEl && introEl.classList.contains('is-open')) return false;
+      return true;
+    }
+
     function draw () {
       const w = drawW, h = drawH;
       ctx.clearRect(0, 0, w, h);
@@ -67,12 +79,28 @@
         }
       }
       ctx.globalAlpha = 1;
-      if (!reduceMotion) requestAnimationFrame(draw);
+    }
+
+    function tick () {
+      if (!sceneActive()) { rafId = 0; return; }   // stop looping when hidden / overlay open
+      draw();
+      rafId = requestAnimationFrame(tick);          // full 60fps twinkle while on screen
+    }
+
+    function start () {
+      if (reduceMotion) { draw(); return; }         // single static frame, no loop
+      if (!rafId) rafId = requestAnimationFrame(tick);
     }
 
     resize();
-    draw();
+    start();
     window.addEventListener('resize', resize, { passive: true });
+    // Resume only when the page is actually visible again (screen wakes / app refocused).
+    document.addEventListener('visibilitychange', start);
+    // Resume / pause when the About overlay is opened or closed.
+    if (introEl) {
+      new MutationObserver(start).observe(introEl, { attributes: true, attributeFilter: ['class'] });
+    }
   }
 
   /* ---------- Mouse parallax ---------- */
@@ -164,16 +192,44 @@
   const root = document.documentElement;
   let lang = 'zh';
   const themeToggle = document.getElementById('themeToggle');
-  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const metaDark = document.getElementById('themeColorDark');
+  const metaLight = document.getElementById('themeColorLight');
   const sysLight = window.matchMedia('(prefers-color-scheme: light)');
+
+  // Status-bar tint per theme. Must equal: the .top-wash top colour, the
+  // --meta-theme CSS var, AND the matching <meta name="theme-color"> content,
+  // so the OS chrome and the page share one seamless colour in every browser.
+  const COLOR = { day: '#4a9fdc', night: '#140d2e' };
+  const META_MEDIA = { night: '(prefers-color-scheme: dark)', day: '(prefers-color-scheme: light)' };
 
   function resolveSystemTheme () {
     return sysLight.matches ? 'day' : 'night';
   }
 
+  function applyColorScheme (theme) {
+    // Safari reads color-scheme to paint its chrome (status bar tint, scrollbars,
+    // default bg) in the matching tone — keeps the bar consistent across browsers.
+    document.documentElement.style.colorScheme = (theme === 'day') ? 'light' : 'dark';
+  }
+
+  function setMetaTheme (theme, force) {
+    // force=true (manual toggle): make the chosen meta win regardless of the OS by
+    //   setting its media to "all" and disabling the other. force=false (auto):
+    //   restore media-targeted metas so the browser follows the system itself.
+    if (force) {
+      if (metaDark)  { metaDark.setAttribute('media',  theme === 'night' ? 'all' : 'not all'); metaDark.setAttribute('content',  COLOR.night); }
+      if (metaLight) { metaLight.setAttribute('media', theme === 'day'   ? 'all' : 'not all'); metaLight.setAttribute('content', COLOR.day);   }
+    } else {
+      if (metaDark)  { metaDark.setAttribute('media',  META_MEDIA.night); metaDark.setAttribute('content',  COLOR.night); }
+      if (metaLight) { metaLight.setAttribute('media', META_MEDIA.day);   metaLight.setAttribute('content', COLOR.day);   }
+    }
+  }
+
   function applyTheme (theme) {
     root.dataset.theme = theme;
-    if (metaTheme) metaTheme.setAttribute('content', theme === 'day' ? '#4a9fdc' : '#1a0f2e');
+    root.dataset.mode = theme;
+    setMetaTheme(theme, userChose);
+    applyColorScheme(theme);
     updateThemeLabels();
   }
 
@@ -203,7 +259,6 @@
 
   function applyMode (mode, explicit) {
     if (explicit) userChose = true;
-    root.dataset.mode = mode;
     applyTheme(mode);
   }
 
@@ -251,6 +306,7 @@
       'intro.secContact': '联系我',
       'intro.secSkills': '爱好领域',
       'intro.secWorks': '作品',
+      'intro.secProjects': '项目',
       'intro.secTimeline': '详细介绍',
       'chip.1': '教育', 'chip.2': '心理', 'chip.3': '管理', 'chip.4': '历史', 'chip.5': '产品',
       'chip.6': '设计', 'chip.7': '编程', 'chip.8': '文学', 'chip.9': '经济', 'chip.10': '艺术',
@@ -258,6 +314,8 @@
       'chip.16': '旅行', 'chip.17': '健身', 'chip.18': '茶道', 'chip.19': '写作',
       'work.1.title': '《简~道》', 'work.1.sub': '简道奠基之作',
       'work.2.title': '《元宇集》', 'work.2.sub': '元宇宙思辨文集',
+      'proj.1.name': '生命池', 'proj.1.aria': '生命池 — 网页项目（链接待添加）',
+      'proj.2.name': '兔子洞', 'proj.2.aria': '兔子洞 — 网页项目（链接待添加）',
       'tl.1.title': '出生于山东菏泽', 'tl.1.desc': '男，汉族，无党派人士。',
       'tl.3.title': '考入天津大学', 'tl.3.desc': '通过自学考入 MEM 专业在职研究生。',
       'tl.4.title': '「中国最杰出的未来主义者」', 'tl.4.desc': '被《时代》周刊评价。',
@@ -307,7 +365,7 @@
       'intro.back': 'Back to Home',
       'intro.topAria': 'Back to top',
       'intro.hi': 'Tongshi Group · Song Jing Studio · Founder of Jiandao',
-      'intro.nameZh': 'Song Jing',
+      'intro.nameZh': 'Joss Song',
       'intro.nameEn': '宋京',
       'intro.k1': 'Scholarly name', 'intro.v1': 'Jinjing',
       'intro.k2': 'Courtesy name', 'intro.v2': 'Zijing',
@@ -320,6 +378,7 @@
       'intro.secContact': 'Contact Me',
       'intro.secSkills': 'Fields of Interest',
       'intro.secWorks': 'Works',
+      'intro.secProjects': 'Projects',
       'intro.secTimeline': 'Journey in Detail',
       'chip.1': 'Education', 'chip.2': 'Psychology', 'chip.3': 'Management', 'chip.4': 'History', 'chip.5': 'Product',
       'chip.6': 'Design', 'chip.7': 'Programming', 'chip.8': 'Literature', 'chip.9': 'Economics', 'chip.10': 'Art',
@@ -327,6 +386,8 @@
       'chip.16': 'Travel', 'chip.17': 'Fitness', 'chip.18': 'Tea Ceremony', 'chip.19': 'Writing',
       'work.1.title': 'Jian Dao (《简~道》)', 'work.1.sub': 'The foundational work of Jiandao',
       'work.2.title': 'Yuan Yu Ji (《元宇集》)', 'work.2.sub': 'Essays on the metaverse',
+      'proj.1.name': 'Life Pool', 'proj.1.aria': 'Life Pool — web project (link to be added)',
+      'proj.2.name': 'Rabbit Hole', 'proj.2.aria': 'Rabbit Hole — web project (link to be added)',
       'tl.1.title': 'Born in Heze, Shandong', 'tl.1.desc': 'Male, Han Chinese, non-partisan.',
       'tl.3.title': 'Admitted to Tianjin University', 'tl.3.desc': 'Entered the part-time MEM graduate program through self-study.',
       'tl.4.title': '"China\u2019s Most Outstanding Futurist"', 'tl.4.desc': 'As named by TIME magazine.',

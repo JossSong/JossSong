@@ -7,9 +7,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<!-- Status-bar / chrome tint = the exact top pixel of the scene, so the bar melts into the sky.
-     Night: 紫黑 (purple-black). Day: top stop of the day sky. JS keeps it in sync on toggle. -->
-<meta name="theme-color" content="#1a0f2e" />
+<!-- Status-bar / chrome tint. Two media-targeted metas so Chrome & Safari BOTH
+     auto-follow the OS theme (no flash, no JS needed). JS re-points the active
+     meta on a manual toggle. Night = 紫黑 (purple-black) matching the top of the
+     night sky; Day = top stop of the day sky. Both must equal the .top-wash top. -->
+<meta id="themeColorDark" name="theme-color" media="(prefers-color-scheme: dark)" content="#140d2e" />
+<meta id="themeColorLight" name="theme-color" media="(prefers-color-scheme: light)" content="#4a9fdc" />
 <title>Joss 宋京 · Be all you can be!</title>
 <meta name="description" content="宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡。" />
 <link rel="icon" href="favicon.ico" />
@@ -27,10 +30,15 @@
       : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'night');
     document.documentElement.dataset.theme = mode;
     document.documentElement.dataset.mode = mode;
-    // Sync the status-bar tint with the resolved theme before the first paint,
-    // so the bar never flashes the wrong colour on load.
-    var mt = document.querySelector('meta[name="theme-color"]');
-    if (mt) mt.setAttribute('content', mode === 'day' ? '#4a9fdc' : '#1a0f2e');
+    // Tell the browser the page's colour scheme before first paint so Safari/Chrome
+    // paint their chrome (status bar, scrollbars) in the right tone immediately.
+    document.documentElement.style.colorScheme = (mode === 'day') ? 'light' : 'dark';
+    // Seed both status-bar tint metas with the resolved theme so the OS bar never
+    // flashes the wrong colour on load (the browser picks the one matching the OS).
+    var md = document.getElementById('themeColorDark');
+    var ml = document.getElementById('themeColorLight');
+    if (md) md.setAttribute('content', '#140d2e');
+    if (ml) ml.setAttribute('content', '#4a9fdc');
   } catch (e) {}
 })();
 </script>
