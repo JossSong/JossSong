@@ -706,8 +706,22 @@
 
   <div class="intro__inner">
 
+      <!-- ===== Left sidebar: table of contents (anchors to section headings) ===== -->
+      <nav class="intro__toc" aria-label="目录">
+        <span class="intro__toc-title" data-i18n="toc.title">目录</span>
+        <a class="intro__toc-link" href="#sec-profile" data-i18n="toc.profile">简介</a>
+        <a class="intro__toc-link" href="#sec-contact" data-i18n="intro.secContact">广结好友</a>
+        <a class="intro__toc-link" href="#sec-skills" data-i18n="intro.secSkills">爱好领域</a>
+        <a class="intro__toc-link" href="#sec-works" data-i18n="intro.secWorks">作品</a>
+        <a class="intro__toc-link" href="#sec-projects" data-i18n="intro.secProjects">项目</a>
+        <a class="intro__toc-link" href="#sec-timeline" data-i18n="intro.secTimeline">详细介绍</a>
+        <a class="intro__toc-link" href="#sec-map" data-i18n="map.title">足迹 · 人生轨迹</a>
+      </nav>
+
+      <div class="intro__content">
+
     <!-- ===== Profile card ===== -->
-    <div class="intro__card reveal">
+    <div class="intro__card reveal" id="sec-profile">
       <div class="intro__avatar intro__avatar--anim" aria-hidden="true">
                 <svg class="character-fig" viewBox="0 0 300 250" aria-hidden="true">
           <!-- ground shadow -->
@@ -786,7 +800,7 @@
       </p>
       <p class="intro__sub" data-i18n="intro.sub">金融投资顾问 / 工程师 / 学者</p>
 
-      <h2 class="intro__sec-title" data-i18n="intro.secContact">广结好友</h2>
+      <h2 class="intro__sec-title" id="sec-contact" data-i18n="intro.secContact">广结好友</h2>
       <!-- Language-conditional social pill row: EN shows 6, ZH shows 4 -->
       <div class="intro__socials" aria-label="Social links" data-i18n-aria="social.aria">
         <!-- English chips -->
@@ -804,7 +818,7 @@
         <a class="chip-pill" data-show-lang="zh" href="mailto:Joss@88.com">邮箱</a>
       </div>
 
-      <h2 class="intro__sec-title" data-i18n="intro.secSkills">爱好领域</h2>
+      <h2 class="intro__sec-title" id="sec-skills" data-i18n="intro.secSkills">爱好领域</h2>
       <div class="intro__skills">
         <span class="chip" data-i18n="chip.1">教育</span><span class="chip" data-i18n="chip.2">心理</span><span class="chip" data-i18n="chip.3">管理</span>
         <span class="chip" data-i18n="chip.4">历史</span><span class="chip" data-i18n="chip.5">产品</span><span class="chip" data-i18n="chip.6">设计</span>
@@ -815,7 +829,7 @@
         <span class="chip" data-i18n="chip.19">写作</span>
       </div>
 
-      <h2 class="intro__sec-title" data-i18n="intro.secWorks">作品</h2>
+      <h2 class="intro__sec-title" id="sec-works" data-i18n="intro.secWorks">作品</h2>
       <div class="intro__works">
         <div class="work">
           <span class="work__icon" aria-hidden="true">📖</span>
@@ -829,7 +843,7 @@
         </div>
       </div>
 
-      <h2 class="intro__sec-title" data-i18n="intro.secProjects">项目</h2>
+      <h2 class="intro__sec-title" id="sec-projects" data-i18n="intro.secProjects">项目</h2>
       <!-- Web 项目 -->
       <div class="intro__works">
         <a class="work work--proj" href="#" data-i18n-aria="proj.1.aria">
@@ -842,7 +856,7 @@
         </a>
       </div>
 
-      <h2 class="intro__sec-title" data-i18n="intro.secTimeline">详细介绍</h2>
+      <h2 class="intro__sec-title" id="sec-timeline" data-i18n="intro.secTimeline">详细介绍</h2>
       <ol class="timeline">
         <li class="timeline__item">
           <span class="timeline__year">1998</span>
@@ -904,7 +918,7 @@
 
     <!-- ===== Journey map card ===== -->
     <div class="intro__card intro__card--map reveal">
-      <h2 class="intro__sec-title intro__sec-title--map">
+      <h2 class="intro__sec-title intro__sec-title--map" id="sec-map">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="map-pin"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
         <span data-i18n="map.title">足迹 · 人生轨迹</span>
       </h2>
@@ -1053,6 +1067,8 @@
         </svg>
       </div>
     </div>
+
+      </div><!-- /.intro__content -->
 
   </div>
 </section>

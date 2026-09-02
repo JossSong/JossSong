@@ -188,6 +188,44 @@
     else closeIntro();
   });
 
+  /* ---------- About-page left sidebar (table of contents) ---------- */
+  (function initToc () {
+    const tocLinks = document.querySelectorAll('.intro__toc-link');
+    if (!scroller || !tocLinks.length) return;
+
+    // Smooth-scroll to the section when a TOC link is clicked
+    tocLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = (link.getAttribute('href') || '').slice(1);
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+      });
+    });
+
+    // Scrollspy: highlight the TOC entry for the section currently in view
+    const spyTargets = Array.prototype.map.call(tocLinks, (l) =>
+      document.getElementById((l.getAttribute('href') || '').slice(1))
+    ).filter(Boolean);
+
+    if ('IntersectionObserver' in window && spyTargets.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+          tocLinks.forEach((l) => {
+            l.classList.toggle('is-active', l.getAttribute('href') === '#' + id);
+          });
+        });
+      }, { root: scroller, rootMargin: '0px 0px -65% 0px', threshold: 0 });
+      spyTargets.forEach((t) => spy.observe(t));
+    }
+  })();
+
   /* ---------- Day / Night theme (default follows system) ---------- */
   const root = document.documentElement;
   let lang = 'zh';
@@ -325,6 +363,8 @@
       'tl.8.title': '销声匿迹', 'tl.8.desc': '暂别公众视野，潜心修行。',
       'intro.quote': '当地著名企业家，著名学者。',
       'intro.quoteCite': '—— 地位评价',
+      'toc.title': '目录',
+      'toc.profile': '简介',
       'intro.email': '邮件联系',
       'social.aria': '社交联系方式',
       'map.title': '足迹 · 人生轨迹',
@@ -397,6 +437,8 @@
       'tl.8.title': 'Off the Grid', 'tl.8.desc': 'Stepped away from public view for quiet cultivation.',
       'intro.quote': 'A renowned local entrepreneur and scholar.',
       'intro.quoteCite': '— Recognition',
+      'toc.title': 'Contents',
+      'toc.profile': 'Profile',
       'intro.email': 'Email Me',
       'social.aria': 'Social links',
       'map.title': 'Footprints · Life Journey',
