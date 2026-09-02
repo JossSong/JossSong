@@ -31,7 +31,7 @@
   --win-color: #ffd58a;
   --glow-strength: 1;
   --brand-ink: #ffffff;
-  --meta-theme: #0a1132;
+  --meta-theme: #060a1f;
   --hint-bg: rgba(12,18,38,.72);
   --hint-ink: #ffe9c2;
   --hint-border: rgba(255,213,138,.45);
@@ -1020,6 +1020,17 @@ a { color: inherit; text-decoration: none; }
   border-color: rgba(40,80,130,.22);
   color: #1c2c44;
 }
+/* Back-to-top button: nearly-invisible white on white card — give it a dark tint + border in day mode */
+[data-theme="day"] .intro-top {
+  background: rgba(20,42,72,.14);
+  border-color: rgba(20,42,72,.34);
+  color: #14253c;
+  box-shadow: 0 4px 14px rgba(20,42,72,.18);
+}
+[data-theme="day"] .intro-top:hover {
+  background: rgba(20,42,72,.22);
+  color: #0a1830;
+}
 [data-theme="day"] .intro::after {
   background: linear-gradient(180deg, transparent 0%, rgba(94,160,120,.16) 55%, rgba(70,120,80,.30) 100%);
 }
@@ -1034,11 +1045,11 @@ a { color: inherit; text-decoration: none; }
 .intro.is-open .reveal:nth-child(2) { transition-delay: .15s; }
 
 .intro__avatar {
-  width: min(168px, 44vw);
-  border-radius: 22px;
-  margin: -74px auto 18px;
+  width: min(128px, 34vw);
+  border-radius: 20px;
+  margin: -90px auto 16px;
   background: linear-gradient(135deg, #2563eb, #1e40af);
-  padding: 7px;
+  padding: 6px;
   box-shadow: 0 16px 38px rgba(0,0,0,.45);
 }
 @supports (aspect-ratio: 6 / 5) {
@@ -1054,7 +1065,7 @@ a { color: inherit; text-decoration: none; }
 }
 /* animated mini-character version (reuses the hero figure) */
 .intro__avatar--anim {
-  overflow: hidden;
+  overflow: visible;
   padding: 6px;
   background:
     radial-gradient(130% 95% at 50% 118%, #163a2a 0%, #122a44 58%, #0e1830 100%),
@@ -1065,6 +1076,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   overflow: visible;
+  transform: translateY(-6px);
 }
 /* Day theme: lighten the mini-avatar frame so it sits cleanly on the white card */
 [data-theme="day"] .intro__avatar--anim {
@@ -1228,7 +1240,7 @@ a { color: inherit; text-decoration: none; }
 .timeline::before {
   content: "";
   position: absolute;
-  left: 44px;
+  left: 98px;          /* sits in the gap after the 88px year column (88 + 20 gap → center 98) */
   top: 16px;
   bottom: 16px;
   width: 2px;
@@ -1254,7 +1266,7 @@ a { color: inherit; text-decoration: none; }
 .timeline__item::after {
   content: "";
   position: absolute;
-  left: 39px;
+  left: 93px;          /* centered on the line at 98px (12px dot, so left = 98 - 6 = 92, +1 for line center) */
   top: 18px;
   width: 12px;
   height: 12px;
@@ -1479,9 +1491,9 @@ a { color: inherit; text-decoration: none; }
   .signature { font-size: 10px; bottom: max(12px, env(safe-area-inset-bottom) + 10px); letter-spacing: .14em; padding: 5px 14px; }
   .intro__card { padding: 40px 20px 32px; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
-  .intro__avatar { width: min(150px, 44vw); margin-top: -64px; }
+  .intro__avatar { width: min(112px, 36vw); margin-top: -74px; }
   @supports not (aspect-ratio: 6 / 5) {
-    .intro__avatar { height: calc(min(150px, 44vw) * 5 / 6); }
+    .intro__avatar { height: calc(min(112px, 36vw) * 5 / 6); }
   }
   .earth { width: 260%; bottom: -4%; }
   .villa { width: 135px; left: 3%; bottom: clamp(26%, 30vh, 36%); }
@@ -1489,9 +1501,9 @@ a { color: inherit; text-decoration: none; }
   .character { width: 150px; height: 125px; bottom: clamp(20%, 26vh, 32%); }
   .hint { font-size: 14px; padding: 7px 14px; gap: 7px; }
   .intro__names { grid-template-columns: 1fr 1fr; gap: 6px 8px; }
-  .timeline::before { left: 38px; }
+  .timeline::before { left: 80px; }      /* 74px year + 12px gap → center 80 */
   .timeline__year { width: 74px; font-size: 15px; }
-  .timeline__item::after { left: 33px; }
+  .timeline__item::after { left: 74px; }  /* centered on line at 80px (74 + 6) */
   .timeline__item { gap: 12px; }
   .map { min-width: 720px; }
 }
