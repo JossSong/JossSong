@@ -8,8 +8,8 @@
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <!-- Status-bar / chrome tint = the exact top pixel of the scene, so the bar melts into the sky.
-     Night: aurora-tinted deep indigo. Day: top stop of the day sky. JS keeps it in sync on toggle. -->
-<meta name="theme-color" content="#2e2757" />
+     Night: 紫黑 (purple-black). Day: top stop of the day sky. JS keeps it in sync on toggle. -->
+<meta name="theme-color" content="#1a0f2e" />
 <title>Joss 宋京 · Be all you can be!</title>
 <meta name="description" content="宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡。" />
 <link rel="icon" href="favicon.ico" />
@@ -30,7 +30,7 @@
     // Sync the status-bar tint with the resolved theme before the first paint,
     // so the bar never flashes the wrong colour on load.
     var mt = document.querySelector('meta[name="theme-color"]');
-    if (mt) mt.setAttribute('content', mode === 'day' ? '#4a9fdc' : '#2e2757');
+    if (mt) mt.setAttribute('content', mode === 'day' ? '#4a9fdc' : '#1a0f2e');
   } catch (e) {}
 })();
 </script>
@@ -819,6 +819,19 @@
           <span class="work__title" data-i18n="work.2.title">《元宇集》</span>
           <span class="work__sub" data-i18n="work.2.sub">元宇宙思辨文集</span>
         </div>
+      </div>
+
+      <h2 class="intro__sec-title" data-i18n="intro.secProjects">项目</h2>
+      <!-- Web 项目：href 先占位为 "#"，拿到真实网址后替换即可 -->
+      <div class="intro__works">
+        <a class="work work--proj" href="#" data-i18n-aria="proj.1.aria">
+          <span class="work__icon" aria-hidden="true">🌊</span>
+          <span class="work__title" data-i18n="proj.1.name">生命池</span>
+        </a>
+        <a class="work work--proj" href="#" data-i18n-aria="proj.2.aria">
+          <span class="work__icon" aria-hidden="true">🐇</span>
+          <span class="work__title" data-i18n="proj.2.name">兔子洞</span>
+        </a>
       </div>
 
       <h2 class="intro__sec-title" data-i18n="intro.secTimeline">详细介绍</h2>

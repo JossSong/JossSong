@@ -31,7 +31,7 @@
   --win-color: #ffd58a;
   --glow-strength: 1;
   --brand-ink: #ffffff;
-  --meta-theme: #2e2757;   /* = top pixel of the night sky incl. aurora → seamless status bar */
+  --meta-theme: #1a0f2e;   /* night = 紫黑: purple-black, matches the top of the night sky */
   --hint-bg: rgba(12,18,38,.72);
   --hint-ink: #ffe9c2;
   --hint-border: rgba(255,213,138,.45);
@@ -119,18 +119,18 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 1.1s ease;
 }
 .nebula--a {
-  /* Top aurora scrim — broadened (100% wide, gentler falloff) so the status-bar
-     strip reads as a single uniform starry-purple band edge-to-edge. */
-  width: 100%; height: 380px;
-  left: 0; top: -40px;
+  /* Top aurora scrim — spans the full width, but kept gentle so the very top
+     stays 紫黑 (purple-black) and the stars read clearly. */
+  width: 100%; height: 360px;
+  left: 0; top: -30px;
   border-radius: 0;
   background: radial-gradient(ellipse 100% 100% at 50% 0%,
-    rgba(150, 110, 230, 0.45) 0%,
-    rgba(115, 85, 205, 0.24) 42%,
-    rgba(85, 65, 175, 0.10) 78%,
+    rgba(120, 85, 185, 0.30) 0%,
+    rgba(95, 66, 172, 0.16) 45%,
+    rgba(75, 55, 150, 0.07) 78%,
     transparent 100%);
   filter: blur(30px);
-  opacity: calc(.9 * var(--night-els));
+  opacity: calc(.8 * var(--night-els));
   animation: drift 44s ease-in-out infinite alternate; }
 .nebula--b { width: 640px; height: 640px; right: -160px; top: 18%;
   background: radial-gradient(circle, #c46bff 0%, transparent 60%);
@@ -140,17 +140,17 @@ a { color: inherit; text-decoration: none; }
   opacity: calc(.45 * var(--night-els));
   animation: drift 44s ease-in-out infinite alternate; }
 
-/* Status-bar cap: a flat, full-width starry-purple band pinned to the very top
-   so the iOS status bar / notch area is uniform edge-to-edge and fuses with
-   the aurora below. Strength is tuned so its average colour matches the
-   --meta-theme tint (#2e2757). */
+/* Status-bar cap: a flat, full-width purple-black (紫黑) band pinned to the very
+   top so the iOS status bar / notch area is uniform edge-to-edge and fuses with
+   the night sky. Tuned so its colour lands on the --meta-theme tint (#1a0f2e);
+   the darker cap also makes the stars read more clearly. */
 .top-wash {
   position: absolute;
   left: 0; right: 0; top: 0;
-  height: 72px;
+  height: 76px;
   background: linear-gradient(180deg,
-    rgba(90, 65, 160, 0.50) 0%,
-    rgba(75, 55, 145, 0.30) 55%,
+    rgba(38, 14, 47, 0.55) 0%,
+    rgba(34, 13, 42, 0.30) 55%,
     transparent 100%);
   pointer-events: none;
   z-index: 2;

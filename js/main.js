@@ -173,7 +173,7 @@
 
   function applyTheme (theme) {
     root.dataset.theme = theme;
-    if (metaTheme) metaTheme.setAttribute('content', theme === 'day' ? '#4a9fdc' : '#2e2757');
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'day' ? '#4a9fdc' : '#1a0f2e');
     updateThemeLabels();
   }
 
