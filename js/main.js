@@ -549,10 +549,14 @@
       langToggle.setAttribute('aria-label', dict['lang.toggleAria']);
       langToggle.setAttribute('title', dict['lang.toggleAria']);
     }
-    // Language-conditional social chips: only show the ones matching the active language
+    // Language-conditional social chips: only show the ones matching the active language.
+    // Toggle on the *parent* cell (closest <li>) so the grid slot is fully removed; hiding
+    // only the inner <a> left the <li> holding a 0-height column and shifted visible items
+    // off the left edge (top-left / bottom-right empty cells on mobile).
     document.querySelectorAll('[data-show-lang]').forEach((el) => {
       const want = el.dataset.showLang;
-      el.classList.toggle('is-hidden', want !== lang);
+      const host = el.closest('li') || el;
+      host.classList.toggle('is-hidden', want !== lang);
     });
     updateThemeLabels();
   }

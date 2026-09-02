@@ -1669,7 +1669,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-2);
 }
 
-[data-show-lang].is-hidden { display: none; }
+/* Hide language-conditional chips: the class now lives on the host cell (closest <li>)
+   so the whole grid slot is removed; keep the data-show-lang form for any inner-link case. */
+[data-show-lang].is-hidden,
+li.is-hidden:has([data-show-lang]),
+.contact-cards li.is-hidden { display: none; }
 .btn {
   display: inline-flex;
   align-items: center;
