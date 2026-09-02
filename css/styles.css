@@ -989,7 +989,7 @@ a { color: inherit; text-decoration: none; }
 
 .intro__card {
   position: relative;
-  width: min(760px, 100%);
+  width: min(860px, 100%);
   padding: 48px 44px 40px;
   background:
     linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
@@ -1021,9 +1021,12 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-/* Personal portrait sits at the top of the contact column */
+/* Personal portrait sits in the middle of the contact column, centered */
 .intro__toc-portrait {
-  margin: 0 0 14px;
+  margin: 14px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .intro__toc-portrait-img {
   display: block;
@@ -1118,7 +1121,7 @@ a { color: inherit; text-decoration: none; }
      card's centerline aligns with the viewport's centerline. */
   .intro__inner {
     display: grid;
-    grid-template-columns: 188px minmax(0, 760px) 188px;
+    grid-template-columns: 160px minmax(0, 900px) 160px;
     column-gap: 28px;
     align-items: start;
     justify-content: center;
@@ -1157,7 +1160,7 @@ a { color: inherit; text-decoration: none; }
   .intro__content {
     grid-column: 2;
     width: 100%;
-    max-width: 880px;
+    max-width: 900px;
     justify-self: center;
   }
 }
@@ -1171,7 +1174,7 @@ a { color: inherit; text-decoration: none; }
     justify-content: center;
     padding: 84px 20px 72px;
   }
-  .intro__content { flex: 0 1 auto; min-width: 0; max-width: 700px; }
+  .intro__content { flex: 0 1 auto; min-width: 0; max-width: 760px; }
 
   .intro__rail {
     display: flex;
