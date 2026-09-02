@@ -593,7 +593,7 @@ a { color: inherit; text-decoration: none; }
 .character svg { width: 100%; height: 100%; overflow: visible; }
 
 /* head: subtle bob (looking at screen) */
-.character .head {
+.character-fig .head {
   transform-box: fill-box;
   transform-origin: 50% 100%;
   animation: head-bob 5s ease-in-out infinite;
@@ -603,7 +603,7 @@ a { color: inherit; text-decoration: none; }
   50%     { transform: rotate(1.5deg) translateY(1.5px); }
 }
 /* body breathe */
-.character .body {
+.character-fig .body {
   transform-box: fill-box;
   transform-origin: 50% 0%;
   animation: breathe 4.5s ease-in-out infinite;
@@ -611,17 +611,17 @@ a { color: inherit; text-decoration: none; }
 @keyframes breathe { 50% { transform: scaleY(1.012); } }
 
 /* typing hands */
-.character .hand {
+.character-fig .hand {
   transform-box: fill-box;
   transform-origin: center;
 }
-.character .hand--l { animation: type-l .26s ease-in-out infinite alternate; }
-.character .hand--r { animation: type-r .26s ease-in-out infinite alternate .13s; }
+.character-fig .hand--l { animation: type-l .26s ease-in-out infinite alternate; }
+.character-fig .hand--r { animation: type-r .26s ease-in-out infinite alternate .13s; }
 @keyframes type-l { from { transform: translateY(0); } to { transform: translateY(3px); } }
 @keyframes type-r { from { transform: translateY(3px); } to { transform: translateY(0); } }
 
 /* screen glow */
-.character .screen-glow {
+.character-fig .screen-glow {
   transform-box: fill-box;
   transform-origin: center;
   animation: screen-pulse 3.4s ease-in-out infinite alternate;
@@ -630,7 +630,7 @@ a { color: inherit; text-decoration: none; }
   from { opacity: calc(.16 * var(--glow-strength) + .06); }
   to   { opacity: calc(.34 * var(--glow-strength) + .1); }
 }
-.character .laptop-logo {
+.character-fig .laptop-logo {
   transform-box: fill-box;
   transform-origin: center;
   animation: logo-glow 3.4s ease-in-out infinite alternate;
@@ -641,12 +641,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* tea steam */
-.character .steam path {
+.character-fig .steam path {
   stroke-dasharray: 26;
   animation: steam-rise 3s ease-in-out infinite;
   opacity: 0;
 }
-.character .steam path:nth-child(2) { animation-delay: 1.5s; }
+.character-fig .steam path:nth-child(2) { animation-delay: 1.5s; }
 @keyframes steam-rise {
   0%   { stroke-dashoffset: 26; opacity: 0; transform: translateY(0); }
   30%  { opacity: .8; }
@@ -654,15 +654,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* floating code symbols */
-.character .code {
+.character-fig .code {
   transform-box: fill-box;
   transform-origin: center;
   animation: code-float 4s ease-in-out infinite;
   opacity: .75;
 }
-.character .c1 { animation-delay: 0s; }
-.character .c2 { animation-delay: 1.3s; }
-.character .c3 { animation-delay: 2.6s; }
+.character-fig .c1 { animation-delay: 0s; }
+.character-fig .c2 { animation-delay: 1.3s; }
+.character-fig .c3 { animation-delay: 2.6s; }
 @keyframes code-float {
   0%,100% { transform: translateY(0) rotate(-4deg); opacity: .4; }
   50%     { transform: translateY(-8px) rotate(4deg); opacity: .9; }
@@ -1034,17 +1034,43 @@ a { color: inherit; text-decoration: none; }
 .intro.is-open .reveal:nth-child(2) { transition-delay: .15s; }
 
 .intro__avatar {
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  margin: -80px auto 18px;
+  width: min(168px, 44vw);
+  border-radius: 22px;
+  margin: -74px auto 18px;
   background: linear-gradient(135deg, #2563eb, #1e40af);
-  padding: 3px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.4);
+  padding: 7px;
+  box-shadow: 0 16px 38px rgba(0,0,0,.45);
+}
+@supports (aspect-ratio: 6 / 5) {
+  .intro__avatar { aspect-ratio: 6 / 5; }
+}
+@supports not (aspect-ratio: 6 / 5) {
+  .intro__avatar { height: calc(min(168px, 44vw) * 5 / 6); }
 }
 .intro__avatar img {
   width: 100%; height: 100%;
   border-radius: 50%;
   object-fit: cover;
+}
+/* animated mini-character version (reuses the hero figure) */
+.intro__avatar--anim {
+  overflow: hidden;
+  padding: 6px;
+  background:
+    radial-gradient(130% 95% at 50% 118%, #163a2a 0%, #122a44 58%, #0e1830 100%),
+    linear-gradient(135deg, #2563eb, #1e40af);
+}
+.intro__avatar--anim .character-fig {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* Day theme: lighten the mini-avatar frame so it sits cleanly on the white card */
+[data-theme="day"] .intro__avatar--anim {
+  background:
+    radial-gradient(130% 95% at 50% 118%, #dff0e6 0%, #cfe6f4 58%, #e8f3fb 100%),
+    linear-gradient(135deg, #3b82f6, #1e40af);
 }
 
 .intro__hi {
@@ -1453,7 +1479,10 @@ a { color: inherit; text-decoration: none; }
   .signature { font-size: 10px; bottom: max(12px, env(safe-area-inset-bottom) + 10px); letter-spacing: .14em; padding: 5px 14px; }
   .intro__card { padding: 40px 20px 32px; }
   .intro__card--map { width: 100%; padding: 28px 16px 24px; }
-  .intro__avatar { width: 80px; height: 80px; margin-top: -68px; }
+  .intro__avatar { width: min(150px, 44vw); margin-top: -64px; }
+  @supports not (aspect-ratio: 6 / 5) {
+    .intro__avatar { height: calc(min(150px, 44vw) * 5 / 6); }
+  }
   .earth { width: 260%; bottom: -4%; }
   .villa { width: 135px; left: 3%; bottom: clamp(26%, 30vh, 36%); }
   .rv { width: 150px; right: 2%; bottom: clamp(26%, 30vh, 36%); }
