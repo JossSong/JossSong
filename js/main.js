@@ -349,10 +349,11 @@
   /* ---------- i18n (中文 / English) ---------- */
   const I18N = {
     zh: {
-      'meta.title': '宋京 SONG JING · 成为你能成为的一切',
-      'meta.desc': '宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡，广交好友。',
+      'meta.title': '宋京工作室 · 成为你能成为的一切',
+      'meta.desc': '宋京工作室（Joss.Song）—— 通识集团创始人兼CEO，宋京（Joss.Song）简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡，广交好友。',
       'hero.hint': '点我 · about',
       'hero.brandSub': 'Joss.Song',
+      'hero.brandMark': '宋京工作室',
       'hero.signature': '仰望星辰 · 脚踏实地',
       'hero.characterAria': '打开宋京的个人介绍',
       'intro.backAria': '返回首页',
@@ -425,10 +426,11 @@
       'lang.toggleAria': 'Switch to English',
     },
     en: {
-      'meta.title': 'Joss Song · Be All You Can Be!',
-      'meta.desc': 'Song Jing (Joss.Song) — Founder & CEO of Tongshi Group, Song Jing Studio, founder of Jiandao. Entrepreneur, investor, tech-savvy, occasional writer, tea lover, and a friend to all.',
+      'meta.title': "Joss's Studio · Be All You Can Be!",
+      'meta.desc': "Joss's Studio (Joss.Song) — Founder & CEO of Tongshi Group, Joss (Joss.Song) founder of Jiandao. Entrepreneur, investor, tech-savvy, occasional writer, tea lover, and a friend to all.",
       'hero.hint': 'Tap me · About',
       'hero.brandSub': 'Joss.Song',
+      'hero.brandMark': "Joss's Studio",
       'hero.signature': 'Reach for the stars · Stand on the ground',
       'hero.characterAria': "Open Song Jing's profile",
       'intro.backAria': 'Back to home',
