@@ -1021,6 +1021,32 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+/* Personal portrait sits at the top of the contact column */
+.intro__toc-portrait {
+  margin: 0 0 14px;
+}
+.intro__toc-portrait-img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 8px 22px rgba(0,0,0,.30);
+}
+.intro__toc-portrait-cap {
+  margin-top: 7px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--ink-2);
+}
+/* Hide the portrait on phones — the contact column stacks at the very bottom on
+   mobile, where the photo adds little and takes vertical space. Shown again at
+   ≥860px where it sits inside the sidebar rail. */
+@media (max-width: 859px) {
+  .intro__toc-portrait { display: none; }
+}
 .intro__contact-title {
   margin: 0 0 12px;
   font-size: 11px;
@@ -1216,34 +1242,6 @@ a { color: inherit; text-decoration: none; }
     border-left-color: var(--accent);
     font-weight: 600;
   }
-
-  /* Portrait card under the TOC links */
-  .intro__toc-portrait {
-    margin: 14px 4px 4px;
-    padding: 10px 8px 10px;
-    border-top: 1px solid rgba(255,255,255,.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .intro__toc-portrait-img {
-    display: block;
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.12),
-      0 8px 22px rgba(0,0,0,.35);
-  }
-  .intro__toc-portrait-cap {
-    font-size: 11px;
-    letter-spacing: .14em;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    font-weight: 600;
-  }
 }
 
 /* Day theme: keep the sidebar readable on the bright card */
@@ -1257,9 +1255,6 @@ a { color: inherit; text-decoration: none; }
   background: rgba(217,119,87,.14);
   color: #c0532f;
   border-left-color: var(--accent-2);
-}
-[data-theme="day"] .intro__toc-portrait {
-  border-top-color: rgba(20,42,72,.16);
 }
 [data-theme="day"] .intro__toc-portrait-img {
   box-shadow:

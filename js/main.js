@@ -204,25 +204,53 @@
         target.setAttribute('tabindex', '-1');
         target.focus({ preventScroll: true });
         if (history.replaceState) history.replaceState(null, '', '#' + id);
+        // Instant visual feedback: light up the clicked entry right away.
+        setActive(id);
+        // Lock the spy briefly so the smooth-scroll animation can't momentarily
+        // flip the highlight to a neighbouring section before it settles.
+        lockUntil = Date.now() + 700;
       });
     });
 
-    // Scrollspy: highlight the TOC entry for the section currently in view
+    // Scrollspy: highlight the TOC entry for the section whose heading is at the
+    // top of the scroll area. Computed deterministically from element positions
+    // (NOT from IntersectionObserver entry ordering) so clicking 作品 never
+    // wrongly lights up 详细介绍 when both sit inside the viewport.
     const spyTargets = Array.prototype.map.call(tocLinks, (l) =>
       document.getElementById((l.getAttribute('href') || '').slice(1))
     ).filter(Boolean);
 
-    if ('IntersectionObserver' in window && spyTargets.length) {
-      const spy = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          tocLinks.forEach((l) => {
-            l.classList.toggle('is-active', l.getAttribute('href') === '#' + id);
-          });
-        });
-      }, { root: scroller, rootMargin: '0px 0px -65% 0px', threshold: 0 });
-      spyTargets.forEach((t) => spy.observe(t));
+    function setActive (id) {
+      tocLinks.forEach((l) => {
+        l.classList.toggle('is-active', l.getAttribute('href') === '#' + id);
+      });
+    }
+
+    let lockUntil = 0;
+    function spy () {
+      if (!spyTargets.length || Date.now() < lockUntil) return;
+      const rect = scroller.getBoundingClientRect();
+      // Reference line just below the top edge: the "current" section is the one
+      // whose heading has scrolled up to the top. A short offset (not a deep
+      // band) is what keeps short sections like 作品 from being skipped over.
+      const ref = rect.top + 24;
+      let active = spyTargets[0].id;
+      for (const t of spyTargets) {
+        if (t.getBoundingClientRect().top <= ref) active = t.id;
+        else break;
+      }
+      // Reached the very bottom → force-activate the last section so 足迹 can
+      // still be highlighted even if it can't scroll its heading to the top.
+      if (scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2) {
+        active = spyTargets[spyTargets.length - 1].id;
+      }
+      setActive(active);
+    }
+
+    if (spyTargets.length) {
+      scroller.addEventListener('scroll', spy, { passive: true });
+      spy();
+      window.requestAnimationFrame(spy);
     }
   })();
 
