@@ -1510,6 +1510,25 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
+
+/* Blog section: Notion embed kept fully inside the content column so it can
+   never push the page wider. The iframe is width:100% + max-width:100% and the
+   wrapper clips any overflow; nothing here breaks the surrounding layout. */
+.intro__blog {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.03);
+}
+.intro__blog iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  border: 0;
+}
 .work {
   display: flex;
   align-items: center;
