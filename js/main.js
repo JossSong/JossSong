@@ -146,11 +146,15 @@
   }
 
   function openIntro () {
-    if (!intro) return;
+    if (!intro || intro.classList.contains('is-open')) return;
     intro.setAttribute('aria-hidden', 'false');
     intro.classList.add('is-open');
-    if (history.pushState) history.pushState({ intro: true }, '', '#about');
-    // focus the close button for keyboard users
+    // always start the about view from the top
+    if (scroller) scroller.scrollTop = 0;
+    // avoid creating a redundant history entry when the URL already carries #about (deep link)
+    if (history.pushState && location.hash !== '#about') {
+      history.pushState(null, '', '#about');
+    }
     setTimeout(() => backBtn && backBtn.focus(), 700);
     updateIntroTopBtn();
   }
@@ -159,7 +163,11 @@
     if (!intro) return;
     intro.classList.remove('is-open');
     intro.setAttribute('aria-hidden', 'true');
-    if (history.pushState && location.hash === '#about') history.back();
+    // strip the #about hash from the current entry in place — deterministic on deep link,
+    // does not accumulate history, and never relies on a "previous" entry existing
+    if (location.hash === '#about') {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
     updateIntroTopBtn();
   }
 
@@ -352,7 +360,6 @@
       'meta.title': '宋京工作室 · 成为你能成为的一切',
       'meta.desc': '宋京工作室（Joss.Song）—— 通识集团创始人兼CEO，宋京（Joss.Song）简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡，广交好友。',
       'hero.hint': '点我 · about',
-      'hero.brandSub': 'Joss.Song',
       'hero.brandMark': '宋京工作室',
       'hero.signature': '仰望星辰 · 脚踏实地',
       'hero.characterAria': '打开宋京的个人介绍',
@@ -429,7 +436,6 @@
       'meta.title': "Joss's Studio · Be All You Can Be!",
       'meta.desc': "Joss's Studio (Joss.Song) — Founder & CEO of Tongshi Group, Joss (Joss.Song) founder of Jiandao. Entrepreneur, investor, tech-savvy, occasional writer, tea lover, and a friend to all.",
       'hero.hint': 'Tap me · About',
-      'hero.brandSub': 'Joss.Song',
       'hero.brandMark': "Joss's Studio",
       'hero.signature': 'Reach for the stars · Stand on the ground',
       'hero.characterAria': "Open Song Jing's profile",
