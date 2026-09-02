@@ -2,10 +2,16 @@
 <html lang="zh-CN" data-theme="night">
 <head>
 <meta charset="utf-8" />
+<!-- Immersive: content extends under the status bar / notch -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Status-bar / chrome tint = the exact top pixel of the scene, so the bar melts into the sky.
+     Night: aurora-tinted deep indigo. Day: top stop of the day sky. JS keeps it in sync on toggle. -->
+<meta name="theme-color" content="#2e2757" />
 <title>Joss 宋京 · Be all you can be!</title>
 <meta name="description" content="宋京（Joss.Song）—— 通识集团创始人兼CEO，宋京工作室，简道奠基人。创业者，投资人，懂点技术，偶尔写作，喜欢喝茶or咖啡。" />
-<meta name="theme-color" content="#060a1f" />
 <link rel="icon" href="favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,6 +27,10 @@
       : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'night');
     document.documentElement.dataset.theme = mode;
     document.documentElement.dataset.mode = mode;
+    // Sync the status-bar tint with the resolved theme before the first paint,
+    // so the bar never flashes the wrong colour on load.
+    var mt = document.querySelector('meta[name="theme-color"]');
+    if (mt) mt.setAttribute('content', mode === 'day' ? '#4a9fdc' : '#2e2757');
   } catch (e) {}
 })();
 </script>
@@ -38,6 +48,10 @@
       <div class="nebula nebula--a"></div>
       <div class="nebula nebula--b"></div>
       <div class="nebula nebula--c"></div>
+
+      <!-- Status-bar cap: a uniform starry-purple wash that spans the full
+           top strip so the iOS status bar fuses with the sky edge-to-edge. -->
+      <div class="top-wash" aria-hidden="true"></div>
 
       <!-- Horizon atmosphere: teal glow in the lower sky above the earth -->
       <div class="horizon-glow" aria-hidden="true"></div>
@@ -756,12 +770,13 @@
         <li><span class="k" data-i18n="intro.k3">号</span><span class="v" data-i18n="intro.v3">乌莲居士 · 乌莲先生</span></li>
         <li><span class="k" data-i18n="intro.k4">英文名</span><span class="v" data-i18n="intro.v4">Joss.Song</span></li>
         <li><span class="k" data-i18n="intro.k5">国籍</span><span class="v" data-i18n="intro.v5">中国</span></li>
+        <li><span class="k" data-i18n="intro.k6">居住地</span><span class="v" data-i18n="intro.v6">数字游民</span></li>
       </ul>
 
       <p class="intro__role" data-i18n="intro.role">
         创业者 · 投资人 · 懂点技术 · 偶尔写作 · 喜欢喝茶or咖啡
       </p>
-      <p class="intro__sub" data-i18n="intro.sub">金融投资顾问 / 工程师</p>
+      <p class="intro__sub" data-i18n="intro.sub">金融投资顾问 / 工程师 / 学者</p>
 
       <h2 class="intro__sec-title" data-i18n="intro.secContact">广结好友</h2>
       <!-- Language-conditional social pill row: EN shows 6, ZH shows 4 -->

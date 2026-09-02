@@ -173,7 +173,7 @@
 
   function applyTheme (theme) {
     root.dataset.theme = theme;
-    if (metaTheme) metaTheme.setAttribute('content', theme === 'day' ? '#79bde8' : '#060a1f');
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'day' ? '#4a9fdc' : '#2e2757');
     updateThemeLabels();
   }
 
@@ -245,8 +245,9 @@
       'intro.k3': '号', 'intro.v3': '乌莲居士 · 乌莲先生',
       'intro.k4': '英文名', 'intro.v4': 'Joss.Song',
       'intro.k5': '国籍', 'intro.v5': '中国',
-      'intro.role': '创业者 · 投资人 · 懂点技术 · 偶尔写作 · 喜欢喝茶 · 广交好友',
-      'intro.sub': '金融投资顾问 / 工程师',
+      'intro.k6': '居住地', 'intro.v6': '数字游民',
+      'intro.role': '创业者 · 投资人 · 懂点技术 · 偶尔写作 · 喜欢喝茶or咖啡',
+      'intro.sub': '金融投资顾问 / 工程师 / 学者',
       'intro.secContact': '联系我',
       'intro.secSkills': '爱好领域',
       'intro.secWorks': '作品',
@@ -313,8 +314,9 @@
       'intro.k3': 'Art name', 'intro.v3': 'Wulian Jushi · Mr. Wulian',
       'intro.k4': 'English name', 'intro.v4': 'Joss.Song',
       'intro.k5': 'Nationality', 'intro.v5': 'China',
-      'intro.role': 'Entrepreneur · Investor · Tech-savvy · Occasional writer · Tea lover · A friend to all',
-      'intro.sub': 'Financial Investment Advisor / Engineer',
+      'intro.k6': 'Residence', 'intro.v6': 'Digital nomad',
+      'intro.role': 'Entrepreneur · Investor · Tech-savvy · Occasional writer · Tea or coffee lover',
+      'intro.sub': 'Financial Investment Advisor / Engineer / Scholar',
       'intro.secContact': 'Contact Me',
       'intro.secSkills': 'Fields of Interest',
       'intro.secWorks': 'Works',
