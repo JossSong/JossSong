@@ -59,6 +59,36 @@
   --hint-shadow: 0 6px 22px rgba(30,80,140,.28), 0 0 0 1px rgba(255,255,255,.35);
 }
 
+/* Bulletproof day/night exclusivity: visibility flips driven directly by
+   data-theme. On some Chromium-based browsers (Dia), var(--day-els) /
+   var(--night-els) opacity transitions mis-render and leave day elements
+   (e.g. clouds) as opaque silhouettes over a night sky. Pairing visibility
+   with opacity removes them from paint AND hit-tree. */
+/* Day mode: hide night-only elements */
+[data-theme="day"] .moon,
+[data-theme="day"] .starfield,
+[data-theme="day"] .shooters,
+[data-theme="day"] .planet--ring,
+[data-theme="day"] .nebula,
+[data-theme="day"] .top-wash,
+[data-theme="day"] .horizon-glow { visibility: hidden; }
+/* Night mode: hide day-only elements */
+[data-theme="night"] .clouds,
+[data-theme="night"] .sun,
+[data-theme="night"] .birds { visibility: hidden; }
+/* Day mode: show day-only elements */
+[data-theme="day"] .clouds,
+[data-theme="day"] .sun,
+[data-theme="day"] .birds { visibility: visible; }
+/* Night mode: show night-only elements */
+[data-theme="night"] .moon,
+[data-theme="night"] .starfield,
+[data-theme="night"] .shooters,
+[data-theme="night"] .planet--ring,
+[data-theme="night"] .nebula,
+[data-theme="night"] .top-wash,
+[data-theme="night"] .horizon-glow { visibility: visible; }
+
 * { box-sizing: border-box; }
 
 html, body { height: 100%; }
